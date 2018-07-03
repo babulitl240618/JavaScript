@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="js/"></script>
+	</head>
+	
+	<body>
+		<p id="demo"></p>
+	</body>
+</html>
+
+
+
+Question:
+Math.max.apply(null, points);

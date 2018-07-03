@@ -6,6 +6,7 @@ function findLowestValue(){
 		return a-b;
 	});
 
+
 	document.getElementById("demo").innerHTML = points[0];
 }
 
