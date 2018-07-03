@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	
+	<body>
+		<h1>Array mapping</h1>
+		<p id = "demo"></p>
+		<script>
+			var num = [70,80,94,50,41,54];
+			document.getElementById("demo").innerHTML=num.map(myFunction);
+			function myFunction(value, index, array){
+				return value*=2;
+			}
+		</script>
+	</body>
+</html>
