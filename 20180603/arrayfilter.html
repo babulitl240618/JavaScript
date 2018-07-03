@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	
+	<body>
+		<h1>Array Filter</h1>
+		<p id = "demo"></p>
+		<script>
+			var num = [70,80,94,50,41,54,7,9,5,4];
+			document.getElementById("demo").innerHTML=num.filter(myFunction);
+			function myFunction(value, index, array){
+				if(value%2==0){
+					return value;
+				}
+			}
+		</script>
+	</body>
+</html>
