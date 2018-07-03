@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	
+	<body>
+		<h1>Array reduce</h1>
+		<p id = "demo"></p>
+		<script>
+			var num = [70,80,94,50,41,54,7,9,5,4];
+			document.getElementById("demo").innerHTML="The sum is "+num.reduce(myFunction);
+			function myFunction(total, value, index, array){
+				return total + value;
+			}
+		</script>
+	</body>
+</html>
