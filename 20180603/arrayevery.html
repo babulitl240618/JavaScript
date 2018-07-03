@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	
+	<body>
+		<h1>Array reduce</h1>
+		<p id = "demo"></p>
+		<script>
+			var num = [70,80,94,50,41,54,7,9,5,4];
+			document.getElementById("demo").innerHTML="The 3 is "+num.every(myFunction);
+			function myFunction(value, index, array){
+				return 3<value;
+			}
+		</script>
+	</body>
+</html>
