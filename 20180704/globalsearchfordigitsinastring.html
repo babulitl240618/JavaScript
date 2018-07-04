@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>JavaScript String method using regular expression for digits</h1>
+		
+		<script>
+			var str = "Honesty is the best policy 420";
+			document.write(str+"<br>");
+			document.write("global searching for digits in a string: ");
+			var pattern = /\d/g;
+			document.write(str.match(pattern));
+		</script>
+	</body>
+</html>
