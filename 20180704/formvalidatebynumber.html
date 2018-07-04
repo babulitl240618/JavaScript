@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function formValidate(){
+				var number = document.forms["myForm"]["number"].value;
+				if(isNaN(number) || number<1 || number>10){
+					alert("Input not invalid");
+					return false;
+				}else{
+					alert("Input is OK");
+					return true;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="myForm" onsubmit="formValidate()" action="action_page.php">
+			<input type="text" name="number" required autocomplete="off" autofocus>
+			<input type="submit" value="submit">
+			<input type="submit" value="submit2" formaction="action_page2.php">
+		</form>
+	</body>
+</html>
