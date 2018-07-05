@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+	
+		<script>
+			function Person(first, last, age){
+				this.first = first;
+				this.last = last;
+				this.age = age;
+			}
+			
+			Person.prototype.nationality = "Bangladeshi";
+			Person.prototype.fullName = function(){
+				return this.first+" "+this.last;
+			}
+			
+			var myMother = new Person("Josna", "Begum", 45);
+			
+			document.write(myMother.fullName());
+		</script>
+		
+	</body>
+</html>
