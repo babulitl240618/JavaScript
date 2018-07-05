@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning Javascripts</title>
+	</head>
+	<body>
+		<script>
+			function onover(obj){
+				obj.innerHTML = "Your mouse point is over"
+			}
+			
+			function onout(obj){
+				obj.innerHTML = "Your mouse point is out"
+			}
+		</script>
+		
+		<p onmouseover="onover(this)" onmouseout="onout(this)">Place your mouse arrow</p>
+	</body>
+</html>
