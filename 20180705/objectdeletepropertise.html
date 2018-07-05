@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+	
+		<script>
+			var txt = "";
+			var x;
+			
+			var person = {
+				fname : "Babul",
+				lname : "Miah",
+				age : 24
+			};
+			
+			delete person.age;
+			
+			for(x in person){
+				txt+=person[x]+" ";
+			}
+			
+			document.write(txt);
+		</script>
+		
+	</body>
+</html>
