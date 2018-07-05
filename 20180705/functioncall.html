@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning Javascripts</title>
+	</head>
+	<body>
+		<script>
+			var person = {
+					fullName: function(){
+					return this.first+" "+this.last;
+				}
+			}
+			
+			var parson1 = {
+				first: "Babul",
+				last: "Miah",
+			}
+			document.write(person.fullName.call(parson1));
+		</script>
+		
+	</body>
+</html>
