@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning Javascripts</title>
+	</head>
+	<body>
+		<script>
+			function findMax(){
+				var max = 0;
+				var i;
+				for(i=0; i<arguments.length; i++){
+					if(arguments[i]>max){
+						max = arguments[i];
+					}
+				}
+				return max;
+			}			
+			document.write(findMax(10,50,80,90,10,20));
+		</script>
+		
+	</body>
+</html>
