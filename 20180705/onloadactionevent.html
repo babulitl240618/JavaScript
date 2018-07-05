@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning Javascripts</title>
+	</head>
+	<body>
+		<script>
+			function changeUpper(){
+				var name = document.getElementById("name");
+				name.value = name.value.toUpperCase();
+			}
+		</script>
+		
+		
+		<input type="text" id="name" onchange="changeUpper()">
+	</body>
+</html>
