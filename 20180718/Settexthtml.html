@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			$("#ct").text("Changed Text");
+		});
+		$("#btn2").click(function(){
+			$("#cs").html("<b>better</b>");
+		});
+		
+		$("#btn3").click(function(){
+			$("#cv").val("Sujon");
+		});
+	});
+</script>
+</head>
+<body>
+
+<p id ="ct">Industry is the mother of good luck</p>
+<p>Honesty is the <span id = "cs">best</span> policy</p>
+<input id="cv" value="babul">
+
+<button id="btn1">change Text</button>
+<button id="btn2">change HTML</button>
+<button id="btn3">set value</button>
+
+</body>
+</html>
