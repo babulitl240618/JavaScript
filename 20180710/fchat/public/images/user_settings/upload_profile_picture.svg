@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Upload Profile Picture</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Upload-Profile-Picture" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group" transform="translate(3.000000, 1.000000)" fill="#DBDBDB" stroke="#DBDBDB" stroke-width="2">
+            <path d="M37.7961433,42.2545455 L37.7961433,37.5030303 C37.7961433,32.2546516 33.5656658,28 28.3471074,28 L9.44903581,28 C4.23047743,28 5.24526856e-16,32.2546516 0,37.5030303 L0,42.2545455 L37.7961433,42.2545455 Z" id="Shape"></path>
+            <ellipse id="Oval" cx="18.4490358" cy="9.5030303" rx="9.44903581" ry="9.5030303"></ellipse>
+        </g>
+    </g>
+</svg>

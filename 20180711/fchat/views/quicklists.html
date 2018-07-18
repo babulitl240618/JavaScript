@@ -1,0 +1,177 @@
+<%- include('layouts/head') %>
+
+<main role="main" class="container">
+
+  <div class="itl-template">
+    <chatbar>
+      <div class="row recent-chat-holder-ql">
+        <div class="col-lg-12">
+          <span class="fas fa-comment mirror-ql recent-icon-color-ql icon-black-comment-ql" ></span><span class="relativeFig-ql">1</span> <span class="recent-chats-ql">RECENT CHATS</span> <i class="fas fa-chevron-down goDown-ql"></i>
+        </div>  
+      </div>
+    </chatbar>
+
+    <div class="search-bar" id="quicklistInsertBox">
+      <h3 class="h3Text-ql quicklists">Quick Lists</h3>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                    <g id="plus-circle" transform="translate(8.000000, 7.000000)" stroke="#9B9B9B" stroke-width="2">
+                        <path d="M3.86100386,0.2 L3.86100386,9.8" id="Shape"></path>
+                        <path d="M0.154440154,5 L7.56756757,5" id="Shape"></path>
+                    </g>
+                </g>
+            </svg>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Create a quick list" id="quicklist-create">
+      </div>
+      <img src="/images/filter-btn.png" class="pointer filter-btn" />
+      <img src="/images/action-btn.png" class="pointer action-btn" />
+    </div>
+    <div class="quicklist-container">
+      <div class="quicklists-body">
+        <h3 class="h3Text-ql pinned-quicklists-1">Pinned Quick Lists (<b><span id="pinQuicklistCount">1</span></b>)</h3>
+        <div class="qlpinnedContainer" id="qlpinnedContainer">
+          <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Pinned" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                  <g id="icon-/-400-/-pin-16" transform="translate(12.000000, 12.000000) rotate(40.000000) translate(-12.000000, -12.000000) translate(7.000000, 5.000000)" stroke="#546E7A" stroke-width="2">
+                      <path d="M0.5,9 C0.5,8.76090345 0.5,8.38590345 0.5,7.875 C0.5,7.60558696 0.5,6.75 1.625,6.1875 L3.3125,5.625 L3.3125,3.375 L1.625,2.25 L1.625,0 L8.375,0 L8.375,2.25 L6.6875,3.375 L6.6875,5.625 L8.375,6.1875 C9.5,6.75 9.5,7.60558696 9.5,7.875 L9.5,9 C3.5,9 0.5,9 0.5,9 Z" id="Stroke-6282"></path>
+                      <path d="M5,14 L5,9" id="Stroke-6283"></path>
+                  </g>
+              </g>
+          </svg>
+          <div class="inner-group-ql">
+            <div class="left-panel-ql">
+              <i class="fas fa-check-circle quicklist-circle"></i>
+            </div>
+            <div class="right-panel-ql">
+              <span>Hayven CX/UX Design Works</span>
+            </div>
+            <div class="pin-panel-ql">
+             <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Pinned" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                      <g id="icon-/-400-/-pin-16" transform="translate(12.000000, 12.000000) rotate(40.000000) translate(-12.000000, -12.000000) translate(7.000000, 5.000000)" stroke="#546E7A" stroke-width="2">
+                          <path d="M0.5,9 C0.5,8.76090345 0.5,8.38590345 0.5,7.875 C0.5,7.60558696 0.5,6.75 1.625,6.1875 L3.3125,5.625 L3.3125,3.375 L1.625,2.25 L1.625,0 L8.375,0 L8.375,2.25 L6.6875,3.375 L6.6875,5.625 L8.375,6.1875 C9.5,6.75 9.5,7.60558696 9.5,7.875 L9.5,9 C3.5,9 0.5,9 0.5,9 Z" id="Stroke-6282"></path>
+                          <path d="M5,14 L5,9" id="Stroke-6283"></path>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="quicklists-body">
+        <h3 class="h3Text-ql all-quicklists-4">All Quick Lists (<b><span id="quicklistCount">5</span></b>)</h3>
+        <div class="quicklistContainer" id="quicklistContainer">
+          <div class="inner-group-ql">
+            <div class="left-panel-ql">
+              <i class="fas fa-check-circle quicklist-circle"></i>
+            </div>
+            <div class="right-panel-ql">
+              <span>Hayven CX/UX Design Works</span>
+            </div>
+            <div class="pin-panel-ql">
+              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Not-Pinned" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                      <g id="icon-/-400-/-pin-16" transform="translate(7.000000, 5.000000)" stroke="#E3E3E3" stroke-width="2">
+                          <path d="M0.535714286,9.64285714 C0.535714286,9.38668226 0.535714286,8.98489655 0.535714286,8.4375 C0.535714286,8.14884317 0.535714286,7.23214286 1.74107143,6.62946429 L3.54910714,6.02678571 L3.54910714,3.61607143 L1.74107143,2.41071429 L1.74107143,0 L8.97321429,0 L8.97321429,2.41071429 L7.16517857,3.61607143 L7.16517857,6.02678571 L8.97321429,6.62946429 C10.1785714,7.23214286 10.1785714,8.14884317 10.1785714,8.4375 L10.1785714,9.64285714 C3.75,9.64285714 0.535714286,9.64285714 0.535714286,9.64285714 Z" id="Stroke-6282"></path>
+                          <path d="M5.35714286,14 L5.35714286,10.6399999" id="Stroke-6283"></path>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+          </div>
+          <div class="inner-group-ql">
+            <div class="left-panel-ql">
+              <i class="fas fa-check-circle quicklist-circle"></i>
+            </div>
+            <div class="right-panel-ql">
+              <span>Nike Brand Strategy</span>
+            </div>
+            <div class="pin-panel-ql">
+              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Not-Pinned" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                      <g id="icon-/-400-/-pin-16" transform="translate(7.000000, 5.000000)" stroke="#E3E3E3" stroke-width="2">
+                          <path d="M0.535714286,9.64285714 C0.535714286,9.38668226 0.535714286,8.98489655 0.535714286,8.4375 C0.535714286,8.14884317 0.535714286,7.23214286 1.74107143,6.62946429 L3.54910714,6.02678571 L3.54910714,3.61607143 L1.74107143,2.41071429 L1.74107143,0 L8.97321429,0 L8.97321429,2.41071429 L7.16517857,3.61607143 L7.16517857,6.02678571 L8.97321429,6.62946429 C10.1785714,7.23214286 10.1785714,8.14884317 10.1785714,8.4375 L10.1785714,9.64285714 C3.75,9.64285714 0.535714286,9.64285714 0.535714286,9.64285714 Z" id="Stroke-6282"></path>
+                          <path d="M5.35714286,14 L5.35714286,10.6399999" id="Stroke-6283"></path>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+          </div>
+          <div class="inner-group-ql">
+            <div class="left-panel-ql">
+              <i class="fas fa-check-circle quicklist-circle"></i>
+            </div>
+            <div class="right-panel-ql">
+              <span>Ritual User Testing Sessions</span>
+            </div>
+            <div class="pin-panel-ql">
+              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Not-Pinned" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                      <g id="icon-/-400-/-pin-16" transform="translate(7.000000, 5.000000)" stroke="#E3E3E3" stroke-width="2">
+                          <path d="M0.535714286,9.64285714 C0.535714286,9.38668226 0.535714286,8.98489655 0.535714286,8.4375 C0.535714286,8.14884317 0.535714286,7.23214286 1.74107143,6.62946429 L3.54910714,6.02678571 L3.54910714,3.61607143 L1.74107143,2.41071429 L1.74107143,0 L8.97321429,0 L8.97321429,2.41071429 L7.16517857,3.61607143 L7.16517857,6.02678571 L8.97321429,6.62946429 C10.1785714,7.23214286 10.1785714,8.14884317 10.1785714,8.4375 L10.1785714,9.64285714 C3.75,9.64285714 0.535714286,9.64285714 0.535714286,9.64285714 Z" id="Stroke-6282"></path>
+                          <path d="M5.35714286,14 L5.35714286,10.6399999" id="Stroke-6283"></path>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+          </div>
+          <div class="inner-group-ql">
+            <div class="left-panel-ql">
+              <i class="fas fa-check-circle quicklist-circle"></i>
+            </div>
+            <div class="right-panel-ql">
+              <span>Feelix Hardware production</span>
+            </div>
+            <div class="pin-panel-ql">
+              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Not-Pinned" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                      <g id="icon-/-400-/-pin-16" transform="translate(7.000000, 5.000000)" stroke="#E3E3E3" stroke-width="2">
+                          <path d="M0.535714286,9.64285714 C0.535714286,9.38668226 0.535714286,8.98489655 0.535714286,8.4375 C0.535714286,8.14884317 0.535714286,7.23214286 1.74107143,6.62946429 L3.54910714,6.02678571 L3.54910714,3.61607143 L1.74107143,2.41071429 L1.74107143,0 L8.97321429,0 L8.97321429,2.41071429 L7.16517857,3.61607143 L7.16517857,6.02678571 L8.97321429,6.62946429 C10.1785714,7.23214286 10.1785714,8.14884317 10.1785714,8.4375 L10.1785714,9.64285714 C3.75,9.64285714 0.535714286,9.64285714 0.535714286,9.64285714 Z" id="Stroke-6282"></path>
+                          <path d="M5.35714286,14 L5.35714286,10.6399999" id="Stroke-6283"></path>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+          </div>
+          <div class="inner-group-ql">
+            <div class="left-panel-ql">
+              <i class="fas fa-check-circle quicklist-circle"></i>
+            </div>
+            <div class="right-panel-ql">
+              <span>Apple Store Brand Environment</span>
+            </div>
+            <div class="pin-panel-ql">
+             <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Not-Pinned" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                      <g id="icon-/-400-/-pin-16" transform="translate(7.000000, 5.000000)" stroke="#E3E3E3" stroke-width="2">
+                          <path d="M0.535714286,9.64285714 C0.535714286,9.38668226 0.535714286,8.98489655 0.535714286,8.4375 C0.535714286,8.14884317 0.535714286,7.23214286 1.74107143,6.62946429 L3.54910714,6.02678571 L3.54910714,3.61607143 L1.74107143,2.41071429 L1.74107143,0 L8.97321429,0 L8.97321429,2.41071429 L7.16517857,3.61607143 L7.16517857,6.02678571 L8.97321429,6.62946429 C10.1785714,7.23214286 10.1785714,8.14884317 10.1785714,8.4375 L10.1785714,9.64285714 C3.75,9.64285714 0.535714286,9.64285714 0.535714286,9.64285714 Z" id="Stroke-6282"></path>
+                          <path d="M5.35714286,14 L5.35714286,10.6399999" id="Stroke-6283"></path>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <%- include('templates/_partial') %>
+</main>
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var to = '';
+  // var alluserinfo = <%- JSON.stringify(data) %>;
+  // console.log(alluserinfo);
+</script>
+<script src="/javascripts/socket-client-side.js"></script>
+<script src="/javascripts/custom.js"></script>
+<%- include('layouts/foot') %>

@@ -1,0 +1,294 @@
+.recent-chat-holder-ql{
+	box-shadow: 2px 0px 10px #a2a2a2;
+    width: 100vw;
+    height: 25px;
+    margin-left: -15%;
+    position: relative;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.mirror-ql{
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+
+.recent-icon-color-ql{
+	color: #af2222;
+}
+
+.h3Text-ql{
+	text-align: left;
+}
+
+.quicklists {
+	height: 24px;
+	/*width: 40%;*/
+	color: rgba(0,0,0,0.96);
+	font-family: "Work Sans";
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.pinned-quicklists-1 {
+	float: left;
+	height: 22px;
+	/*width: 40%;*/
+	color: rgba(0,0,0,0.96);
+	font-family: "Work Sans";
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 24px;
+}
+
+.all-quicklists-4 {
+	height: 22px;
+	/*width: 40%;*/
+	color: rgba(0,0,0,0.96);
+	font-family: "Work Sans";
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 24px;
+}
+
+.quicklists-body{
+	float: left;
+	width: 72%;
+	margin-left: 10%;
+	height: auto;
+	position: relative;
+	padding-top: 15px;
+}
+
+#quicklistContainer .inner-group-ql{
+	float: left;
+	position: relative;
+	width: 100%;
+    height: 40px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+    border-radius: 3px;
+    margin-bottom: 1%;
+    background-color: #ffffff;
+}
+
+#quicklistContainer>.inner-group-ql>.left-panel-ql{
+	width: 6%;
+	float: left;
+}
+
+#quicklistContainer>.inner-group-ql>.right-panel-ql{
+	width: 89%;
+    display: inline-block;
+    height: 40px;
+    float: left;
+}
+#quicklistContainer>.inner-group-ql>.pin-panel-ql{
+	width: 5%;
+    display: inline-block;
+    height: 40px;
+    float: left;
+    padding: 12px 0 0 0;
+    color: #b2b4b7;
+    display: none;
+}
+
+#quicklistContainer>.inner-group-ql>.right-panel-ql>span{
+	font-size: 19px;
+    padding: 3px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+#qlpinnedContainer .inner-group-ql{
+	float: left;
+	position: relative;
+	width: 100%;
+    height: 40px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+    border-radius: 3px;
+    margin-bottom: 1%;
+    background-color: #ffffff;
+}
+
+#qlpinnedContainer>.inner-group-ql>.left-panel-ql{
+	width: 6%;
+	float: left;
+}
+
+#qlpinnedContainer>.inner-group-ql>.right-panel-ql{
+	width: 89%;
+    display: inline-block;
+    height: 40px;
+    float: left;
+}
+#qlpinnedContainer>.inner-group-ql>.pin-panel-ql{
+	width: 5%;
+    display: inline-block;
+    height: 40px;
+    float: left;
+    padding: 12px 0 0 0;
+    color: #b2b4b7;
+    display: block;
+}
+
+#qlpinnedContainer>.inner-group-ql>.right-panel-ql>span{
+	font-size: 19px;
+    padding: 3px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.quicklist-circle{
+	font-size: 29px;
+	margin: 5px;
+    color: #e2e2e2;
+}
+
+#quicklistCount{
+	font-weight: 800;
+	font-size: 18px;
+	font-family: "Work Sans";
+}
+
+#pinQuicklistCount{
+	font-weight: 800;
+	font-size: 18px;
+	font-family: "Work Sans";
+}
+
+.inner-group-ql:hover{
+	margin-top: -3px;
+    margin-bottom: 11px !important;
+    cursor: pointer;
+    box-shadow: -3px 3px 6px #a7a7a7 !important;
+}
+
+.inner-group-ql:hover .pin-panel-ql{
+	display: block !important;
+}
+
+.svgfont-ql{
+
+	-webkit-transform: rotate(45deg);
+
+	/* Firefox */
+	-moz-transform: rotate(45deg);
+
+	/* IE */
+	-ms-transform: rotate(45deg);
+
+	/* Opera */
+	-o-transform: rotate(45deg);
+
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.icon-black-comment-ql {
+	position: absolute;
+    height: 21px;
+    color: #d0021b;
+    font-size: 19px;
+    padding-top: 0px;
+    margin-left: -1%;
+    margin-top: 3px;
+}
+
+.count-span-ql{
+	color: #ffffff;
+}
+
+.recent-chats-ql {
+	height: 14px;
+    width: 93px;
+    color: #37474F;
+    font-family: "Work Sans";
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 26px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+
+.relativeFig-ql{
+	position: relative;
+    font-size: 11px;
+    color: #ffffff;
+    margin-left: -6px;
+    /* margin-top: -31px; */
+    line-height: -58px;
+    padding-top: 5px;
+}
+
+.goDown-ql{
+	position: absolute;
+    margin-left: 7px;
+    margin-top: 0.5%;
+    font-size: 13px;
+}
+
+#quicklistInsertBox>.input-group>.form-control {
+    border-left-color: #FFF ;
+    border-top-right-radius: 8px ;
+    border-bottom-right-radius: 8px ;
+    border: 1px solid #ffffff;
+}
+
+#quicklistInsertBox>.input-group>.input-group-prepend>.input-group-text {
+    background-color: #FFF !important;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#quicklistInsertBox>.input-group>.input-group-prepend>.input-group-text{
+    border: 1px solid #ffffff;
+}
+
+#quicklistInsertBox>.input-group {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+}
+/*Header Style Change Here*/
+
+/*.navbar {
+	height: 48px;
+	width: 1440px;
+	background-color: #37474F;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+}*/
+
+/*.nav-link {
+	height: 24px;
+	color: #ECEFF1;
+	font-family: "Work Sans";
+	font-size: 20px;
+	line-height: 24px;
+}*/
+
+/*.nav-item{
+	margin-right: 17px;
+}*/
+
+/*.navbar-nav{
+	height: 48px;
+    width: 65%;
+    padding: 5px;
+}*/
+
+/*.navbar-dark .navbar-nav .nav-link {
+   	color: #ECEFF1;
+}*/
+
+/*.active .nav-link::first-letter {
+    text-decoration: underline;
+}*/
+
+/*Header Style Change Here*/

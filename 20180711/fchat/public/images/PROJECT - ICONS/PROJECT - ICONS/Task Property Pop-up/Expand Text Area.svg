@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Expand Text Area</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Expand-Text-Area" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M8.74383214,16 L8,15.2639425 L15.3660973,8 L16.1099294,8.73605753 L8.74383214,16 Z M15.2741745,12.1601751 L16.0179234,12.8963146 L12.9551416,15.915947 L12.2113926,15.1798075 L15.2741745,12.1601751 Z" id="drag" fill="#E6E8ED" fill-rule="nonzero"></path>
+    </g>
+</svg>

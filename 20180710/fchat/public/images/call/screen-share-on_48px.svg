@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>call / screen-share-on_48px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="call-/-screen-share-on_48px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M24,0.625 C5.14517797,0.625 0.625,5.14517797 0.625,24 C0.625,42.854822 5.14517797,47.375 24,47.375 C42.854822,47.375 47.375,42.854822 47.375,24 C47.375,5.14517797 42.854822,0.625 24,0.625 Z" id="mask-squircle" stroke="#FFFFFF" stroke-width="1.25" opacity="0.869084821"></path>
+        <g id="Group-5" transform="translate(12.000000, 12.000000)">
+            <rect id="bounds" x="0" y="0" width="24" height="24"></rect>
+            <g id="Group-3" transform="translate(3.000000, 4.000000)">
+                <path d="M2,0 L16,0 C17.1045695,-2.02906125e-16 18,0.8954305 18,2 L18,11 C18,12.1045695 17.1045695,13 16,13 L2,13 C0.8954305,13 1.3527075e-16,12.1045695 0,11 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 Z M6,18 L12,18" id="Rectangle-3" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M9,14 L9,17" id="Path" stroke="#FFFFFF" stroke-width="2.5" fill="#000000" stroke-linecap="round" stroke-linejoin="round"></path>
+                <rect id="Rectangle-3" fill="#FFFFFF" x="2" y="2" width="14" height="9" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

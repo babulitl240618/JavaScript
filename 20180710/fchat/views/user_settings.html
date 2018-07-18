@@ -1,0 +1,1292 @@
+<%- include('layouts/head') %>
+    <script src="/javascripts/mdb.min.js"></script>
+    <script src="/javascripts/user-file-upload.js"></script>
+    <link href="/stylesheets/style-usersetings.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/mdb.css">
+    <main role="main" class="container-fluid">
+        <!-- <div class="userArea"> -->
+        <ul class="nav md-pills  pills-secondary">
+
+            <li class="nav-item activeMenu ">
+                <a class="nav-link  active show " data-toggle="tab" href="#General" role="tab">General</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Account" role="tab">Account</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Notifications" role="tab">Notifications</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#PrivacySecurity" role="tab">Privacy & Security</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Support" role="tab">Support</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Billing" role="tab">Billing</a>
+            </li>
+        </ul>
+        <div class="border_area"></div>
+        <!-- Tab panels -->
+        <div class="tab-content">
+
+            <!--Panel 1-->
+            <div class="tab-pane fade in show active" id="General" role="tab">
+
+                <div class="invite-friends">
+                    <p class="invite-friend">Invite Friends!</p>
+                    <p class="start-inviting-your">Start inviting your family & friends to join Hayven!</p>
+                    <input type="email" id="inviteFriends" placeholder="Enter email address"><button id="invite">Invite</button>
+                    <div class="border_invite"></div>
+                    <p class="language">Language</p>
+                    <p class="set-the-language-use">Set the language used for Hayven</p>
+                    <select id="optionList">
+                        <option>Canada (EN)</option>
+                    </select>
+                    <div class="border_invite"></div>
+                    <p class="visit-our-about-us-p">Visit our <span class="blue-color">About Us</span> page to learn more about Hayven.</p>
+                </div>
+
+
+            </div>
+            <!--/.Panel 1-->
+
+            <!--Panel 2 Personal Information -->
+            <div class="tab-pane fade" id="Account" role="tab">
+                <div class="accountDetails">
+                    <p class="personal-information">Personal Information</p>
+                    <form method="POST" id="frm_personalInfo" enctype="multipart/form-data" onsubmit="return false;">
+                        <div class="row">
+                            <div class="text-info" id="userMsg"></div>
+                            <div class="col-md-2">
+                                <div id="profile_image"> <img id="profile_img" src="/images/user_settings/upload_profile_picture.svg" alt=""></div>
+                                <!-- <div id="profile_image"> <img id="profile_img" src="/images/user_settings/' + pathArray[(pathArray.length - 1)] + '" alt=""></div> -->
+                            </div>
+                            <div class="col-md-4" style="padding-left: 0;padding-right: 0;">
+                                <div class="row" id="fileUploadArea">
+                                    <div class="col-md-12" style="padding-left: 0;padding-right: 0;">
+                                        <p class="upload-a-profile-pic"> Upload a profile picture</p>
+
+                                    </div><br>
+                                    <div class="col-md-12 upload-btn-wrapper" style="padding-left: 0;padding-right: 0;">
+                                        <button class="filebtn">Upload</button>
+                                        <input type="file" value="Upload" name="user_img" id="user_img" onchange="submit_personal_data(event); ">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row rowTopMargin">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="firstName" class="labelClass">First Name</label>
+                                    <input type="text" class="form-control shape" id="firstName" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group inputLeft">
+                                    <label for="middleName" class="labelClass">Middle Name</label>
+                                    <input type="text" class="form-control shape" id="middleName" placeholder="Middle Name">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group inputLeft2">
+                                    <label for="lastName" class="labelClass">Last Name</label>
+                                    <input type="text" class="form-control shape" id="lastName" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row rowTopMargin2">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="primaryEmailAddress" class="labelClass">Primary Email Address</label>
+                                    <input type="email" class="form-control shape" id="primaryEmailAddress" placeholder="Email Address">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group inputLeft">
+                                    <label for="secondaryEmailAddress" class="labelClass">Secondary Email Address</label>
+                                    <input type="email" class="form-control shape" id="secondaryEmailAddress" placeholder="Email Address">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row ">
+                            <div class="col-md-11">
+                                <div class="border_line"></div>
+                            </div>
+                        </div> -->
+                        <div class="border_line"></div>
+                        <div class="row rowTopMargin3">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="jobTitle" class="labelClass">Job Title</label>
+                                    <input type="text" class="form-control shape" id="jobTitle" placeholder="Enter Job Title">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group inputLeft">
+                                    <label for="company" class="labelClass">Company</label>
+                                    <input type="text" class="form-control shape" id="company" placeholder="Enter Company">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group inputLeft2">
+                                    <label for="officeLocation" class="labelClass">Office Location</label>
+                                    <input type="text" class="form-control shape" id="officeLocation" placeholder="Enter Office Location">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border_line"></div>
+                        <div class="row rowTopMargin3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="personalAddress" class="labelClass">Personal Address</label>
+                                    <input type="text" class="form-control shape2" id="personalAddress" placeholder="Street address, appartment, suite, building, floor, etc.">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row rowTopMargin3">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="city" class="labelClass">City</label>
+                                    <input type="text" class="form-control shape3" id="city" placeholder="Enter your city">
+                                </div>
+                            </div>
+                            <div class="col-md-3 leftMargin2">
+                                <div class="form-group inputLeft">
+                                    <label for="provinceState" class="labelClass">Province/State</label>
+                                    <input type="text" class="form-control shape4" id="provinceState" placeholder="Province/State">
+                                </div>
+                            </div>
+                            <div class="col-md-4 leftMargin">
+                                <div class="form-group inputLeft2">
+                                    <label for="postalCode" class="labelClass">Postal Code</label>
+                                    <input type="text" class="form-control shape5 " id="postalCode" placeholder="Postal Code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row rowTopMargin4">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="city" class="labelClass">Country</label>
+                                    <select class="form-control shape3" id="country">
+                                        <option>Select a country</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row rowTopMargin5">
+                            <div class="col-md-12">
+                                <div class="form-group ">
+                                    <button id="piSubmit" class="btn float-right">Save</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="border_line_new"></div>
+
+                    </form>
+                    <form method="POST" id="frm_socialMedia" role="form">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="social-media">Social Media</p>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 23.5px;">
+                                <label for="linkedIn" class="labelClass">LinkedIn</label>
+                                <div class="form-group ">
+                                    <input type="text" class="form-control shape6" id="linkedIn" placeholder="Enter your linkedin URL">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 23.5px;">
+                                <label for="twitter" class="labelClass">Twitter</label>
+                                <div class="form-group ">
+                                    <input type="text" class="form-control shape6" id="twitter" placeholder="Enter your twitter URL">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 23.5px;">
+                                <label for="facebook" class="labelClass">Facebook</label>
+                                <div class="form-group ">
+                                    <input type="text" class="form-control shape6" id="facebook" placeholder="Enter your facebook URL">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 23.5px;">
+                                <label for="instagram" class="labelClass">Instagram</label>
+                                <div class="form-group ">
+                                    <input type="text" class="form-control shape6" id="instagram" placeholder="Enter your instagram URL">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row rowTopMarginSocial">
+                            <div class="col-md-12">
+                                <div class="form-group ">
+                                    <button id="socialSubmit" class="btn float-right">Save</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <!--============Change password Form=====================-->
+                    <div class="border_line2"></div>
+                    <form method="POST" id="frm_changePassword" role="form">
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 23.5px;">
+                                <p class="social-media">Change Password</p>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 23.5px;">
+                                <label for="oldPassword" class="labelClass ">Old Password</label>
+                                <div class="form-group ">
+                                    <input type="password" class="form-control shape6" id="oldPassword" placeholder="Enter old password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 23.5px;">
+                                <label for="newPassword" class="labelClass">New Password</label>
+                                <div class="form-group ">
+                                    <input type="password" class="form-control shape6" id="newPassword" placeholder="Enter new password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 23.5px;">
+                                <label for="confirmNewPassword" class="labelClass">Confirm New Password</label>
+                                <div class="form-group ">
+                                    <input type="password" class="form-control shape6" id="confirmNewPassword" placeholder="Enter new password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row rowTopMarginSocial">
+                            <div class="col-md-12">
+                                <div class="form-group ">
+                                    <button id="passwordSubmit" class="btn float-right">Change Password</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border_line3"></div>
+                    </form>
+                    <!--============Change password Form End=====================-->
+
+
+                    <!--============Start Contact Form=====================-->
+                    <form method="POST" id="frm_Contact" role="form">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="social-media">Contacts</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="upload-contact-cv-text"> Upload your CSV file and sync your contacts</p>
+                            </div>
+                            <div class="col-md-12 upload-btn2-wrapper">
+                                <button class="filebtn">Upload</button>
+                                <input type="file" value="Upload" name="user_cv" id="user_cv">
+
+                            </div>
+                        </div>
+                        <div class="border_line3"></div>
+                    </form>
+                    <!--============Contact Form End=====================-->
+
+
+                    <!--============Deactivate Account =====================-->
+                    <form method="POST" id="frm_Deactivate" role="form">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="social-media">Deactivate Account</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="upload-contact-cv-text"> We’re sad to see you leave :(</p>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group ">
+                                    <button id="accountDeactivate" class="btn">Deactivate Account</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="margin_bottom "></div>
+
+                    </form>
+
+
+                </div>
+
+            </div>
+            <!--/.Panel 2-->
+
+            <!--Panel 3 Notifications -->
+            <div class="tab-pane fade" id="Notifications" role="tab">
+                <div id="notificationDetails">
+                    <p class="notification-information">Email Notifications</p>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Send email when I recieve DM messages</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Send email when I get mentioned in messages</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox" >
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Send email when tasks are completed</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Send email when a project is completed</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Send email reminding me about my pending tasks</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Send email for other notifications and alerts</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Send email when I get assigned to task/project</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Send email when changes occur on tasks/projects</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Send email when I get invited to events</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Recieve weekly digest</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-6">
+                            <button id="email_notifications">Opt out all email notifications</button>
+                        </div>
+                        <div class="col-md-3">
+
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-11">
+                            <div class="border_area2"></div>
+                        </div>
+
+                    </div>
+                    <!-- =============Desktop Notification ================ -->
+                    <p class="notification-information">Desktop Notifications</p>
+
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Play sound when recieving message</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Play sound when recieving a notification</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Show preview of message</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="notification_para">Enable Desktop notification</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-11">
+                            <div class="border_area2"></div>
+                        </div>
+                        <div class="col-md-1">
+
+                        </div>
+                    </div>
+                    <!-- ============ Email preferance ================ -->
+                    <p class="email-preference">Email Preference</p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="upload-contact-cv-text">We will use the bellow email to send you notifications</p>
+                        </div>
+                        <div class="col-md-12">
+                            <select id="preferenceList">
+                                <option>rosina.mccullough@hotmail.com</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!--/.Panel 3-->
+
+            <!--Panel 4-->
+            <!-- ====================== PrivacySecurity Start=========================== -->
+            <div class="tab-pane fade" id="PrivacySecurity" role="tab">
+                <div class="PrivacySecurityDetails">
+                    <p class="security-questions">Security Questions</p>
+                    <p class="add-your-customized">Add your customized questions and answers below, this will help us verify your identity should you forget your password.</p>
+                    <div class="row field_wrapper">
+                        <div class="col-md-11">
+                            <div class="form-group">
+                                <label for="personalAddress" class="labelClass">Question 1</label>
+                                <input type="text" class="form-control security_questions_shape" id="question_1" placeholder="Add your question">
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="form-group">
+                                <label for="personalAddress" class="labelClass">Answer 1</label>
+                                <input type="text" class="form-control security_questions_shape" name="anwser_name[]" id="Answer_1" placeholder="Type your answer">
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="form-group">
+                                <label for="personalAddress" class="labelClass">Question 2</label>
+                                <input type="text" class="form-control security_questions_shape" name="question_name[]" id="question_2" placeholder="Add your question">
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="form-group">
+                                <label for="personalAddress" class="labelClass">Answer 2</label>
+                                <input type="text" class="form-control security_questions_shape" name="anwser_name[]" id="Answer_2" placeholder="Add your question">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-11">
+                            <p class="add-another-securi">+ Add another security question</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="border_area3"></div>
+                        </div>
+                    </div>
+
+                    <p class="feedback_Participation">Feedback Participation</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn_Feedback_Participation" id="btn_Feedback_Participation" data-popup-open="popup-4">Feedback Participation </button>
+                        </div>
+                    </div>
+                    <div class="popup" id="popup4" data-popup="popup-4">
+                        <div class="popup-inner" id="popup_inner4">
+                            <p style="margin-bottom: 0" class="create-a-new-ticket">Feedback Participation</p>
+                            <div class="row" style="">
+                                <div class="col-md-12" style="">
+                                    <p class="hayven-analytics-pro">Hayven analytics programs help us understand how our customer use our products and services so we can personalize your experience and build better online, mobile, and desktop </p>
+                                    <p class="by-analyzing-usage-t">By analyzing usage trends an patterns we can optimize current features, make positive changes for future releases, provide more useful communications, and improve performance and quality.</p>
+                                    <p class="you-may-opt-out-of-d">You may opt out of data collection in desktop products for Hayven analytics <br>programs by unchecking the box bellow.</p>
+                                    <div style="margin-top:16px;"><input class="HoverCheckbox" id="i-agree-to" type="checkbox"> <span class="i-agree-to-data-coll">  I agree to data collection in desktop products for Hayven analytics program.</span></div>
+                                    <p class="learn-more-about-our">Learn more about our privacy here.</p>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn_feedback_partition" id="btn_feedback_partition" data-popup-open="popup-4">Save </button>
+                                </div>
+                            </div>
+
+
+                            <a class="popup-close" data-popup-close="popup-4" href="#"><img src="/images/user_settings/remove.svg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 32px;">
+                        <div class="col-md-11">
+                            <div class="border_area3"></div>
+                        </div>
+                    </div>
+
+                    <p class="feedback_Participation">Marketing Emails</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn_Marketing_Emails" id="btn_Marketing_Emails" data-popup-open="popup-5">Marketing Emails</button>
+                        </div>
+                    </div>
+                    <div class="popup" id="popup5" data-popup="popup-5">
+                        <div class="popup-inner" id="popup_inner5">
+                            <p class="marketing-emails_popup">Marketing Emails</p>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <p class="i-would-like-to-reci">I would like to recieve updates about products & services, promotions, special offers, news & events from Hayven via email.</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="switch" id="switch2">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <a class="popup-close" data-popup-close="popup-5" href="#"><img src="/images/user_settings/remove.svg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 32px;">
+                        <div class="col-md-11">
+                            <div class="border_area3"></div>
+                        </div>
+                    </div>
+                    <p class="feedback_Participation">Why We Love Cookies?</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn_Love_Cookies" id="btn_Love_Cookies" data-popup-open="popup-6">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="popup" id="popup6" data-popup="popup-6">
+                        <div class="popup-inner" id="popup_inner6">
+                            <p class="marketing-emails_popup">Why we love cookies?</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p style="margin-top: 24px;" class="you-can-learn-more">We use cookies to try and give you a better experience in Hayven.</p>
+                                    <P style="margin-top: 16px;" class="you-can-learn-more">You can learn more about what kind of cookies we use, why, and how from our <span class="text_color">Privacy Policy</span>. If you hate cookies, or are just on a diet, you can disable them altogether too. Just note
+                                        that the Hayven is pretty big on some cookies (we love the choco-chip ones), and some portions of Hayven may not work properly if you disable cookies.</P>
+                                    <P style="margin-top: 16px;" class="you-can-learn-more">We’ll also assume you agree to the way we use cookies and are ok with it as described in our <span class="text_color">Privacy Policy</span>, unless you choose to disable them altogether through your browser.</P>
+                                </div>
+
+                            </div>
+                            <a class="popup-close" data-popup-close="popup-6" href="#"><img src="/images/user_settings/remove.svg" alt=""></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--End Panel 4-->
+
+            <!--Panel 5-->
+            <!-- ====================== Support =========================== -->
+            <div class="tab-pane fade" id="Support" role="tab">
+                <div class="SupportDetails">
+                    <p class="create_Ticket">Create Ticket</p>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p class="experiencing-a-probl">Experiencing a problem? submit a ticket</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn_Create_Ticket" id="btn_Create_Ticket" data-popup-open="popup-1">Create Ticket </button>
+                        </div>
+                    </div>
+
+                    <!-- btn_Create_Ticket  pop up form-->
+                    <div class="popup" data-popup="popup-1">
+                        <div class="popup-inner">
+                            <p class="create-a-new-ticket">Create A New Ticket</p>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label for="category" class="popup_label">Category</label>
+                                        <select type="text" class="form-control popup_shape" id="category">
+                                            <option>Select a category</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label for="subject" class="popup_label">Subject</label>
+                                        <input type="text" class="form-control popup_shape" id="subject" placeholder="Enter a subject for your ticket">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label for="description" class="popup_label">Description</label>
+                                        <textarea class="form-control textarea_shape" id="description" placeholder="Tell us what problems are you having"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <div class="fileUpload btn">
+                                            <span><img src="/images/user_settings/attach.png" alt=""></span>
+                                            <input type="file" class="upload_icon" /> <span class="attach_files">Attach files</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn_create_ticket_shape" id="btn_create_ticket_shape" data-popup-open="popup-1">Create Ticket </button>
+                                </div>
+                            </div>
+
+                            <a class="popup-close" data-popup-close="popup-1" href="#"><img src="/images/user_settings/remove.svg" alt=""></a>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="margin-top: 32px;">
+                        <div class="col-md-11">
+                            <div class="border_area3"></div>
+                        </div>
+                    </div>
+                    <p class="create_Ticket">Open Tickets</p>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p class="experiencing-a-probl">Already submitted a ticket? want to know it's status?</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn_Open_Ticket" id="btn_Open_Ticket" data-popup-open="popup-2">Open Ticket </button>
+                        </div>
+                    </div>
+
+                    <!-- btn_Open_Ticket  pop up form-->
+                    <div class="popup" id="popup2" data-popup="popup-2">
+                        <div class="popup-inner" id="popup_inner2">
+                            <p class="create-a-new-ticket">Open Tickets <span id="notify_digit">(3)</span></p>
+                            <div class="row" style="background: #FFF;margin-top: 24px;box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);border-radius: 5px;">
+                                <div class="col-md-12" style="margin-top: 20px;">
+                                    <p class="popup_id_para"><span class="popup_id_para_underline">ID: 840IRN</span><span class="closed">closed</span></p>
+                                    <p class="need_to_upgrade">Need to upgrade plan! having an error when paying.</p>
+                                    <p class="submitted-copy">Submitted: 07/06/2018 @ 3:47PM</p>
+                                </div>
+
+                            </div>
+                            <div class="row" style=" background: #FFF;border-radius: 5px; margin-top: 8px;box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);">
+                                <div class="col-md-12" style="margin-top: 20px;">
+                                    <p class="popup_id_para"><span class="popup_id_para_underline">ID: 203LLI</span><span class="opened">open</span></p>
+                                    <p class="need_to_upgrade">Can't sign into my account????</p>
+                                    <p class="submitted-copy">Submitted: 07/06/2018 @ 3:47PM</p>
+                                </div>
+
+                            </div>
+                            <div class="row" style=" background: #FFF;border-radius: 5px; margin-top: 8px;box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);">
+                                <div class="col-md-12" style="margin-top: 20px;">
+                                    <p class="popup_id_para"><span class="popup_id_para_underline">ID: 112BER</span><span class="pendding">pendding</span></p>
+                                    <p class="need_to_upgrade">When inviting a guest to a project, they can’t see t…</p>
+                                    <p class="submitted-copy">Submitted: 07/06/2018 @ 3:47PM</p>
+                                </div>
+
+                            </div>
+                            <a class="popup-close" data-popup-close="popup-2" href="#"><img src="/images/user_settings/remove.svg" alt=""></a>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="margin-top: 32px;">
+                        <div class="col-md-11">
+                            <div class="border_area3"></div>
+                        </div>
+                    </div>
+                    <p class="create_Ticket">Get In Touch!</p>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p class="experiencing-a-probl">We appreciate your interest in Hayven and thank you for trusting us with your questions or concerns.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p class="toronto-office">Toronto Office: <span class="text_color"> 416-834-9232</span> </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p class="toronto-office">Toll Free: <span class="text_color"> 1-866-342-1111</span> </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p class="toronto-office">Email: <span class="text_color"> Info@hayven.io</span> </p>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 32px;">
+                        <div class="col-md-11">
+                            <div class="border_area3"></div>
+                        </div>
+                    </div>
+                    <p class="create_Ticket">Give Feedback!</p>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p class="experiencing-a-probl">Found a bug? have a suggestion? click on the hyperlink bellow, fill out the form and we'll look into it.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn_Give_Feedback" id="btn_Give_Feedback" data-popup-open="popup-3">Give feedback</button>
+                        </div>
+                    </div>
+                    <div class="popup" id="popup3" data-popup="popup-3">
+                        <div class="popup-inner" id="popup_inner3">
+                            <p class="create-a-new-ticket">Give feedback!</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea class="form-control textarea_shape2" id="" placeholder="What's your feedback on ?"></textarea>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn_create_ticket_shape" id="btn_give_feed" data-popup-open="popup-3">Send Feedback </button>
+                                </div>
+                            </div>
+
+
+                            <a class="popup-close" data-popup-close="popup-3" href="#"><img src="/images/user_settings/remove.svg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 32px;">
+                        <div class="col-md-11">
+                            <div class="border_area3"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p class="visit-our-help-cente">Visit our <span class="text_color">Help Center</span> page for more information.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--End Panel 5-->
+            <!--Panel 6-->
+            <!-- ====================== Billings =========================== -->
+            <div class="tab-pane fade" id="Billing" role="tab">
+                <div class="BillingDetails">
+
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="hayven-basic">Hayven Basic</p>
+                            <p class="see-other-plans">See other plans</p>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn_Upgrade" id="btn_Upgrade">Upgrade</button>
+                        </div>
+
+                    </div>
+                    <div class="row" style="margin-top: 16px;">
+                        <div class="col-md-12">
+                            <div class="border_area4"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p class="used-storage">Used Storage</p>
+                        </div>
+                        <div class="col-md-5">
+                            <p class="used-storage">Using <span class="font_weight600">700 MB</span> of 5 GB</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="progress" class="progress" style="height: 33px">
+                                <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 14%;height: 33px;" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100">14%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 16px;">
+                        <div class="col-md-12">
+                            <div class="border_area4"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p class="hayven-basic">Payment Method</p>
+                            <p class="We_accept_all">We accept all major credit cards</p>
+                        </div>
+                    </div>
+                    <div id="pament_default_area">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="card_Holder_name" class="labelClass">Card Holder Name</label>
+                                    <input type="text" class="form-control blling_shape" id="card_Holder_name" placeholder="Enter card holder name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15.25px;">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="card_Number" class="labelClass">Card Number</label>
+                                    <input type="text" class="form-control blling_shape" id="card_Number" placeholder="Enter 16 digits on card">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row" style="margin-top: 15.25px;">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="month" class="labelClass">Expiry Date</label>
+                                    <input type="text" class="form-control dateShape" id="month" placeholder="MM">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="year" class="labelClass"></label>
+                                    <input type="text" class="form-control dateShape" id="year" placeholder="YYYY">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group marginleft">
+                                    <label for="CVV" class="labelClass2">CVV</label>
+                                    <input type="text" class="form-control " id="CVV" placeholder="882">
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="row" style="margin-top: 15.25px; margin-left: 0;">
+
+                            <div class="form-group">
+                                <label for="month" class="labelClass">Expiry Date</label>
+                                <input type="text" class="form-control dateShape monthid" placeholder="MM">
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="year" class="labelClass visibility_none">date2</label>
+                                <input type="text" class="form-control dateShape yearid" placeholder="YYYY">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="CVV" class="labelClass2">CVV</label>
+                                <input type="text" class="form-control cvvshape CVVid" placeholder="882">
+                            </div>
+
+
+                        </div>
+                        <div class="row " style="margin-left: 24px;">
+                            <div class="col-md-12">
+                                <button class="btn_card" id="btn_card">Add Card</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add card button -->
+                    <div id="add_click_pamentArea">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="round">
+                                    <input type="checkbox" id="checkbox" />
+                                    <label for="checkbox"></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table_payment_shape align-center" id="payment_tabel">
+                                    <tr>
+                                        <td><span class="card_image"><img src="/images/user_settings/visa.png" alt=""> </span></td>
+                                        <td><span class="digit_area">**** **** **** 8826</span></td>
+                                        <td><span class="digit_area2">07/20</span></td>
+                                        <td><span class="edit_area">Edit</span></td>
+                                        <td><span class="delete_area">Delete</span></td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button class="btn_add_card" id="btn_add_card"><span> <img id="add_another_payment_icon" src="/images/user_settings/Add_Another_Payment_Icon.svg" alt=""> </span>Add Another Card</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--Add another card area-->
+                    <div id="add_another_cardArea">
+
+
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="round">
+                                    <input type="checkbox" id="checkbox2" checked />
+                                    <label for="checkbox2"></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table_payment_shape align-center" id="payment_tabel">
+                                    <tr>
+                                        <td><span class="card_image"><img src="/images/user_settings/visa.png" alt=""> </span></td>
+                                        <td><span class="digit_area">**** **** **** 8826</span></td>
+                                        <td><span class="digit_area">07/20</span></td>
+
+                                        <td><span class="edit_area">Edit</span></td>
+                                        <td><span class="delete_area">Delete</span></td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p class="add-another-card">Add Another Card</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="card_Holder_name" class="labelClass">Card Holder Name</label>
+                                    <input type="text" class="form-control blling_shape" id="card_Holder_name2" placeholder="Enter card holder name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15.75px; ">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="card_Number" class="labelClass">Card Number</label>
+                                    <input type="text" class="form-control blling_shape" id="card_Number2" placeholder="Enter 16 digits on card">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15.75px;margin-left: 0;">
+                            <div class="form-group">
+                                <label for="month" class="labelClass">Expiry Date</label>
+                                <input type="text" class="form-control dateShape monthid" placeholder="MM">
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="year" class="labelClass visibility_none">date2</label>
+                                <input type="text" class="form-control dateShape yearid" placeholder="YYYY">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="CVV" class="labelClass2">CVV</label>
+                                <input type="text" class="form-control cvvshape CVVid" placeholder="882">
+                            </div>
+
+
+                        </div>
+                        <div class="row" style="max-width: 100%; margin-top: 22.75px;margin-bottom: 32px;">
+                            <div class="col-md-10">
+                                <button class="btn_cancle" id="btn_cancle">Cancle</button>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="" id="btn_card2">Add Card</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row" style="margin-top: 16px;">
+                        <div class="col-md-12">
+                            <div class="border_area4"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="billing-history">Billing History</p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="padding-bottom: 40px;">
+                            <!--Table-->
+                            <table class="table borderless" id="billHistory">
+
+                                <!--Table head-->
+                                <thead>
+                                    <tr>
+                                        <th class="th_class">Date</th>
+                                        <th class="th_class">Invoice Number</th>
+                                        <th class="th_class">Amount (CAD)</th>
+                                        <th class="th_class" style="text-align: center;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <!--Table head-->
+
+                                <!--Table body-->
+                                <tbody>
+                                    <tr>
+                                        <td class="td_class">28 May 2018</td>
+                                        <td class="td_class">HA-76253</td>
+                                        <td class="td_class">$200</td>
+                                        <td><span class="download">Download</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_class">28 May 2018</td>
+                                        <td class="td_class">HA-76253</td>
+                                        <td class="td_class">$200</td>
+                                        <td><span class="download">Download</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_class">28 May 2018</td>
+                                        <td class="td_class">HA-76253</td>
+                                        <td class="td_class">$200</td>
+                                        <td><span class="download">Download</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_class">28 May 2018</td>
+                                        <td class="td_class">HA-76253</td>
+                                        <td class="td_class">$200</td>
+                                        <td><span class="download">Download</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_class">28 May 2018</td>
+                                        <td class="td_class">HA-76253</td>
+                                        <td class="td_class">$200</td>
+                                        <td><span class="download">Download</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_class">28 May 2018</td>
+                                        <td class="td_class">HA-76253</td>
+                                        <td class="td_class">$200</td>
+                                        <td><span class="download">Download</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_class">28 May 2018</td>
+                                        <td class="td_class">HA-76253</td>
+                                        <td class="td_class">$200</td>
+                                        <td><span class="download">Download</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_class">28 May 2018</td>
+                                        <td class="td_class">HA-76253</td>
+                                        <td class="td_class">$200</td>
+                                        <td><span class="download">Download</span></td>
+                                    </tr>
+
+
+
+                                </tbody>
+                                <!--Table body-->
+
+                            </table>
+                            <!--Table-->
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!--End Panel 6-->
+
+        </div>
+
+
+        <!-- </div> -->
+
+        <%- include('templates/_partial') %>
+    </main>
+    <script>
+      var user_id = '<%= user_id %>';
+      var user_fullname = '<%= user_fullname %>';
+      var user_img = '<%= user_img %>';
+      var to = '';
+    </script>
+    <script src="/javascripts/socket-client-side.js"></script>
+    <script src="/javascripts/custom.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("ul.nav.md-pills.pills-secondary li.nav-item").click(function(e) {
+                e.preventDefault();
+                $("ul.nav.md-pills.pills-secondary li.nav-item.activeMenu").removeClass("activeMenu"); //Remove any "activeMenu" class  
+                $(".md-pills a.nav-link").removeClass('activeColor');
+                $(this).addClass("activeMenu"); //Add "activeMenu" class to selected tab
+                $(".md-pills a.nav-link").addClass('activeColor');
+
+            });
+        });
+    </script>
+    <script>
+        $("#add_click_pamentArea").hide();
+        $("#add_another_cardArea").hide();
+        $("#btn_card").click(function() {
+            //alert("helo");
+            $('#pament_default_area').hide();
+            $("#add_another_cardArea").hide();
+            $("#add_click_pamentArea").show();
+        });
+
+        $("#btn_add_card").click(function() {
+            $('#pament_default_area').hide();
+            $("#add_click_pamentArea").hide();
+            $("#add_another_cardArea").show();
+        });
+        $(".btn_cancle").click(function() {
+            //alert("helo");
+            $('#pament_default_area').hide();
+            $("#add_another_cardArea").hide();
+            $("#add_click_pamentArea").show();
+        });
+    </script>
+    <script>
+        $(function() {
+
+            $('[data-popup-open]').on('click', function(e) {
+                var targeted_popup_class = jQuery(this).attr('data-popup-open');
+                $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+
+                e.preventDefault();
+            });
+
+
+            $('[data-popup-close]').on('click', function(e) {
+                var targeted_popup_class = jQuery(this).attr('data-popup-close');
+                $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+
+                e.preventDefault();
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var maxField = 20; //Input fields increment limitation
+            var x = 3;
+
+            var addButton = $('.add-another-securi'); //Add button selector
+            var wrapper = $('.field_wrapper'); //Input field wrapper
+            var fieldHTML = '<div class="removeDiv">' +
+                '<a  href="javascript:void(0);" class="remove_button pull-right" title="Remove field"><span class="remove_text"><i style="color: #ced4da;" class="fas fa-minus" style="font-size: 16px;"></i></span>' +
+                '<div class="col-md-11" style="margin-top: -16px;">' +
+                '<div class="form-group">' +
+
+                '<label for="personalAddress" class="labelClass">Question 3 </label>' +
+                '<input type="text" class="form-control security_questions_shape" name="question_name[]" value=""/></div></div>' +
+                '<div class="col-md-11">' +
+                '<div class="form-group">' +
+                '<label for="personalAddress" class="labelClass">Answer 3</label>' +
+                '<input type="text" class="form-control security_questions_shape" name="anwser_name[]" id="Answer_2" placeholder="Add your question">' +
+                '</div></div></a></div>';
+            //New input field html 
+            //Initial field counter is 1
+            $(addButton).click(function() { //Once add button is clicked
+                if (x < maxField) { //Check maximum number of input fields
+                    x++; //Increment field counter
+                    $(wrapper).append(fieldHTML); // Add field html
+                }
+            });
+            $(wrapper).on('click', '.remove_button', function(e) { //Once remove button is clicked
+                e.preventDefault();
+                $(this).remove(); //Remove field html
+                x--; //Decrement field counter
+            });
+        });
+    </script>
+    <%- include('layouts/foot') %>

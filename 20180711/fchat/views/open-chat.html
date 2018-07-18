@@ -1,0 +1,231 @@
+<%- include('layouts/head') %>
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link rel="stylesheet" href="/stylesheets/bootstrap-tagsinput.css">
+<main role="main" class="container">
+  <div class="members-list">
+    <div class="ml-header">
+      <div class="ml-container">
+        <img src="/images/view-team_40px @1x.png" class="view-team-icon">
+        <div class="group-name" id="groupname"><%= data[0].room_name %></div>
+        <div class="no-group-members" ><span id="groupmembers"><%= data[0].conversation[0].participants.length %></span><span>&nbsp;members</span></div>
+        <img src="/images/close_32px_100 @1x.png" class="close-container" onclick="close_container()">
+      </div>
+    </div>
+    <!-- <%- include('templates/chat/chat-member-list-view') %> -->
+
+    <div class="ml-container">
+      <div class="ml-body">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <img src="/images/add-new_26px_300 @1x.png"
+            </span>
+          </div>
+          <input class="form-control addmemberInput" id="addmemberInput" onkeyup="searchsldefclas($(this).val());" placeholder="Add member" id="project-create" >
+          <ul class="suggested-list" id="s-l-def">
+
+
+          </ul>
+        </div>
+        <div class="type-name" id="ml-admintype" style="display:none;">Admin</div>
+        <div class="ml-listHA" id="ml-listHA">
+        </div>
+        <div class="type-name" id="ml-membertype" style="display:none;">Members</div>
+        <div class="ml-listHl" id="ml-listHl">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="convo-sticky-sidebar-single">
+    <img src="/images/back_34px_200 @1x.png" class="back-to-home" onclick="window.location.href='/hayven'">
+    <div class="ecosystem"><%= data[0].conversation[0].group_keyspace %></div>
+    <div class="username"><%= data[0].room_name %></div>
+    <div class="conversation-details">
+      <img src="/images/pin-off_16px_200 @1x.png" class="pin">
+      <div class="no-of-members" onclick="open_members_view_div()"><span class="numbers" id="numbers"><%= data[0].conversation[0].participants.length %></span><span>&nbsp;members</span></div>
+      <img src="/images/call_18px_000 @1x.png" class="icon audio-call" onclick="openAudioCall(this)">
+      <img src="/images/video_18px_000 @1x.png" class="icon video-call" onclick="openVideoCall(this)">
+      <img src="/images/more_18px_400 @1x.png" class="icon more" onclick="open_more_option()">
+      <div class="more-option">
+        <ul>
+          <li onclick="flagged_messages()">Flagged messages</li>
+          <li onclick="tagged_messages()">Tagged messages</li>
+          <li onclick="files_media_mgs()">Files & Media</li>
+          <li onclick="add_tag()">Add tags</li>
+          <li onclick="select_messages()">Select messages</li>
+          <li>Export conversation</li>
+          <li>Delete conversation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="itl-template chat-page">
+    <div class="up-down-arrow">
+      <div class="up-arrow"><img src="/images/up-arrow.png"></div>
+      <div class="down-arrow"><img src="/images/down-arrow.png"></div>
+    </div>
+    <div class="message-container">
+      <% var cdate =  ""; 
+        var pdate = "";
+        data[0].conversation_list.forEach(function(row){ 
+          if(row.has_delete == null || (row.has_delete).indexOf(user_id) == -1){ %>
+            <%
+            // Sender and receiver message check
+            if(row.sender == user_id){
+              var is_right = 'right-msg';
+              var is_mirror = 'mirror';
+            } else {
+              var is_right = '';
+              var is_mirror = '';
+            }
+            // Check emoji reaction message
+            if(row.has_emoji != null){
+              var abck = row.has_emoji;
+            } else {
+              var abck = 'no_emoji';
+            }
+            // Check flag and unflag message
+            if(row.has_flagged != null && (row.has_flagged).indexOf(user_id) != -1){
+              var is_flag = true;
+            } else {
+              var is_flag = false;
+            }
+            // Check message date by group date
+            if(cdate == moment(row.created_at).format("MMM Do, YYYY")){
+              pdate =  "";
+            } else {
+              cdate = moment(row.created_at).format("MMM Do, YYYY");
+              pdate = moment(row.created_at).format("MMM Do, YYYY");
+            }
+
+            if(row.msg_type=='call'){
+              if(row.sender == user_id){ // right side
+
+                var msg_text= data[0].room_name + " missed a " + (row.msg_body=='audio'? "" : row.msg_body) + " call from you. ";
+                } else { // left side
+
+                  var msg_text= "You missed a " +(row.msg_body=='audio'? "" : row.msg_body) + " call from " + row.sender_name + ". " ;
+                }
+              }
+              else if(row.msg_type=='called'){
+                if(row.sender == user_id){ // right side
+
+                  var msg_text= data[0].room_name + " called you. ";
+                  } else { // left side
+
+                    var msg_text= "You called " + row.sender_name + ". " ;
+                  }
+
+              }
+              else{
+                  var msg_text= row.msg_body;
+                }
+            %>
+            <%- include('templates/chat/per_msg', {
+                  msg_id: row.msg_id,
+                  msg_data: pdate,
+                  msg_right: is_right,
+                  msg_mirror: is_mirror,
+                  msg_user_img: row.sender_img,
+                  msg_user_name: row.sender_name,
+                  msg_is_flag: is_flag,
+                  msg_text: msg_text,
+                  msg_type: row.msg_type,
+                  call_type: row.msg_body,
+                  msg_link_url: '',
+                  msg_attach_video: [],
+                  msg_attach_img: [],
+                  msg_attach_file: [],
+                  msg_tags: [],
+                  msg_replies_thread: [],
+                  msg_replies_emoji: [abck],
+                  msg_time: moment(row.created_at).format('h:mm a')}); %>
+          <% }
+        }); %>
+    </div>
+    <%- include('templates/chat/message-send-form') %>
+  </div>
+  <%- include('templates/_partial') %>
+  <div class="backWrap"></div>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+    </div>
+  </div>
+</main>
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var to = '<%= data[0].room_id %>';
+  var conversation_id = '<%= data[0].conversation_id %>';
+  var conversation_type = '<%= data[0].conversation_type %>';
+  var room_id  = '<%= data[0].room_id %>';
+  var room_name = '<%= data[0].room_name %>';
+  var room_img = '<%= data[0].room_img %>';
+  var conversation_list = <%- JSON.stringify(data[0].conversation_list) %>;
+  // console.log(user_id);
+  // console.log(user_fullname);
+  // console.log(user_img);
+  // console.log("to = ", to);
+  // console.log(conversation_id);
+  // console.log(conversation_type);
+  // console.log(conversation_list);
+  var adist = <%- JSON.stringify(data) %>;
+</script>
+<script src="/javascripts/socket-client-side.js"></script>
+<script src="/javascripts/custom.js"></script>
+<script src="/javascripts/custom-chat.js"></script>
+<script src="/javascripts/msg-file-upload.js"></script>
+<script src="/javascripts/bootstrap-tagsinput.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    scrollToBottom('.message-container');
+    if("<%= file_message %>" != "No"){
+      var html = per_msg_top(moment().format("MMM Do, YYYY"), 'right-msg', 'mirror', user_img, user_fullname, '');
+      html += per_msg_main_body("<img src='/upload/<%= file_message %>' style='max-width: 508px;' class='image1 lightbox'>", '', moment().format('h:mm a'));
+      $('.message-container').html(html);
+    }
+  });
+  
+  //notification when someone add to new group
+  
+  socket.on('popUpgroupblock', function (message) {
+
+    var options =
+      {
+        priority : 'success',
+        title    : 'Notification',
+        message  : 'your added to a new group <strong>'+message.groupName+'</strong> by <strong>'+message.senderName+'</strong>'
+      };
+    $.toaster(options);
+  });
+</script>
+<script>
+  $(function(){
+    var teamname = getCookie('teamname');
+    var grpmember = getCookie('grpmember');
+    var selectecosystem = getCookie('selectecosystem');
+    var grpmemberCount = grpmember.split(',');
+
+    //$("#numbers").text(grpmemberCount.length);
+    //$("#groupname").text(teamname);
+    //$("#selectecosystem").text(selectecosystem);
+    $("#adminImg").text(user_img);
+    $("#adminName").text(user_fullname);
+    //$("#groupmembers").text(grpmemberCount.length + "members");
+
+  });
+
+  var allUserdata = <%- JSON.stringify(data) %>;
+  var grpmember = getCookie('grpmember');
+  var gm = grpmember.split(',');
+
+  var adList = getCookie('adminList');
+  var adminList = adList.split(',');
+
+  // console.log(adminList);
+  // console.log(gm);
+
+</script>
+<script src="/javascripts/open-chat-page.js"></script>
+<%- include('layouts/foot') %>

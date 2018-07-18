@@ -1,0 +1,587 @@
+<%- include('layouts/head') %>
+<style type="text/css">
+	#mask{
+		width: 1058px;
+		height: 587px;
+		margin: 85px auto;
+	}
+
+	.project-container{
+		width: 98%;
+	}
+</style>
+<main role="main" class="project-container">
+	<%- include('templates/recent-chat-holder') %>
+  	<div class="project-template">
+		<div class="upper-prt">
+			<div class="upper-left">
+				<svg width="48px" height="48px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Back" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+				        <path d="M10.5,9 L8,12 L10.5,15 M8,12 L16,12 M12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 Z" id="btn-/-back-/-32-copy" stroke="#B0BEC5"></path>
+				    </g>
+				</svg>
+			</div>
+			<div class="upper-right">
+				<span class="hayven-proname-span" style="overflow: hidden;float: left;width:320px;"><span class="hayven-proname-span" id="hayven-proname-span" style="overflow: hidden;float: left;width:320px;">Hayven CX / UX Design Works</span><span class="dotodot" id="dotodot">...</span></span>
+				<div class="menuListTT">
+					<ul class="menuListUlTT">
+						<li class="menuListliTT">Edit Name</li>
+						<li class="menuListliTT">Duplicate Project</li>
+						<li class="menuListliTT">Delete Project</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="detail-prt">
+			<div class="pro-detail-right">
+				<div class="rectBox">
+					<span class="p15">Total Tasks</span>
+					<span class="p25" id="t-p25">0</span>
+				</div>
+				<div class="divider"></div>
+				<div class="rectBox">
+					<span class="p15">Total Subtasks</span>
+					<span class="p25" id="s-t-p25">0</span>
+				</div>
+				<div class="divider"></div>
+				<div class="rectBox">
+					<span class="p15">Overdue Tasks</span>
+					<span class="p25">0</span>
+				</div>
+
+				<div class="divider"></div>
+				<div class="rectBox p15-special">
+					<span class="p15">Estimated Hours</span>
+					<span class="p25">0</span>
+				</div>
+				<div class="divider"></div>
+				<div class="rectBox">
+					<span class="p15">Cost</span>
+					<span class="p25">0.00</span>
+				</div>
+				<div class="divider"></div>
+				<div class="rectBox">
+					<span class="p15">Start Date</span>
+					<span class="p25"><%= moment().format('D/M/YYYY'); %></span>
+				</div>
+				<div class="divider"></div>
+				<div class="rectBox">
+					<span class="p15">Due Date</span>
+					<span class="p25"><%= moment().format('D/M/YYYY'); %></span>
+				</div>
+			</div>
+		</div>
+		<div class="project-prt">
+			<div class="pro-act-right">
+				<div class="row">
+					<div class="col-lg-12 nopaddion">
+						<div class="col-lg-4 flLeft">
+							<p>
+							  <span class="btn btn-block cardPro project-description " data-toggle="collapse" aria-controls="multiCollapseExample1" data-target="#multiCollapseExample1"  aria-expanded="false" aria-controls="multiCollapseExample1">Project Description <i class="fas fa-angle-down rotateIcon uperRotateIcon" id="pdrotate"></i></span>
+							</p>
+							<div class="row">
+							  <div class="col colDesign">
+							    <div class="collapse multi-collapse collpsedesign" id="multiCollapseExample1">
+							      <div class="card card-body this-project-is-main custom-card" id="pdc-desc">
+							      </div>
+							    </div>
+							  </div>
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft tgs">
+							<p>
+							  <span class="btn btn-block cardPro project-description" data-toggle="collapse" aria-controls="multiCollapseExample2" data-target="#multiCollapseExample2"  aria-expanded="false" aria-controls="multiCollapseExample2">Tags <span class="tags-2" id="tags-2">(0)</span> <i class="fas fa-angle-down rotateIcon uperRotateIcon" id="tgsrotate"></i></span>
+							</p>
+							<div class="row">
+							  <div class="col colDesign">
+							    <div class="collapse multi-collapse collpsedesign custom-collps"  id="multiCollapseExample2">
+							      <div class="card card-body custom-card">
+							        <div class="col-lg-12 ">
+										<div class="form-group">
+											<input class="form-control shape" id="tags"  onkeyup="searchTags($(this).val());" onfocus="$('#tagslist').show();" name="tags" placeholder=" + Add tag and press enter" type="text" value="" />
+											<div class="form-control tagslist" id="tagslist">
+												<ul>
+													<%- include('templates/project/tag-list'); %>
+												</ul>
+											</div>
+											<div id="PDCTagHolder"></div>
+
+										</div>
+									</div>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft coon">
+							<p>
+							  <span class="btn btn-block cardPro project-description" data-toggle="collapse" aria-controls="multiCollapseExample3" data-target="#multiCollapseExample3"  aria-expanded="false" aria-controls="multiCollapseExample3">Co-Owners <span class="tags-2" id="tags-3">(3)</span> <i class="fas fa-angle-down rotateIcon uperRotateIcon" id="coonrotate"></i></span>
+							</p>
+							<div class="row">
+							  	<div class="col colDesign">
+							    	<div class="collapse multi-collapse collpsedesign"  id="multiCollapseExample3">
+								      	<div class="card card-body custom-card">
+								       		<div class="col-lg-12">
+												<div class="form-group">
+													<input class="form-control shape" id="coowner" name="coowner" onkeyup="searchCoOwner($(this).val());" onfocus="$('#users').show();" placeholder="Enter name or email addresses" type="text" value="" />
+													<div class="form-control coownerlist" id="users">
+														<ul>
+															<% data.forEach(function(user){ %>
+																<% if (user.id != user_id) { %>
+																	<%- include('templates/project/user-list', {user: user, display: 'block'}); %>
+																<% } %>
+															<% }); %>
+														</ul>
+													</div>
+													<div class="tagDivHolder"  id="tagDivHolder">
+
+													</div>
+												</div>
+											</div>
+								      	</div>
+								    </div>
+							  	</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="task-prt">
+			<div class="pro-act-right">
+				<div class="task-bar" id="taskInsertBox">
+			    	<h3 class="h3Text project-tasks" style="    width: 79%;float: left;">Project Tasks</h3><a href="/projects/projectDetail/kb/1"><span class="view-project-tasks-i">View project tasks in kanban</span></a>
+			    	<div class="input-group">
+			    		<div class="input-group-prepend">
+			    			<span class="input-group-text">
+			    				<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								    <g id="Create-Project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+								        <g id="plus-circle" transform="translate(8.000000, 7.000000)" stroke="#9B9B9B" stroke-width="2">
+								            <path d="M3.86100386,0.2 L3.86100386,9.8" id="Shape"></path>
+								            <path d="M0.154440154,5 L7.56756757,5" id="Shape"></path>
+								        </g>
+								    </g>
+								</svg>
+			    			</span>
+			    		</div>
+			    		<input class="form-control" id="addingtaskInput" placeholder="Start adding task" id="project-create" >
+			    	</div>
+			      <img src="/images/filter_28px_400 @1x.png" class="pointer filter-btn" style="float: left;" onclick="$('.rectangle-13-control').toggle();" />
+			      <span class="add-a-section-copy-5" onclick="parseHtmlConentEdit(event)" id="parseHtmlConentEdit" >Add a section</span>
+						<span class="you-have-no-projects" style="display: none;">You have no task created yet.</span>
+			    </div>
+			    <div class="newTasktasklistcontainer" id="newTasktasklistcontainer">
+
+			    </div>
+					<div id="taskcontainer">
+						<div class="sectionDiv">
+				    	<!-- <span class="mvp-release-1-0" id="sectionnaem">Branding & PR</span> -->
+				    </div>
+				    <div class="tasklistcontainer" id="tasklistcontainer">
+
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+  	<%- include('templates/_partial') %>
+  	<!-- EXTRA HTML COMPONENT FOR DYNAMIC CHANGE START -->
+	<input type="hidden" id="forStatusBtn" value="">
+	<input type="hidden" id="forMoremenyTaask" value="">
+	<input type="hidden" id="forMoremenySubTask" value="">
+	<!-- EXTRA HTML COMPONENT FOR DYNAMIC CHANGE END -->
+</main>
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var to = '';
+  // var alluserinfo = <%- JSON.stringify(data) %>;
+  // console.log(alluserinfo);
+</script>
+<script src="/javascripts/socket-client-side.js"></script>
+<script src="/javascripts/custom.js"></script>
+<script src="/javascripts/custom-project.js"></script>
+<script src="/javascripts/custom-pdc.js"></script>
+
+<%- include('layouts/foot') %>
+
+<div id="taskOptDiv">
+	<div class="row" id="taskOptDivHolder">
+		<div class="col-lg-12" >
+			<div class="col-lg-7 flLeft" style="margin-top: -22px;">
+				<form action="/" enctype="multipart/form-data" method="post" class="projectsetownerForm">
+					<fieldset>
+						<div class="col-lg-12 ">
+							<div class="form-group">
+								<label for="coowner" class="project-name" style="font-weight: 500; line-height: 22px;">Task Title</label>
+								<input class="form-control shape" id="coowner" name="coowner" placeholder="Call John Smith and confirm all changes that have been discussed during the meeting." type="text" value="" />
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Start date</label>
+								<input type='text' class="form-control shape"  id='datetimepicker4' />
+								<script type="text/javascript">
+						            $(function () {
+						                $('#datetimepicker4').datetimepicker({
+                    format: 'L'
+                });
+						            });
+						        </script>
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Due Date</label>
+								<input class="form-control shape" id='datetimepicker5' name="tags" type="text" />
+								<script type="text/javascript">
+						            $(function () {
+						                $('#datetimepicker5').datetimepicker({
+						                    format: 'L'
+						                });
+									});
+						        </script>
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group customSelect" style="margin-bottom: 14%;" >
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Status</label>
+								<!-- <input class="form-control shape" id="tags" name="tags" placeholder="add tag and press enter" type="text" value="" /> -->
+								<select class="form-control shape" id="activityStatus" name="tags">
+								  <option disabled selected>Select Status</option>
+								  <option>Completed</option>
+								  <option>Awaiting feedback</option>
+								  <option>On Hold</option>
+								  <option>Cancelled</option>
+								  <option>In Progress</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group customSelect" style="margin-bottom: 0%;">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Priority</label>
+								<select class="form-control shape " id="projectPriority" name="tags">
+								  <option value="" disabled selected>Select priority</option>
+								  <option value="High">High</option>
+								  <option value="Medium">Medium</option>
+								  <option value="Low">Low</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Hours</label>
+								<input class="form-control shape" id="tags" name="tags" placeholder="Enter hours" type="text" value="" />
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Budget</label>
+								<input class="form-control shape" id="tags" name="tags" placeholder="Enter budget" type="text" value="" />
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Tags</label>
+								<input class="form-control shape" id="tags" name="tags" placeholder="Add tags" type="text" value="" />
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Assign Members</label>
+								<span class="tagSqureBtnSpan"  >
+									<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onclick="openTagDiv(event,'AM');" style="cursor: pointer;float: left;">
+									    <g id="Assign-Members-&amp;-Guests" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+									        <g id="Group-31" transform="translate(4.000000, 4.000000)" stroke="#9B9B9B">
+									            <path d="M8,4.44444444 L8,11.5555556" id="Shape"></path>
+									            <rect id="Rectangle-path" x="0" y="0" width="16" height="16" rx="4"></rect>
+									            <path d="M4.44444444,8 L11.5555556,8" id="Shape"></path>
+									        </g>
+									    </g>
+									</svg>
+									<img src="/images/users/mahfuz.jpg" title="Mahfuz"  class="tagged" />
+									<img src="/images/users/manzu.jpg" title="Mahfuz"  class="tagged" />
+									<img src="/images/users/jubayer.jpg" title="Mahfuz"  class="tagged" />
+									<span class="plusPeople">+1</span>
+								</span>
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Assign Guests</label>
+								<span class="tagSqureBtnSpan"  >
+									<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onclick="openTagDiv(event,'AG');" style="float: left;cursor: pointer;">
+									    <g id="Assign-Members-&amp;-Guests" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+									        <g id="Group-31" transform="translate(4.000000, 4.000000)" stroke="#9B9B9B">
+									            <path d="M8,4.44444444 L8,11.5555556" id="Shape"></path>
+									            <rect id="Rectangle-path" x="0" y="0" width="16" height="16" rx="4"></rect>
+									            <path d="M4.44444444,8 L11.5555556,8" id="Shape"></path>
+									        </g>
+									    </g>
+									</svg>
+									<img src="/images/users/mahfuz.jpg" title="Mahfuz"  class="tagged" />
+									<img src="/images/users/manzu.jpg" title="Mahfuz"  class="tagged" />
+									<img src="/images/users/jubayer.jpg" title="Mahfuz"  class="tagged" />
+									<span class="plusPeople">+3</span>
+								</span>
+							</div>
+						</div>
+						<div class="col-lg-12 flLeft">
+							<div class="form-group">
+								<textarea class="form-control dexcriptionTextare" rows="3"></textarea>
+								<div class="underTesxt"></div>
+								<div class="footProject">
+									<div class="footProject-left">
+										<svg style="float:left;margin: 8px 0px 8px 8px;" width="20px" height="20px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+										    <g id="Attach-Files" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										        <g id="attach-interface-symbol-of-rotated-paperclip" transform="translate(2.000000, 2.000000)" fill="#4A4A4A" fill-rule="nonzero">
+										            <path d="M19.56761,7.27977659 L9.07849243,17.3312341 C7.34051332,18.9968525 4.52242832,18.9968525 2.78444922,17.3312341 C1.04647011,15.6656483 1.04647011,12.9655471 2.78444922,11.2999287 L12.2251603,2.25370507 C13.3840601,1.14352129 15.2620423,1.14352129 16.4209758,2.25370507 C17.5798755,3.36385621 17.5798755,5.1644242 16.4209758,6.27457534 L6.98023098,15.3208316 C6.40115166,15.8762989 5.46178999,15.8762989 4.88196954,15.3208316 C4.30289021,14.7661151 4.30289021,13.8658638 4.88196954,13.3103965 L13.2735668,5.26934145 L12.2244192,4.26414021 L3.83359678,12.3058808 C2.67469701,13.4160645 2.67469701,15.2165999 3.83359678,16.326751 C4.99249655,17.4369348 6.87047878,17.4369348 8.02937855,16.326751 L17.4701233,7.28049475 C19.2081024,5.61490896 19.2081024,2.91480777 17.4701233,1.24918934 C15.7321105,-0.416396447 12.9140592,-0.416396447 11.1760801,1.24918934 L1.21076156,10.7980299 L1.24687401,10.8329915 C-0.563329996,13.0633154 -0.404192663,16.2874805 1.73533534,18.3371535 C3.87486334,20.3868592 7.23810488,20.5403504 9.56621264,18.8047763 L9.60232509,18.8397705 L20.6160164,8.285696 L19.56761,7.27977659 Z" id="Shape"></path>
+										        </g>
+										    </g>
+										</svg>
+										<span class="attach-files">Attach files</span>
+									</div>
+									<div class="footProject-right">
+										<span class="btn btn-block postBtn">Post</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-lg-5 flLeft">
+				<div class="row flLeft textLeftAlign">
+					<span class="recent-activity">Recent Activity</span>
+					<span class="postingLin"><span id="postCOut">4 Posts</span><span class="show-all">Show All
+						<svg width="24px" height="24px" style="margin: -6px;" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						    <g id="Show-All-Chevron" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.7">
+						        <polyline id="Shape" stroke="#000000" stroke-width="1.2" points="9 11 12 14 15 11"></polyline>
+						    </g>
+						</svg>
+					</span></span>
+					<span class="legendFeild">4 Updates</span>
+					<div id="activityUpdate">
+						<div class="firstDiv">
+							<div class="creatorDiv">Rebecca Jones created this task</div>
+							<div class="lineDiv"></div>
+							<div class="dateDiv">Tue @ 3:45PM</div>
+						</div>
+						<div class="firstDiv">
+							<div class="creatorDiv">Rebecca Jones changed status to in progress</div>
+							<div class="lineDiv"></div>
+							<div class="dateDiv">Today @ 01:33PM</div>
+						</div>
+						<div class="firstDiv">
+							<div class="creatorDiv">Rebecca Jones set the start date to March 9th</div>
+							<div class="lineDiv"></div>
+							<div class="dateDiv">Today @ 10:20AM</div>
+						</div>
+						<div class="firstDiv">
+							<div class="creatorDiv">Rebecca Jones changed priority to high</div>
+							<div class="lineDiv"></div>
+							<div class="dateDiv">Today @ 11:20AM</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div id="tagInfoDiv">
+	<div class="col-lg-12">
+		<div class="form-group tagFromGroup">
+			<span class="assign-members-4">Assign Members (<span>4</span>)</span>
+			<input class="form-control shape tagShape" id="coowner" name="coowner" placeholder="Enter name or email addresses" type="text" value="" />
+			<input class="form-control shape tagHour" id="coowner" name="coowner" placeholder="Add hours" type="text" value="" />
+			<div class="tagDivHolder">
+				<div class="tagDiv">
+					<div class="tagImgle">
+						<img src="/images/users/mahfuz.jpg" title="Mahfuz"  class="tagImge" />
+					</div>
+					<div class="tagImgMid">
+						<span class="tagtile">John Smith</span>
+						<span class="tagemail">Johnsmith@ohs-global.com</span>
+					</div>
+					<div class="tagImgMHour">
+						<input class="form-control shape tagHourAdded" id="coowner" name="coowner" placeholder="Add hours" type="text" value="44hr" />
+					</div>
+					<div class="tagImgRi">
+						<svg width="18px" height="18px" class="svgTagClose" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						    <g id="Close-Modal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+						        <path d="M17,7 L7,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						        <path d="M7,7 L17,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						    </g>
+						</svg>
+					</div>
+				</div>
+				<div class="tagDiv">
+					<div class="tagImgle">
+						<img src="/images/users/manzu.jpg" title="Mahfuz"  class="tagImge" />
+					</div>
+					<div class="tagImgMid">
+						<span class="tagtile">Rebecca Brown</span>
+						<span class="tagemail">Rebeccab@ohs-global.com</span>
+					</div>
+					<div class="tagImgMHour">
+						<input class="form-control shape tagHourAdded" id="coowner" name="coowner" placeholder="Add hours" type="text" value="44hr" />
+					</div>
+					<div class="tagImgRi">
+						<svg width="18px" height="18px" class="svgTagClose" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						    <g id="Close-Modal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+						        <path d="M17,7 L7,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						        <path d="M7,7 L17,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						    </g>
+						</svg>
+					</div>
+				</div>
+				<div class="tagDiv" style="border: none;">
+					<div class="tagImgle">
+						<img src="/images/users/jubayer.jpg" title="Mahfuz"  class="tagImge" />
+					</div>
+					<div class="tagImgMid">
+						<span class="tagtile">Jamie Jones</span>
+						<span class="tagemail">Jamiej@hayven.io</span>
+					</div>
+					<div class="tagImgMHour">
+						<input class="form-control shape tagHourAdded" id="coowner" name="coowner" placeholder="Add hours" type="text" value="44hr" />
+					</div>
+					<div class="tagImgRi">
+						<svg width="18px" height="18px" class="svgTagClose" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						    <g id="Close-Modal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+						        <path d="M17,7 L7,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						        <path d="M7,7 L17,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						    </g>
+						</svg>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="rectangle-13-control">
+	<form role="form">
+		<div class="row">
+			<div class="col-lg-12">
+				<span class="modelCloseBtn"><img src="/images/CloseModal.svg" onclick="$('.rectangle-13-control').toggle();"></span>
+				<div class="conCointainer">
+
+					<div class="checkbox checkbox-primary">
+		                <input id="checkbox1" type="checkbox">
+		                <label for="checkbox1">
+		                    Assigned to others
+		                </label>
+		            </div>
+		            <div class="checkbox checkbox-primary">
+	                    <input id="checkbox2" type="checkbox" >
+	                    <label for="checkbox2">
+	                        Assigned to me
+	                    </label>
+	                </div>
+	                <div class="checkbox checkbox-primary">
+		                <input id="checkbox3" type="checkbox" >
+		                <label for="checkbox3">
+		                    Completed
+		                </label>
+		            </div>
+		            <div class="checkbox checkbox-primary">
+	                    <input id="checkbox4" type="checkbox" >
+	                    <label for="checkbox4">
+	                        In progress
+	                    </label>
+	                </div>
+	                <div class="checkbox checkbox-primary">
+		                <input id="checkbox5" type="checkbox" >
+		                <label for="checkbox5">
+		                    Overdue
+		                </label>
+		            </div>
+		            <div class="checkbox checkbox-primary">
+	                    <input id="checkbox6" type="checkbox">
+	                    <label for="checkbox6">
+	                        Cancelled
+	                    </label>
+	                </div>
+		            <div class="checkbox checkbox-primary">
+	                    <input id="checkbox7" type="checkbox">
+	                    <label for="checkbox7">
+	                        Flagged
+	                    </label>
+	                </div>
+		            <div class="checkbox checkbox-primary">
+	                    <input id="checkbox8" type="checkbox"  >
+	                    <label for="checkbox8" onclick="membersAdd()">
+	                        Members (2)
+	                    </label>
+	                </div>
+	                <div class="col-lg-12">
+	                	<div class="form-group" id="entryArea">
+							<input class="form-control shape enter-member-name" id="tags" name="tags" placeholder="Enter member name" type="text" value="" />
+						</div>
+	                	<div class="form-group customSelect" style="margin-bottom: 3%;" >
+							<label for="tags" class="sort-by"  style="margin-top: 0%;">Sort by</label>
+							<select class="form-control shape" id="tags" name="tags">
+							  <option>Due Date</option>
+							  <option>Start Date</option>
+							</select>
+						</div>
+						<div class="form-group customSelect" style="margin-bottom: 3%;" >
+							<label for="tags" class="sort-by" style="margin-top: 0%;">Tags (3)</label>
+							<select class="form-control shape" id="tags" name="tags">
+							  <option>Marketing</option>
+							  <option>New Hires</option>
+							  <option>consulting</option>
+							  <option>Branding</option>
+							</select>
+						</div>
+	                </div>
+	            </div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<ul id="flotingUL">
+	<li class="flotingULli" style="color: #32CD80;" onclick="statusChange('Completed','32CD80')">Completed</li>
+	<li class="flotingULli" style="color: #F5A623;" onclick="statusChange('Awaiting Feedback','F5A623')">Awaiting Feedback</li>
+	<li class="flotingULli" style="color: #9013FE;" onclick="statusChange('On Hold','9013FE')">On Hold</li>
+	<li class="flotingULli" style="color: #E03C31;" onclick="statusChange('Cancelled','E03C31')">Canceled</li>
+	<li class="flotingULli" style="color: #4A90E2;" onclick="statusChange('In Progress','4A90E2')">In Progress</li>
+</ul>
+
+<script  type="text/javascript">
+	var allUserdata = <%- JSON.stringify(data) %>;
+	var tagUserr = getCookie('tagUserr');
+	var resTaggedArray = tagUserr.split(",");
+	if(allUserdata.length > 0){
+		$.each(allUserdata, function(k,v){
+			if(jQuery.inArray(v.id, resTaggedArray) !== -1){
+				var design = '<div class="tagDiv ckkiTag" id="tagUserr'+v.id+'">';
+				    design +='    <div class="tagImgle">';
+				    design +='      <img src="/images/users/'+v.img+'" title="Mahfuz"  class="tagImge" />';
+				    design +='    </div>';
+				    design +='    <div class="tagImgMid" style="width:82%;">';
+				    design +='      <span class="tagtile">'+v.fullname+'</span>';
+				    design +='      <span class="tagemail">'+v.email+'</span>';
+				    design +='    </div>';
+				    design +='    <div class="tagImgRi">';
+				    design +='      <img src="/images/svg/RemoveCoOwners.svg" >';
+				    design +='    </div>';
+				    design +='  </div>';
+
+				  $("#tagDivHolder").append(design);
+			}
+
+		});
+
+		$("#tags-3").text("("+resTaggedArray.length+")");
+	}
+</script >

@@ -1,0 +1,126 @@
+#myCallModal .modal-content{
+  /*background-color:#2E302D;*/
+  top:134px;
+  height: 436px;	
+  width: 384px;	
+  border-radius: 4px;	
+  background-color: rgba(0,0,0,0.8);	
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.12), 0 6px 12px 0 rgba(0,0,0,0.24);
+  position: relative;
+  transform: translateX(-50%);
+	left: 50%;
+}
+
+#myCallModal .modal-footer{
+	border:none !important;
+}
+
+#myCallModal .modal-body{
+	padding-top: 47px;
+}
+
+.modal-backdrop {
+  background: none !important;
+  
+}
+
+#call_userimg{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: 50px;
+  max-width: 192px;
+  max-height: 192px;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 40%;
+}
+
+#calling_userimg{
+	display: block;
+	margin: 0 auto;
+	border-radius: 50px;
+	height: 184px;	
+	width: 184px;
+}
+
+#modalCallMsg{
+	height: 36px;	
+	color: #FFFFFF;	
+	font-family: "hvWorkSans";	
+	font-size: 32px;	
+	font-weight: 600;	
+	letter-spacing: -0.4px;	
+	line-height: 36px;	
+	text-align: center;	
+	margin: 16px 0 0 0;
+}
+
+#modal_incomingcall{
+	height: 16px;	
+	color: rgba(255,255,255,0.64);	
+	font-family: "hvWorkSans";
+	font-size: 12px;	
+	letter-spacing: 0.17px;	
+	line-height: 16px;	
+	text-align: center;
+	margin: 8px 0 0 0;
+}
+
+#calling_userspace{
+	position: absolute;
+	left: 174px;
+	right: 176px;
+	top: 224px;
+	bottom: 196px;
+
+	height: 16px;
+	width: 34px;
+	border-radius: 8px;
+	
+
+}
+
+#modalCallAccept{
+	position: absolute;
+	left: 160px;
+	right: 160px;
+	top: 340px;
+	bottom: 32px;
+
+	height: 64px;	
+	width: 64px;
+	
+}
+
+#modalCallReject{
+	position: absolute;
+	left: 60px;
+	right: 268px;
+	top: 344px;
+	bottom: 36px;
+
+	height: 56px;	
+	width: 56px;	
+	opacity: 0.87;
+	
+}
+
+#modalCallTextMsg{
+
+	position: absolute;
+	left: 268px;
+	right: 60px;
+	top: 344px;
+	bottom: 36px;
+
+	height: 56px;	
+	width: 56px;	
+	opacity: 0.87;
+
+}
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / search bar / close_18px_300</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-search-bar-/-close_18px_300" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9,9 L9,1 L9,9 L1,9 L9,9 Z M9,9 L9,17 L9,9 L17,9 L9,9 Z" stroke="#90A4AE" stroke-width="2" transform="translate(9.000000, 9.000000) rotate(45.000000) translate(-9.000000, -9.000000) "></path>
+    </g>
+</svg>

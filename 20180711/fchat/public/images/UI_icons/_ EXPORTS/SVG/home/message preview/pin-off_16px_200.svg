@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / message preview / pin-off_16px_200</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-message-preview-/-pin-off_16px_200" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="Rectangle-2" x="0" y="0" width="16" height="16"></rect>
+            <path d="M3.5,10 C3.5,9.76090345 3.5,9.38590345 3.5,8.875 C3.5,8.60558696 3.5,7.75 4.625,7.1875 L6.3125,6.625 L6.3125,4.375 L4.625,3.25 L4.625,1 L11.375,1 L11.375,3.25 L9.6875,4.375 L9.6875,6.625 L11.375,7.1875 C12.5,7.75 12.5,8.60558696 12.5,8.875 L12.5,10 C6.5,10 3.5,10 3.5,10 Z M8,15 L8,10 L8,15 Z" id="icon-/-pin-/-16" stroke="#B0BEC5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

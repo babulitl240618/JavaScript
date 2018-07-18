@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / input bar / emoji_22px_800</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-input-bar-/-emoji_22px_800" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11,21 C5.4773913,21 1,16.5226087 1,11 C1,5.4773913 5.4773913,1 11,1 C16.5226087,1 21,5.4773913 21,11 C21,16.5226087 16.5226087,21 11,21 Z M15.757913,14.0434783 C14.7526957,15.6104348 12.9996522,16.6521739 10.9996522,16.6521739 C9.00052174,16.6521739 7.2466087,15.6104348 6.24226087,14.0434783" stroke="#37474F" stroke-width="1.5"></path>
+        <path d="M7.81818182,8 C7.81818182,8.552 7.41090909,9 6.90909091,9 C6.40727273,9 6,8.552 6,8 C6,7.448 6.40727273,7 6.90909091,7 C7.41090909,7 7.81818182,7.448 7.81818182,8 Z M16,8 C16,8.552 15.5927273,9 15.0909091,9 C14.5890909,9 14.1818182,8.552 14.1818182,8 C14.1818182,7.448 14.5890909,7 15.0909091,7 C15.5927273,7 16,7.448 16,8 Z" id="eyes" stroke="#37474F" stroke-width="0.5" fill="#37474F"></path>
+    </g>
+</svg>

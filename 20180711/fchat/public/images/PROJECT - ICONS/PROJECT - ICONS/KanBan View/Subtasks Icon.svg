@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Subtasks Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Subtasks-Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.86">
+        <g id="Group-47" transform="translate(6.000000, 5.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="list" transform="translate(0.777778, 0.000000)">
+                <polygon id="Shape" points="11.1885714 13.9857143 0.0114285714 13.9857143 0.0114285714 0.728571429 2.09142857 0.728571429 2.09142857 1.32285714 0.605714286 1.32285714 0.605714286 13.3914286 10.5942857 13.3914286 10.5942857 1.32285714 9.07714286 1.32285714 9.07714286 0.728571429 11.1885714 0.728571429"></polygon>
+                <path d="M9.67142857,2.63142857 L1.52857143,2.63142857 L2.09428571,0.0171428571 L9.10857143,0.0171428571 L9.67142857,2.63142857 Z M2.27142857,2.03714286 L8.96,2.03714286 L8.63428571,0.611428571 L2.56857143,0.611428571 L2.27142857,2.03714286 Z" id="Shape"></path>
+                <g id="Group" transform="translate(1.714286, 4.457143)">
+                    <path d="M2.57714286,2.75142857 L0.02,2.75142857 L0.02,0.0171428571 L2.57714286,0.0171428571 L2.57714286,2.75142857 Z M0.617142857,2.15714286 L1.98571429,2.15714286 L1.98571429,0.611428571 L0.617142857,0.611428571 L0.617142857,2.15714286 Z" id="Shape"></path>
+                    <rect id="Rectangle-path" x="3.67714286" y="1.08571429" width="3.77428571" height="1"></rect>
+                </g>
+                <g id="Group" transform="translate(1.714286, 8.457143)">
+                    <path d="M2.57714286,2.73428571 L0.02,2.73428571 L0.02,0 L2.57714286,0 L2.57714286,2.73428571 Z M0.617142857,2.14 L1.98571429,2.14 L1.98571429,0.594285714 L0.617142857,0.594285714 L0.617142857,2.14 Z" id="Shape"></path>
+                    <rect id="Rectangle-path" x="3.67714286" y="1.06857143" width="3.77428571" height="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

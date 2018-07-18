@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / nested / close_32px_100</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-nested-/-close_32px_100" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M16,31.25 C24.4223424,31.25 31.25,24.4223424 31.25,16 C31.25,7.57765757 24.4223424,0.75 16,0.75 C7.57765757,0.75 0.75,7.57765757 0.75,16 C0.75,24.4223424 7.57765757,31.25 16,31.25 Z" id="Path" stroke="#CFD8DC" stroke-width="1.5"></path>
+        <path d="M16,16 L16,22 L16,16 L10,16 L16,16 Z M16,16 L22,16 L16,16 L16,10 L16,16 Z" id="icon-/-add-/-16" stroke="#CFD8DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(16.000000, 16.000000) rotate(45.000000) translate(-16.000000, -16.000000) "></path>
+    </g>
+</svg>

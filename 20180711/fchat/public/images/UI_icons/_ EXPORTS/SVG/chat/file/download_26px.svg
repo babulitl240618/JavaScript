@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / file / download_26px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-file-/-download_26px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16.6086957,17 L19.7826087,17 C22.6636522,17 25,14.761 25,12 C25,9.239 22.6636522,7 19.7826087,7 C19.7544348,7 19.7283478,7.007 19.7012174,7.008 C19.1972174,3.613 16.1596522,1 12.4782609,1 C8.44417391,1 5.17391304,4.134 5.17391304,8 C5.17391304,8.343 5.20834783,8.678 5.25843478,9.008 C5.22921739,9.008 5.20313043,9 5.17391304,9 C2.86886957,9 1,10.791 1,13 C1,15.209 2.86886957,17 5.17391304,17 L8.34782609,17" id="cloud" stroke="#37474F" stroke-width="1.5"></path>
+        <polyline id="arrow" stroke-opacity="0.88" stroke="#0039CB" stroke-width="1.5" points="16.6521739 20.826087 12.4782609 25 8.30434783 20.826087 12.4782609 25 12.4782609 9.34782609"></polyline>
+    </g>
+</svg>

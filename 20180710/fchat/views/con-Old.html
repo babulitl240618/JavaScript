@@ -1,0 +1,673 @@
+<%- include('layouts/head') %>
+<script src="/javascripts/masonry/jquery.masonry.min.js"></script>
+<main role="main" class="container">
+  <div class="itl-template">
+    <div class="search-bar">
+      <div class="input-group">
+        <input type="text" class="form-control search-txt" id="search-txt" placeholder="Search or start a new chat">
+        <img src="/images/search_18px_400 @1x.png" class="search-bar-img">
+      </div>
+      <img src="/images/filter_28px_400 @1x.png" class="pointer filter-btn" />
+      <img src="/images/NavbarIcons/28px/actions-create_24px_000.png" class="pointer action-btn" style="background: none;display: none;" />
+      <img src="/images/close_18px_300 @1x.png" class="fa-times" onclick="clearSearch()">
+    </div>
+
+    <div class="search-body">
+      <div class="row contacts">
+        <p>Contacts</p>
+        <div class="col-md-12">
+          <div class="contact-img new-group-chat-btn" onclick="window.location.href='/hayven/new-group'">
+            <img src="/images/new-group_72px_000 @1x.png" title="Start New Group Chat" /><br>
+            <span>Start New Group Chat</span>
+          </div>
+          <% data.forEach(function(user){ %>
+            <% if (user.id != user_id) { %>
+              <div class="contact-img searchContactList" data-id="<%= user.id %>" data-name="<%= user.fullname %>" data-img="<%= user.img %>"><img src="/images/users/<%= user.img %>" title="<%= user.fullname %>" /><br><span class="searchContactListText"><%= user.fullname %></span></div>
+            <% } %>
+          <% }); %>
+        </div>
+      </div>
+      <div class="row contacts-recent">
+        <p>Current Chat</p>
+        <div class="col-md-12">
+
+          <div class="contact-img" id="currentChatDiv"><img src="/images/users/anwar.jpg" title="Anwar" id="currentChatID" /><br><span id="currentChatSpan">Anwar</span></div>
+        </div>
+      </div>
+      <div class="row search-inside-msg">
+        <p>Messages containing </p>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pin-bar">
+        <div class="pin-item">
+          <img src="/images/users/feelix.jpg" title="Feelix" />
+        </div>
+        <div class="pin-item">
+          <img src="/images/users/navigate group.jpg" title="Everyone @ Navigate Group" onclick="unpinme(event)" />
+        </div>
+        <div class="pin-item">
+          <img src="/images/drag-to-pin_72px @1x.png" title="Pin" style="margin: 0;border-radius: 0;box-shadow: none;" />
+        </div>
+    </div>
+    <div class="body-bar">
+      <!-- <div class="masonry-layout"> -->
+      <div id="conversation-container" class="masonry-layout">
+        <%- include('templates/chat/user_list', {
+                          userid: 1,
+                          box_type: 'success',
+                          unread: 1,
+                          users_name: 'Feelix',
+                          users_img: 'feelix.jpg',
+                          pined: true,
+                          sub_title: 'Hayven Bot',
+                          last_msg: 'Welcome to Hayven- considering Customer journeys to, consequently, disrupt the balance! Let\'s get you started! ',
+                          last_msg_time: '10:07am',
+                          display: 'block'}
+                          ); %>
+        <%- include('templates/chat/user_list', {
+                          userid: 2,
+                          box_type: 'warning',
+                          unread: 0,
+                          users_name: 'Random Coffee',
+                          users_img: 'navigate group.jpg',
+                          pined: false,
+                          sub_title: '103 members',
+                          last_msg: '',
+                          last_msg_time: '',
+                          display: 'block'}
+                          ); %>
+        <%- include('templates/chat/user_list', {
+                          userid: 3,
+                          box_type: 'info',
+                          unread: 1,
+                          users_name: 'Everyone @ Navigate Group',
+                          users_img: 'navigate group.jpg',
+                          pined: true,
+                          sub_title: '8 members',
+                          last_msg: 'Samantha Arias added you to the group chat.',
+                          last_msg_time: '10:07am',
+                          display: 'block'}
+                          ); %>
+
+        <% data.forEach(function(user){ %>
+          <% if (user.id != user_id) { %>
+            <%- include('templates/chat/user_list', {
+                      userid: user.id,
+                      box_type: 'default',
+                      unread: 0,
+                      users_name: user.fullname,
+                      users_img: user.img,
+                      pined: false,
+                      sub_title: 'Software Developer',
+                      last_msg: '',
+                      last_msg_time: '',
+                      display: 'block'}
+                      ); %>
+          <% } %>
+        <% }); %>
+      </div>
+        <!-- <div class="box box-success" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg">3 UNREAD</div>
+          <div class="box-header" data-name="Tobias Funke" data-img="manzu.jpg">
+            <div class="box-title">Tobias Funke</div>
+            <div class="box-subtitle">Customer Applications</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body">
+            Screw the pooch. I don't want to drain the whole swamp, i just want to shoot some alligators.
+            <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+          </div>
+        </div>
+        <div class="box box-warning" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header" data-name="Claire Beauchamp" data-img="dipok.jpg">
+            <div class="box-title">Claire Beauchamp</div>
+            <div class="box-subtitle">Senior Quality Director</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+        <div class="box box-info" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header" data-name="NavDesign Resources" data-img="manzu.jpg">
+            <div class="box-title">NavDesign Resources</div>
+            <div class="box-subtitle">13 members</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>  -->
+
+      <!-- <div class="classic-row">
+        <div class="box box-success" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg">3 UNREAD</div>
+          <div class="box-header" data-name="Tobias Funke" data-img="anwar.jpg">
+            <div class="box-title">Tobias Funke</div>
+            <div class="box-subtitle">Customer Applications</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body">
+            Screw the pooch. I don't want to drain the whole swamp, i just want to shoot some alligators.
+          </div>
+          <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+        </div>
+        <div class="box box-info" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg">4 UNREAD</div>
+          <div class="box-header">
+            <div class="box-title">Hayven UX Team</div>
+            <div class="box-subtitle">4 members</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body">
+            Raymond: Hard stop sacred cow, yet thought shower market-facing anti-pattern. Put your fellers out, for due diligence.
+          </div>
+          <div class="msg-time">10:01am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+        </div>
+        <div class="box box-info" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg">1 UNREAD</div>
+          <div class="box-header">
+            <div class="box-title">Amy Santiago</div>
+            <div class="box-subtitle">Tactics Specialist</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body">
+            Powerpoint Bunny can we take this offline? Staff engagement who's responsible for the ask for this request? Please use "solutionise" instead of solution ideas! knowledge is power programmatically, draw a line in the...
+          </div>
+          <div class="msg-time">09:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+        </div>
+        <div class="box box-info" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg">1 UNREAD</div>
+          <div class="box-header">
+            <div class="box-title">Raymond Holt</div>
+            <div class="box-subtitle">Creative Director</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+        <div class="box box-warning" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header">
+            <div class="box-title">Claire Beauchamp</div>
+            <div class="box-subtitle">Senior Quality Director</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+        <div class="box box-info" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header">
+            <div class="box-title">NavDesign Resources</div>
+            <div class="box-subtitle">13 members</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+        <div class="box box-success" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header">
+            <div class="box-title">Random Coffee</div>
+            <div class="box-subtitle">103 members</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+        <div class="box box-info" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header">
+            <div class="box-title">Terrence Jeffords</div>
+            <div class="box-subtitle">Senior Group Liason</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+        <div class="box box-info" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header">
+            <div class="box-title">Jacob Peralta</div>
+            <div class="box-subtitle">Sales Represntative</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+        <div class="box box-warning" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header">
+            <div class="box-title">Regina Linetti</div>
+            <div class="box-subtitle">Dance Artist</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+        <div class="box box-success" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header">
+            <div class="box-title">Rosa Diaz</div>
+            <div class="box-subtitle">Division Director</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+        <div class="box box-default" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header">
+            <div class="box-title">Norman Scully</div>
+            <div class="box-subtitle">Security Officer</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+        <div class="box box-info" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header">
+            <div class="box-title">Maurice Moss</div>
+            <div class="box-subtitle">Metrics Engineer</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+        <div class="box box-info" onclick="window.location.href='/hayven/chat'">
+          <div class="box-msg"></div>
+          <div class="box-header">
+            <div class="box-title">Michael Bluth</div>
+            <div class="box-subtitle">VP Marketing</div>
+            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">
+          </div>
+          <div class="box-body"></div>
+        </div>
+      </div>   -->
+    </div>
+  </div>
+  <%- include('templates/_partial') %>
+</main>
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var to = '';
+  var pinneditem = [];
+  var unpinneditem = [];
+  var margedPinn = [];
+  // var alluserinfo = <%- JSON.stringify(data) %>;
+  // console.log(alluserinfo);
+</script>
+<script src="/javascripts/socket-client-side.js"></script>
+<script src="/javascripts/custom.js"></script>
+<script src="/javascripts/custom-chat.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- this script working for render new block on page load and masonry view after append new block -->
+<script>
+  $(function(){
+    var teamname = getCookie('teamname');
+    var grpmember = getCookie('grpmember');
+    var grpmemberCount = grpmember.split(',');
+    if(teamname != ""){
+      var cokkieDesign = '<div class="item oct ui-widget-content">';
+          cokkieDesign += '        <div class="box box-success online_4 offline">';
+          cokkieDesign += '          <div class="box-msg nomsg"></div>';
+          cokkieDesign += '          <div class="box-header" data-id="4" data-name="'+teamname+'" data-img="navigate group.jpg">';
+          cokkieDesign += '            <div class="box-title">'+teamname+'</div>';
+          cokkieDesign += '            <div class="box-subtitle">'+grpmemberCount.length+' members</div>';
+          cokkieDesign += '            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">';
+          cokkieDesign += '          </div>';
+          cokkieDesign += '        </div>';
+          cokkieDesign += '      </div>';
+      $("#conversation-container").append(cokkieDesign);
+
+
+      $("#conversation-container .item").draggable({
+        helper: 'clone', opacity: 0.5
+      });
+
+      masonryViewLoad();
+      afterAppendEventInConnectpage();
+
+    }else{
+      masonryViewLoad();
+    }
+
+    $('.masonry-layout .item').each(function(i, obj) {
+        if($(obj).find('img').hasClass('pined')){
+          var name = $(obj).find('.box-header').attr('data-name').replace(/ /g,'');
+          pinneditem.push({'design':obj,'name':name});
+        }else{
+          var name = $(obj).find('.box-header').attr('data-name').replace(/ /g,'');
+          unpinneditem.push({'design':obj,'name':name});
+        }
+    });
+
+    $('.masonry-layout').html('');
+    var $grid = $('.masonry-layout').masonry({
+      itemSelector : '.item',
+      columnWidth : 264
+    });
+
+    $.each(pinneditem, function(k,v){
+      var $content = $( v.design );
+      $grid.append( $content ).masonry( 'appended', $content );
+    });
+
+    $.each(unpinneditem, function(k,v){
+      var $content = $( v.design );
+      $grid.append( $content ).masonry( 'appended', $content );
+    });
+
+    appendAfter();
+  });
+  /*
+  Live event call after dynamically append data.
+  */
+  var afterAppendEventInConnectpage = () => {
+
+    $('.oct').on('click', function(event){
+      var id = $(this).find('.box-header').attr('data-id');
+      var name = $(this).find('.box-header').attr('data-name');
+      var img = $(this).find('.box-header').attr('data-img');
+      window.location.href='/hayven/chat/'+ id +'/'+ encodeURI(name) +'/' + encodeURI(img);
+    });
+  }
+
+  var appendAfter = () => {
+    $('.pin-to-bar').on('click', function(event){
+
+      event.stopPropagation();
+      var name = $(event.target).closest('.box-header').attr('data-name');
+      var img = $(event.target).closest('.box-header').attr('data-img');
+
+      if($(event.target).hasClass('pined')){
+
+        $(event.target).removeClass('pined');
+        $(event.target).attr('src', '/images/pin-off_16px_200 @1x.png');
+        unpining(name);
+        var newname = name.replace(/ /g,'');
+
+        $.each(pinneditem, function(ka,va){
+          if(va.name == newname){
+            unpinneditem.push({'design':va.design,'name':va.name});
+            pinneditem.splice(ka,1);
+          }
+        });
+      }else{
+        var html = '<div class="pin-item"><img src="/images/users/'+ img +'" title="'+ name +'" onclick="unpinme(event)" /></div>';
+        $('.pin-bar').find('.pin-item').last().before(html);
+        $(event.target).addClass('pined');
+        $(event.target).attr('src', '/images/pin-on_16px_500 @1x.png');
+
+        var newnameUn = name.replace(/ /g,'');
+
+        $.each(unpinneditem, function(ky,vaa){
+          if(vaa.name == newnameUn){
+            pinneditem.push({'design':vaa.design,'name':vaa.ky});
+            unpinneditem.splice(ky,1);
+          }
+        });
+      }
+
+      $('.masonry-layout').html('');
+      var $grid = $('.masonry-layout').masonry({
+        itemSelector : '.item',
+        columnWidth : 264
+      });
+      console.log(pinneditem);
+      console.log(unpinneditem);
+      $.each(pinneditem, function(k,v){
+        console.log(v)
+        var $content = $( v.design );
+        $grid.append( $content ).masonry( 'appended', $content );
+      });
+
+      $.each(unpinneditem, function(k,v){
+        console.log(v)
+        var $content = $( v.design );
+        $grid.append( $content ).masonry( 'appended', $content );
+      });
+
+      appendAfter();
+
+    });
+
+    $('.item').on('click', function(event){
+      //alert('click');
+      var id = $(this).find('.box-header').attr('data-id');
+      var name = $(this).find('.box-header').attr('data-name');
+      var img = $(this).find('.box-header').attr('data-img');
+
+      setCookie('userid',id,1);
+      setCookie('username',name,1);
+      setCookie('userimg',img,1);
+      window.location.href='/hayven/chat/'+ id +'/'+ encodeURI(name) +'/' + encodeURI(img);
+    });
+
+
+  }
+  /*
+  Masonry View Load after event call
+  */
+  var masonryViewLoad = () => {
+    if($('.masonry-layout').length){
+      $('.masonry-layout').masonry({
+        itemSelector : '.item',
+        columnWidth : 264
+      });
+      // $.each($('.masonry-layout .box-body'), function(k,v){
+      //   if($(v).height() > 200){
+      //     console.log($(v).text());
+      //   }
+      // });
+    }
+  }
+
+
+  socket.on('groupCreate', function(message) {
+      console.log(message);
+      var memberListLen = message.memberList;
+      var adminList = message.adminList;
+      var arr3 = [];
+
+      for (var i=0,j=memberListLen.length; i<j; i++) {
+          arr3.push(memberListLen[i]);
+          arr3.push(adminList[i]);
+      }
+
+      console.log(arr3);
+
+      $.each(arr3, function(ka,va){
+        if(va == user_fullname){
+          var cokkieDesign = '<div class="item oct ui-widget-content">';
+              cokkieDesign += '        <div class="box box-success online_4 offline" >';
+              cokkieDesign += '          <div class="box-msg nomsg"></div>';
+              cokkieDesign += '          <div class="box-header" data-id="4" data-name="'+message.teamname+'" data-img="navigate group.jpg">';
+              cokkieDesign += '            <div class="box-title">'+message.teamname+'</div>';
+              cokkieDesign += '            <div class="box-subtitle">'+ parseInt(parseInt(memberListLen.length)+parseInt(adminList.length)) +' members</div>';
+              cokkieDesign += '            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">';
+              cokkieDesign += '          </div>';
+              cokkieDesign += '        </div>';
+              cokkieDesign += '      </div>';
+
+          //$("#conversation-container").append(cokkieDesign);
+
+          $("#conversation-container .item").draggable({
+            helper: 'clone', opacity: 0.5
+          });
+
+          var $grid = $('.masonry-layout').masonry({
+            itemSelector : '.item',
+            columnWidth : 264
+          });
+
+          var $content = $( cokkieDesign );
+          // add jQuery object
+          $grid.append( $content ).masonry( 'appended', $content );
+          afterAppendEventInConnectpage();
+
+          setCookie('teamname',message.teamname,1);
+          setCookie('selectecosystem',message.selectecosystem,1);
+          setCookie('grpprivacy',message.grpprivacy,1);
+          setCookie('grpmember',message.memberList,1);
+          setCookie('adminList',message.adminList,1);
+        }
+      });
+  });
+
+  $(document).keyup(function(e) {
+    if (e.keyCode == 27) { // escape key maps to keycode `27`
+        if($(".filter-btn-div").is(':visible')){
+          $(".filter-btn-div").hide();
+        }
+        if($(".action-btn-div").is(':visible')){
+          $(".action-btn").trigger('click');
+        }
+        if($(".search-body").is(':visible')){
+          clearSearch();
+        }
+    }
+  });
+
+  /** End of action button process*/
+
+  $('.search-txt').on('keyup', function(e){
+    var str = $(this).val();
+    console.log(str);
+    if(str.length > 0){
+      $('.search-body').show();
+      $('.search-bar .fa-times').show();
+      $('.pin-bar').hide();
+      $('.body-bar').hide();
+      $('.search-bar .pointer').hide();
+      // $('.search-bar .input-group').css('width', '890px');
+      $('.search-bar').addClass('sticky');
+      $('.gradient-body-bg').show();
+
+      $('.searchContactListText').unhighlight();
+      $('.searchContactListText').highlight(str);
+
+      $(".searchContactListText").each(function() {
+
+          if ($(this).text().toLowerCase().search(str.toLowerCase()) > -1) {
+              $(this).parent('div').show();
+          }else {
+              $(this).parent('div').hide();
+          }
+      });
+    } else {
+      clearingSearch();
+    }
+
+    if(getCookie('userid')!= ''){
+      $("#currentChatID").attr('src','/images/users/'+getCookie('userimg'));
+      $("#currentChatSpan").text(getCookie('username'));
+      $("#currentChatDiv").attr('data-id',getCookie('userid'));
+      $("#currentChatDiv").attr('data-name',getCookie('username'));
+      $("#currentChatDiv").attr('data-img',getCookie('userimg'));
+    }
+  });
+
+  $('.searchContactList').on('click', function(event){
+    //alert('click');
+    var id = $(this).attr('data-id');
+    var name = $(this).attr('data-name');
+    var img = $(this).attr('data-img');
+
+    setCookie('userid',id,1);
+    setCookie('username',name,1);
+    setCookie('userimg',img,1);
+
+    window.location.href='/hayven/chat/'+ id +'/'+ encodeURI(name) +'/' + encodeURI(img);
+  });
+
+  $('#currentChatDiv').on('click', function(event){
+    //alert('click');
+    var id = $(this).attr('data-id');
+    var name = $(this).attr('data-name');
+    var img = $(this).attr('data-img');
+
+    setCookie('userid',id,1);
+    setCookie('username',name,1);
+    setCookie('userimg',img,1);
+
+    window.location.href='/hayven/chat/'+ id +'/'+ encodeURI(name) +'/' + encodeURI(img);
+  });
+
+</script>
+<%- include('layouts/foot') %>
+<%- include('templates/project/quickproject') %>

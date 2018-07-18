@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>call / speaker-off_48px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="call-/-speaker-off_48px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M24,0.625 C5.14517797,0.625 0.625,5.14517797 0.625,24 C0.625,42.854822 5.14517797,47.375 24,47.375 C42.854822,47.375 47.375,42.854822 47.375,24 C47.375,5.14517797 42.854822,0.625 24,0.625 Z" id="mask-squircle" stroke="#FFFFFF" stroke-width="1.25" opacity="0.871316964"></path>
+        <g id="Group-3" transform="translate(15.000000, 16.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25">
+            <path d="M11.7946957,5.83577075 C11.9903478,6.58494071 12.0949328,7.37110672 12.0949328,8.18146245 C12.0949328,8.99181818 11.9910593,9.77727273 11.7954071,10.5257312 M14.1854941,12.53483 C14.7411462,11.1937233 15.0477866,9.7238419 15.0477866,8.18210277 C15.0477866,6.63965217 14.7404348,5.16834783 14.1847826,3.82652964 M16.4781818,14.4190672 C17.450751,12.5529012 18,10.4313202 18,8.18167589 C18,5.9306087 17.4500395,3.80831621 16.4767589,1.94143874" id="Stroke-1"></path>
+            <path d="M9.24901186,16.3636364 L3.55731225,11.3833992 L0.711462451,11.3833992 C0.318735178,11.3833992 0,11.064664 0,10.6719368 L0,5.6916996 C0,5.29897233 0.318735178,4.98023715 0.711462451,4.98023715 L3.55731225,4.98023715 L9.24901186,0 L9.24901186,16.3636364 Z" id="Stroke-1" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

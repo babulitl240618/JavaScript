@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Not Pinned</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Not-Pinned" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="icon-/-400-/-pin-16" transform="translate(7.000000, 5.000000)" stroke="#E3E3E3" stroke-width="2">
+            <path d="M0.535714286,9.64285714 C0.535714286,9.38668226 0.535714286,8.98489655 0.535714286,8.4375 C0.535714286,8.14884317 0.535714286,7.23214286 1.74107143,6.62946429 L3.54910714,6.02678571 L3.54910714,3.61607143 L1.74107143,2.41071429 L1.74107143,0 L8.97321429,0 L8.97321429,2.41071429 L7.16517857,3.61607143 L7.16517857,6.02678571 L8.97321429,6.62946429 C10.1785714,7.23214286 10.1785714,8.14884317 10.1785714,8.4375 L10.1785714,9.64285714 C3.75,9.64285714 0.535714286,9.64285714 0.535714286,9.64285714 Z" id="Stroke-6282"></path>
+            <path d="M5.35714286,14 L5.35714286,10.6399999" id="Stroke-6283"></path>
+        </g>
+    </g>
+</svg>

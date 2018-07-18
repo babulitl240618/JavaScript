@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / popup / input-dropdown_16px_200</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-popup-/-input-dropdown_16px_200" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="Rectangle-6" x="0" y="0" width="16" height="16"></rect>
+            <path d="M11.9059675,6.08868112 C12.0896334,6.31584626 11.9939891,6.5 11.7082998,6.5 L4.29254847,6.5 C3.99971369,6.5 3.91316042,6.31343992 4.0948808,6.08868112 L7.66786756,1.66947268 C7.85153349,1.44230754 8.15126037,1.44471388 8.33298074,1.66947268 L11.9059675,6.08868112 Z M11.9059675,9.91131888 L8.33298074,14.3305273 C8.15126037,14.5552861 7.85153349,14.5576925 7.66786756,14.3305273 L4.0948808,9.91131888 C3.91316042,9.68656008 3.99971369,9.5 4.29254847,9.5 L11.7082998,9.5 C11.9939891,9.5 12.0896334,9.68415374 11.9059675,9.91131888 Z" id="Affordance" fill="#B0BEC5"></path>
+        </g>
+    </g>
+</svg>

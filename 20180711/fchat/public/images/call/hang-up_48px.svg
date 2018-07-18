@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>call / hang-up_48px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="call-/-hang-up_48px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M24,0.625 C5.14517797,0.625 0.625,5.14517797 0.625,24 C0.625,42.854822 5.14517797,47.375 24,47.375 C42.854822,47.375 47.375,42.854822 47.375,24 C47.375,5.14517797 42.854822,0.625 24,0.625 Z" id="mask-squircle" stroke-opacity="0.868517889" stroke="#D0021B" stroke-width="1.25"></path>
+        <path d="M25.1111111,30.5555556 L27.7888889,28.5333333 C28.0888889,28.2333333 28.9222222,28.2666667 28.9222222,28.2666667 L32.8888889,28.9 C32.8888889,28.9 34,29.4 34,30.0111111 L34,33.8888889 C34,34.5 33.5,35 32.8888889,35 C22.4555556,35 14,26.5444444 14,16.1111111 C14,15.5 14.5,15 15.1111111,15 L19,15 C19.6111111,15 20.1111111,16.1111111 20.1111111,16.1111111 L20.7444444,20.0777778 C20.7444444,20.0777778 20.7777778,20.9 20.4666667,21.2111111 L18.4444444,23.8888889 C20.0444444,27.0333333 21.9666667,28.9444444 25.1111111,30.5555556 Z" id="Stroke-86" stroke="#D0021B" stroke-width="0.5" fill="#D0021B" stroke-linecap="round" stroke-linejoin="round" transform="translate(24.000000, 25.000000) rotate(-225.000000) translate(-24.000000, -25.000000) "></path>
+    </g>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / search bar / notification_28px_000</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-search-bar-/-notification_28px_000" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12,4 L12,3.89473684 C12,2.84884211 12.896,2 14,2 C15.104,2 16,2.84884211 16,3.89473684 L16,4 M15.94625,23 C16.1375,23.29 16.25,23.64 16.25,24 C16.25,25.1 15.2375,26 14,26 C12.7625,26 11.75,25.1 11.75,24 C11.75,23.64 11.8625,23.29 12.05375,23 L15.94625,23 Z M23.75,23 L4.25,23 L6.01218421,19.7043636 C6.87428947,18.0933939 7.32894737,16.2498182 7.32894737,14.371697 L7.32894737,11.4848485 C7.32894737,7.35090909 10.3155263,4 14,4 C17.6844737,4 20.6710526,7.35090909 20.6710526,11.4848485 L20.6710526,14.371697 C20.6710526,16.2498182 21.1257105,18.0933939 21.9878158,19.7043636 L23.75,23 Z" stroke="#FFFFFF" stroke-width="1.5"></path>
+    </g>
+</svg>

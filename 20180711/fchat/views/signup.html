@@ -1,0 +1,46 @@
+<%- include('layouts/head') %>
+<div class="centered-form__form">
+  <form action="/signup" method="POST">
+    <input style="opacity: 0;position: absolute;">
+    <input type="password" style="opacity: 0;position: absolute;">
+    <div class="hello-welcome-back">Signup</div>
+    <% if (error) { %>
+    <div class="form-field">
+      <ul class="error-msg">
+        <% for(var i=0; i < error.length; i++) { %>
+          <li><%= error[i].msg %></li>
+        <% } %>
+      </ul>
+    </div>
+    <% } %>
+    <div class="form-field email-address">
+      <label>Full Name</label>
+      <input type="text" name="fullname" id="fullname" placeholder="Your Full Name Please" autocomplete="off" required autofocus />
+    </div>
+    <div class="form-field password">
+      <label>Email</label>
+      <input type="email" name="email" id="email" placeholder="example@hayven.com" autocomplete="off" required />
+    </div>
+    <div class="form-field password">
+      <label>Password</label>
+      <input type="password" name="password" id="password" placeholder="password" autocomplete="off" required />
+    </div>
+    <div class="sign-up">
+      <button class="sendButton">Sign In</button>
+    </div>
+    <a href="/"><div class="back">Back</div></a>
+  </form>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    // $('.sendButton').removeClass('active');
+    $('input').keyup(function(){
+        if($("#fullname").val() == "" || $("#email").val() == "" || $("#password").val() == ""){
+          $('.sendButton').removeClass('active');
+        }else{
+          $('.sendButton').addClass('active');
+        }
+    });
+  }); 
+</script>
+<%- include('layouts/foot') %>

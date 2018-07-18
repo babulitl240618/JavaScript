@@ -1,0 +1,71 @@
+<%- include('layouts/head') %>
+<div class="centered-form__form">
+  <form action="/" method="POST">
+    <!-- <input style="opacity: 0;position: absolute;">
+    <input type="password" style="opacity: 0;position: absolute;"> -->
+    <div class="hello-welcome-back">
+      Hello! Welcome back.
+    </div>
+    <div class="sign-into-your-account">
+      Sign into your account here
+    </div>
+    <% if (success) { %>
+      <div class="form-field">
+        <label>Signup successfully.</label>
+      </div>
+    <% } %>
+    <% if (error) { %>
+      <div class="form-field">
+        <ul class="error-msg">
+          <% for(var i=0; i < error.length; i++) { %>
+            <li><%= error[i].msg %></li>
+          <% } %>
+        </ul>
+      </div>
+    <% } %>
+    <div class="form-field email-address">
+      <label>Email Address</label><br>
+      <input type="text" name="email" id="email" placeholder="example@hayven.com" autocomplete="off" autofocus />
+    </div>
+    <div class="form-field password">
+      <label>Password</label>
+      <input type="password" name="password" id="password" placeholder="Enter password" autocomplete="off" />
+    </div>
+    <div class="form-field forgotpass">
+      <div class="forgot-pass" onclick="window.location.href='/forgot-password';">Forgot Your Password ?</div>
+    </div>
+    <div class="remember-me">
+      <input type="checkbox" name="chkRememberMe" class="HoverCheckbox">
+      <p>Remember me</p>
+    </div>
+    <div class="sign-in">
+      <button class="sendButton">Sign In</button>
+    </div>
+    <div class="don-t-have-an-account">Don't have an account? <a href="/signup">Register.</a></div>
+    <div class="or-sign-in">
+      <div class="line"> </div>
+      <div class="or">or</div>
+      <div class="line right"> </div>
+    </div>
+    <div class="social-icon">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-google-plus-g"></i>
+      <i class="fab fa-windows windows-icon"></i>
+    </div>
+  </form>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    // $('.sendButton').removeClass('active');
+    $('input').keyup(function(){
+        if($("#email").val() == "" || $("#password").val() == ""){
+          $('.sendButton').removeClass('active');
+        }else{
+          $('.sendButton').addClass('active');
+        }
+    });
+  }); 
+
+  setCookie('call_status','new',1);
+</script>
+<%- include('layouts/foot') %>

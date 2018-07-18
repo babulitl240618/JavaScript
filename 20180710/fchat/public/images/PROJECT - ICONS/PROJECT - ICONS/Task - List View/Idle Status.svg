@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Idle Status</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Idle-Status" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <path d="M13,1 C6.3728959,1 1,6.37267089 1,13 C1,19.6273291 6.3728959,25 13,25 C19.6278354,25 25,19.6273291 25,13 C25,6.37267089 19.6276104,1 13,1 Z M10.7987091,19.1641659 L5.51485705,13.8805389 L7.27599106,12.1194049 L10.7987091,15.6418979 L18.7240089,7.71637299 L20.4851429,9.477507 L10.7987091,19.1641659 Z" id="Shape" fill="#D5D9E3" fill-rule="nonzero"></path>
+    </g>
+</svg>

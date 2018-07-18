@@ -1,0 +1,493 @@
+<style type="text/css">
+	#mask{
+		height: 599px;
+	}
+
+	.innerMask {
+	     margin: 0% 15px 15px auto; 
+	}
+
+	.plusPeople{
+		color: #9b9b9b;
+	    font-size: 11px;
+	}
+
+
+</style>
+<div id="taskOptDiv">
+	<div class="row" id="taskOptDivHolder">
+		<div class="col-lg-12" >
+			<div class="col-lg-7 flLeft" style="margin-top: -22px;">
+				<form action="/" enctype="multipart/form-data" method="post" class="projectsetownerForm">    
+					<fieldset>
+						<div class="col-lg-12 ">
+							<div class="form-group">
+								<label for="coowner" class="project-name" style="font-weight: 500; line-height: 22px;">Task Title</label>
+								<input class="form-control shape" id="coowner" name="coowner" placeholder="Call John Smith and confirm all changes that have been discussed during the meeting." type="text" value="" />
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Start date</label>
+								<input type='text' class="form-control shape"  id='datetimepicker4' />
+								<script type="text/javascript">
+						            $(function () {
+						                $('#datetimepicker4').datetimepicker({
+						                    format: 'L'
+						                });
+						            });
+						        </script>
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Due Date <span class="subtaskBtn rectangle-3-copy-3-5 overdue knOverDueBtn">Overdue</span></label>
+								<input class="form-control shape" id='datetimepicker5' name="tags" type="text" />
+								<script type="text/javascript">
+						            $(function () {
+						                $('#datetimepicker5').datetimepicker({
+						                    format: 'L'
+						                });
+									});
+						        </script>
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group customSelect" style="margin-bottom: 14%;" >
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Status</label>
+								<!-- <input class="form-control shape" id="tags" name="tags" placeholder="add tag and press enter" type="text" value="" /> -->
+								<select class="form-control shape" id="tags" name="tags">
+								  <option>Select Status</option>
+								  <option>Completed</option>
+								  <option>Awaiting feedback</option>
+								  <option>On Hold</option>
+								  <option>Cancelled</option>
+								  <option>In Progress</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group customSelect" style="margin-bottom: 0%;">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Priority</label>
+								<select class="form-control shape " id="projectPriority" name="tags">
+								  <option value="High">High</option>
+								  <option value="Medium">Medium</option>
+								  <option value="Low">Low</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Hours</label>
+								<input class="form-control shape" id="tags" name="tags" placeholder="add tag and press enter" type="text" value="" />
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Budget</label>
+								<input class="form-control shape" id="tags" name="tags" placeholder="add tag and press enter" type="text" value="" />
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Tags</label>
+								<input class="form-control shape" id="tags" name="tags" placeholder="add tag and press enter" type="text" value="" />
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Assign Members</label>
+								<span class="tagSqureBtnSpan"  >
+									<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onclick="openTagDiv(event,'AM');" style="cursor: pointer;float: left;">
+									    <g id="Assign-Members-&amp;-Guests" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+									        <g id="Group-31" transform="translate(4.000000, 4.000000)" stroke="#9B9B9B">
+									            <path d="M8,4.44444444 L8,11.5555556" id="Shape"></path>
+									            <rect id="Rectangle-path" x="0" y="0" width="16" height="16" rx="4"></rect>
+									            <path d="M4.44444444,8 L11.5555556,8" id="Shape"></path>
+									        </g>
+									    </g>
+									</svg>
+									<img src="/images/users/mahfuz.jpg" title="Mahfuz"  class="tagged" />
+									<img src="/images/users/manzu.jpg" title="Mahfuz"  class="tagged" />
+									<img src="/images/users/jubayer.jpg" title="Mahfuz"  class="tagged" />
+									<span class="plusPeople">+1</span>
+								</span>
+							</div>
+						</div>
+						<div class="col-lg-4 flLeft">
+							<div class="form-group">
+								<label for="tags" class="project-name" style="margin-top: 2%;font-weight: 500; line-height: 22px;">Assign Guests</label>
+								<span class="tagSqureBtnSpan"  >
+									<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onclick="openTagDiv(event,'AG');" style="float: left;cursor: pointer;">
+									    <g id="Assign-Members-&amp;-Guests" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+									        <g id="Group-31" transform="translate(4.000000, 4.000000)" stroke="#9B9B9B">
+									            <path d="M8,4.44444444 L8,11.5555556" id="Shape"></path>
+									            <rect id="Rectangle-path" x="0" y="0" width="16" height="16" rx="4"></rect>
+									            <path d="M4.44444444,8 L11.5555556,8" id="Shape"></path>
+									        </g>
+									    </g>
+									</svg>
+									<img src="/images/users/mahfuz.jpg" title="Mahfuz"  class="tagged" />
+									<img src="/images/users/manzu.jpg" title="Mahfuz"  class="tagged" />
+									<img src="/images/users/jubayer.jpg" title="Mahfuz"  class="tagged" />
+									<span class="plusPeople">+3</span>
+								</span>
+							</div>
+						</div>
+						<div class="col-lg-12 flLeft">
+							<div class="form-group">
+								<textarea class="form-control dexcriptionTextare" rows="3"></textarea>
+								<div class="underTesxt"></div>
+								<div class="footProject">
+									<div class="footProject-left">
+										<svg style="float:left;margin: 8px 0px 8px 8px;" width="20px" height="20px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+										    <g id="Attach-Files" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										        <g id="attach-interface-symbol-of-rotated-paperclip" transform="translate(2.000000, 2.000000)" fill="#4A4A4A" fill-rule="nonzero">
+										            <path d="M19.56761,7.27977659 L9.07849243,17.3312341 C7.34051332,18.9968525 4.52242832,18.9968525 2.78444922,17.3312341 C1.04647011,15.6656483 1.04647011,12.9655471 2.78444922,11.2999287 L12.2251603,2.25370507 C13.3840601,1.14352129 15.2620423,1.14352129 16.4209758,2.25370507 C17.5798755,3.36385621 17.5798755,5.1644242 16.4209758,6.27457534 L6.98023098,15.3208316 C6.40115166,15.8762989 5.46178999,15.8762989 4.88196954,15.3208316 C4.30289021,14.7661151 4.30289021,13.8658638 4.88196954,13.3103965 L13.2735668,5.26934145 L12.2244192,4.26414021 L3.83359678,12.3058808 C2.67469701,13.4160645 2.67469701,15.2165999 3.83359678,16.326751 C4.99249655,17.4369348 6.87047878,17.4369348 8.02937855,16.326751 L17.4701233,7.28049475 C19.2081024,5.61490896 19.2081024,2.91480777 17.4701233,1.24918934 C15.7321105,-0.416396447 12.9140592,-0.416396447 11.1760801,1.24918934 L1.21076156,10.7980299 L1.24687401,10.8329915 C-0.563329996,13.0633154 -0.404192663,16.2874805 1.73533534,18.3371535 C3.87486334,20.3868592 7.23810488,20.5403504 9.56621264,18.8047763 L9.60232509,18.8397705 L20.6160164,8.285696 L19.56761,7.27977659 Z" id="Shape"></path>
+										        </g>
+										    </g>
+										</svg>
+										<span class="attach-files">Attach files</span>
+									</div>
+									<div class="footProject-right">
+										<span class="btn btn-block postBtn">Post</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-lg-5 flLeft">
+				<div class="row flLeft textLeftAlign">
+					<span class="recent-activity">Recent Activity</span>
+					<span class="postingLin"><span id="postCOut">4 Posts</span><span class="show-all" id="showActivitybutton" onclick="activityListToggle()">Show All 
+						<svg width="24px" height="24px" class="dowbIcon" style="margin: -6px;" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						    <g id="Show-All-Chevron" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.7">
+						        <polyline id="Shape" stroke="#000000" stroke-width="1.2" points="9 11 12 14 15 11"></polyline>
+						    </g>
+						</svg>
+					</span></span>
+					<span class="legendFeild">4 Updates</span>
+					<div id="activityUpdate" style="display:none;">
+						<div class="firstDiv">
+							<div class="creatorDiv">Rebecca Jones created this task</div>
+							<div class="lineDiv"></div>
+							<div class="dateDiv">Tue @ 3:45PM</div>
+						</div>
+						<div class="firstDiv">
+							<div class="creatorDiv">Rebecca Jones changed status to in progress</div>
+							<div class="lineDiv"></div>
+							<div class="dateDiv">Today @ 01:33PM</div>
+						</div>
+						<div class="firstDiv">
+							<div class="creatorDiv">Rebecca Jones set the start date to March 9th</div>
+							<div class="lineDiv"></div>
+							<div class="dateDiv">Today @ 10:20AM</div>
+						</div>
+						<div class="firstDiv">
+							<div class="creatorDiv">Rebecca Jones changed priority to high</div>
+							<div class="lineDiv"></div>
+							<div class="dateDiv">Today @ 11:20AM</div>
+						</div>
+					</div>
+					<div class="postDivContainer">
+						<div class="postholder col-lg-12">
+							<div class="postInfo">
+								<div class="userImg">
+									<img src="/images/users/mahfuz.jpg" title="Mahfuz"  class="tagged" />
+								</div>
+								<div class="userInfo">
+									<p class="mike-bozai">Mike Bozai</p>
+									<span class="th-jan-27">24th January 2017 @ 4:19PM</span>
+								</div>
+								<div class="usermenu">
+									<svg onclick="menulistToggle()" width="24px" height="24px" class="dot3"  viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									    <g id="More-Menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.3">
+									        <g id="more-horizontal" transform="translate(4.000000, 11.000000)" stroke="#90A4AE" stroke-width="2">
+									            <circle id="Oval" cx="8" cy="1" r="1"></circle>
+									            <circle id="Oval" cx="15" cy="1" r="1"></circle>
+									            <circle id="Oval" cx="1" cy="1" r="1"></circle>
+									        </g>
+									    </g>
+									</svg>
+								</div>
+							</div>
+							<div class="postDetail"><p>Hey guys, can someone please upload the new files for the designs here, we need to keep all records and revisions regulary updated here in the task activity. Thank you!</p></div>
+						</div>
+
+						<div class="postholder col-lg-12">
+							<div class="postInfo">
+								<div class="userImg">
+									<img src="/images/users/manzu.jpg" title="Mahfuz"  class="tagged" />
+								</div>
+								<div class="userInfo">
+									<p class="mike-bozai">Rebecca Jones</p>
+									<span class="th-jan-27">24th January 2017 @ 4:19PM</span>
+								</div>
+								<div class="usermenu">
+									<svg onclick="menulistToggle()" width="24px" height="24px" class="dot3"  viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									    <g id="More-Menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.3">
+									        <g id="more-horizontal" transform="translate(4.000000, 11.000000)" stroke="#90A4AE" stroke-width="2">
+									            <circle id="Oval" cx="8" cy="1" r="1"></circle>
+									            <circle id="Oval" cx="15" cy="1" r="1"></circle>
+									            <circle id="Oval" cx="1" cy="1" r="1"></circle>
+									        </g>
+									    </g>
+									</svg>
+								</div>
+							</div>
+							<div class="postDetail"><p>Changed due date of this task from "23/02/2018" to "27/02/2018"</p></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div class="row lowerPanelKn" id="lowerPanelKn" onclick="subtaskExpand()">
+		<div class="col-lg-12" style="padding-top: 0%;">
+			<span class="loSpanSub">Subtask <span class="Expand">( <span id="etext" class="Expand">Expand</span> <svg style="width: 10px; margin-bottom: -7px;" aria-hidden="true" data-prefix="fal" data-icon="long-arrow-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-long-arrow-up fa-w-8 fa-2x inlinefa"><path fill="currentColor" d="M3.515 168.97l7.07 7.071c4.686 4.686 12.284 4.686 16.971 0L111 92.113V468c0 6.627 5.373 12 12 12h10c6.627 0 12-5.373 12-12V92.113l83.444 83.928c4.686 4.686 12.284 4.686 16.971 0l7.07-7.071c4.686-4.686 4.686-12.284 0-16.97l-116-116.485c-4.686-4.686-12.284-4.686-16.971 0L3.515 152c-4.687 4.686-4.687 12.284 0 16.97z" class=""></path></svg> )</span></span>	
+		</div>
+		
+	</div>
+	<div class="row" id="knbnSubTaskCoainTainer">
+		<div class="col-lg-12" id="knbnSTListHolder">
+			<div class="task-bar" id="taskInsertBox">
+	    		<div class="input-group">
+		    		<div class="input-group-prepend">
+		    			<span class="input-group-text">
+		    				<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							    <g id="Create-Project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+							        <g id="plus-circle" transform="translate(8.000000, 7.000000)" stroke="#9B9B9B" stroke-width="2">
+							            <path d="M3.86100386,0.2 L3.86100386,9.8" id="Shape"></path>
+							            <path d="M0.154440154,5 L7.56756757,5" id="Shape"></path>
+							        </g>
+							    </g>
+							</svg>
+		    			</span>
+		    		</div>
+		    		<input class="form-control" id="addingtaskInput" placeholder="Start adding subtasks" id="project-create" >
+		    	</div>
+		    </div>
+		    <div class="subtaskListholder">
+		    	<div class="progressBarHolder">
+		    		<p><span class="active-subtasks-3">Active Subtasks (3)</span><span class="completed-54-copy">Completed 54%</span></p>
+		    		<div class="progress">
+					  <div class="progress-bar" role="progressbar" style="width: 54%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+		    	</div>
+		    	<div class="knbnsubtasklistcoaintainer" id="knbnsubtasklistcoaintainer">
+		    		<div class="listGroup">
+						<div class="inner-group" id="fstPinKNBN">
+							<div class="left-panel" style="border-left: 4px solid #B8E986;">
+								<i class="fas fa-check-circle project-circle"></i>
+							</div>
+							<div class="right-panel">
+								<span>Discuss new prices with John Smith.</span>
+							</div>
+							<div class="pin-panel" id="pinpanExtra" style="display:none;">
+								<svg id="menulistKNBNToggle3" width="24px" height="24px" class="fltRight menulistKNBNToggle"  viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								    <g id="More-Menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.3">
+								        <g id="more-horizontal" transform="translate(4.000000, 11.000000)" stroke="#90A4AE" stroke-width="2">
+								            <circle id="Oval" cx="8" cy="1" r="1"></circle>
+								            <circle id="Oval" cx="15" cy="1" r="1"></circle>
+								            <circle id="Oval" cx="1" cy="1" r="1"></circle>
+								        </g>
+								    </g>
+								</svg>
+								<svg width="24px" height="24px" class="nflagged fltRight" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svgnflagged" onclick="flagToggle(event,'svgnflagged')">
+								   <g id="Not-Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.3">
+								        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#90A4AE" stroke-width="2" fill-rule="nonzero"></path>
+								    </g>
+								</svg>
+								<span class="stAssignee">
+									<img src="/images/blankAssignee.png" style="margin: -3px 17px 0px 4px;">
+								</span>
+								<span class="subtaskBtn rectangle-3-copy-3-5 knbnduedate">Due Date</span>
+							</div>
+						</div>
+					</div>
+					<div class="listGroup">
+						<div class="inner-group">
+							<div class="left-panel" style="border-left: 4px solid #E03C31;">
+								<i class="fas fa-check-circle project-circle"></i>
+							</div>
+							<div class="right-panel">
+								<span>Send files to client by end of the day.</span>
+							</div>
+							<div class="pin-panel">
+								<svg id="menulistKNBNToggle1" width="24px" height="24px" class="fltRight menulistKNBNToggle"  viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								    <g id="More-Menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.3">
+								        <g id="more-horizontal" transform="translate(4.000000, 11.000000)" stroke="#90A4AE" stroke-width="2">
+								            <circle id="Oval" cx="8" cy="1" r="1"></circle>
+								            <circle id="Oval" cx="15" cy="1" r="1"></circle>
+								            <circle id="Oval" cx="1" cy="1" r="1"></circle>
+								        </g>
+								    </g>
+								</svg>
+								
+								
+								<svg width="24px" height="24px" class="nflagged fltRight" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svgnflagged" onclick="flagToggle(event,'svgnflagged')">
+								   <g id="Not-Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.3">
+								        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#90A4AE" stroke-width="2" fill-rule="nonzero"></path>
+								    </g>
+								</svg>
+								<span class="stAssignee">
+									<img src="/images/blankAssignee.png" onclick="openKNBNTagDiv(event,'BL');" class="openKNBNTagDiv" style="margin: -3px 14px 0px 4px;">
+								</span>
+								<input class="subtaskBtn rectangle-3-copy-3-5 knbnduedate" type="text" id="dueDateKNBN2" name="dueDate" value="Feb. 7th">
+								<script type="text/javascript">
+						            $(function () {
+						                $('#dueDateKNBN2').datetimepicker({
+						                    format: 'MMM, Do'
+						                });
+									});
+						        </script>
+							</div>
+						</div>
+					</div>
+					<div class="listGroup">
+						<div class="inner-group">
+							<div class="left-panel" style="border-left: 4px solid #F5A623;">
+								<i class="fas fa-check-circle project-circle"></i>
+							</div>
+							<div class="right-panel">
+								<span>Email client with updated proposal, including all price changes.</span>
+							</div>
+							<div class="pin-panel">
+								<svg id="menulistKNBNToggle2" width="24px" height="24px" class="fltRight menulistKNBNToggle"  viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								    <g id="More-Menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.3">
+								        <g id="more-horizontal" transform="translate(4.000000, 11.000000)" stroke="#90A4AE" stroke-width="2">
+								            <circle id="Oval" cx="8" cy="1" r="1"></circle>
+								            <circle id="Oval" cx="15" cy="1" r="1"></circle>
+								            <circle id="Oval" cx="1" cy="1" r="1"></circle>
+								        </g>
+								    </g>
+								</svg>
+								
+								
+								<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flagged fltRight" style="display: block;" id="svgFlagged" onclick="flagToggle(event,'svgFlagged')">
+								    <g id="Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#CD327F" stroke-width="2" fill="#CD327F" fill-rule="nonzero"></path>
+								    </g>
+								</svg>
+								<span class="stAssignee">
+									<img src="/images/users/mahfuz.jpg"  onclick="openKNBNTagDiv(event,'AM');"  style="margin: 0px 0px 0px 8px;" title="Mahfuz"  class="tagged openKNBNTagDiv" />
+									<span class="plusPeople">+3</span>
+								</span>
+								<input class="subtaskBtn rectangle-3-copy-3-5 knbnduedate" type="text" id="dueDateKNBN" name="dueDate" value="Feb. 7th">
+								<script type="text/javascript">
+						            $(function () {
+						                $('#dueDateKNBN').datetimepicker({
+						                    format: 'MMM, Do'
+						                });
+									});
+						        </script>
+							</div>
+						</div>
+					</div>
+		    	</div>
+		    </div>
+		</div>
+	</div>
+</div>
+
+
+<div id="tagInfoDiv">
+	<div class="col-lg-12">
+		<div class="form-group tagFromGroup">
+			<span class="assign-members-4">Assign Members (<span>4</span>)</span>
+			<input class="form-control shape tagShape" id="coowner" name="coowner" placeholder="Enter name or email addresses" type="text" value="" />
+			<input class="form-control shape tagHour" id="coowner" name="coowner" placeholder="Add hours" type="text" value="" />
+			<div class="tagDivHolder">
+				<div class="tagDiv">
+					<div class="tagImgle">
+						<img src="/images/users/mahfuz.jpg" title="Mahfuz"  class="tagImge" />
+					</div>
+					<div class="tagImgMid">
+						<span class="tagtile">John Smith</span>
+						<span class="tagemail">Johnsmith@ohs-global.com</span>
+					</div>
+					<div class="tagImgMHour">
+						<input class="form-control shape tagHourAdded" id="coowner" name="coowner" placeholder="Add hours" type="text" value="44hr" />
+					</div>
+					<div class="tagImgRi">
+						<svg width="18px" height="18px" class="svgTagClose" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						    <g id="Close-Modal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+						        <path d="M17,7 L7,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						        <path d="M7,7 L17,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						    </g>
+						</svg>
+					</div>
+				</div>
+				<div class="tagDiv">
+					<div class="tagImgle">
+						<img src="/images/users/manzu.jpg" title="Mahfuz"  class="tagImge" />
+					</div>
+					<div class="tagImgMid">
+						<span class="tagtile">Rebecca Brown</span>
+						<span class="tagemail">Rebeccab@ohs-global.com</span>
+					</div>
+					<div class="tagImgMHour">
+						<input class="form-control shape tagHourAdded" id="coowner" name="coowner" placeholder="Add hours" type="text" value="44hr" />
+					</div>
+					<div class="tagImgRi">
+						<svg width="18px" height="18px" class="svgTagClose" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						    <g id="Close-Modal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+						        <path d="M17,7 L7,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						        <path d="M7,7 L17,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						    </g>
+						</svg>
+					</div>
+				</div>
+				<div class="tagDiv" style="border: none;">
+					<div class="tagImgle">
+						<img src="/images/users/jubayer.jpg" title="Mahfuz"  class="tagImge" />
+					</div>
+					<div class="tagImgMid">
+						<span class="tagtile">Jamie Jones</span>
+						<span class="tagemail">Jamiej@hayven.io</span>
+					</div>
+					<div class="tagImgMHour">
+						<input class="form-control shape tagHourAdded" id="coowner" name="coowner" placeholder="Add hours" type="text" value="44hr" />
+					</div>
+					<div class="tagImgRi">
+						<svg width="18px" height="18px" class="svgTagClose" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						    <g id="Close-Modal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+						        <path d="M17,7 L7,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						        <path d="M7,7 L17,17" id="Shape" stroke="#9B9B9B" stroke-width="2"></path>
+						    </g>
+						</svg>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<div id="tagInfoDivBLANK">
+	<div class="col-lg-12">
+		<div class="form-group tagFromGroup">
+			<span class="assign-members-4">Assign Members (<span>4</span>)</span>
+			<input class="form-control shape tagShape" id="coowner" name="coowner" placeholder="Enter name or email addresses" type="text" value="" />
+			<input class="form-control shape tagHour" id="coowner" name="coowner" placeholder="Add hours" type="text" value="" />
+			<div class="tagDivHolder">
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+<div class="menuListPDKNBN">
+	<ul class="menuListUlPD">
+		<li class="menuListliPD">Convert to task</li>
+		<li class="menuListliPD">Duplicate subtask</li>
+		<li class="menuListliPD">Delete </li>
+	</ul>
+</div>

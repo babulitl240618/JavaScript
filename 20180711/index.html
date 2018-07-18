@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Hayven</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="filter.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body class="body">
+
+  <div class="container">
+
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Hayven Files (650)
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a tabindex="-1" href="#">Google Drive</a>
+        </li>
+        <li>
+          <a tabindex="-1" href="#">Dropbox</a>
+        </li>
+        <li>
+          <a tabindex="-1" href="#">OneDrive</a>
+        </li>
+        <li>
+          <a tabindex="-1" href="#">iCloud</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="searchbutton">
+      <span class="glyphicon glyphicon-search"></span>
+      <input type="text" placeholder="Search" >
+    </div>
+  </div>
+
+  </div>
+</body>
+
+
+<script>
+  $(document).ready(function () {
+    $('.dropdown a.test').on("click", function (e) {
+      $(this).next('ul').toggle();
+      e.stopPropagation();
+      e.preventDefault();
+    });
+  });
+</script>
+
+</html>

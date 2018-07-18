@@ -1,0 +1,4 @@
+<li onclick="setCown($(this).data('img'),$(this).data('email'),$(this).data('name'),$(this).data('id'));" class="coulst userlist offline online_<%= user.id %>" data-img="<%= user.img %>" data-email="<%= user.email %>" data-id="<%= user.id %>" data-name="<%= user.fullname %>" style="display: <%= display %>">
+  <%= user.fullname %>
+  <span class="nomsg"></span>
+</li>

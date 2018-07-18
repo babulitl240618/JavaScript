@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>call / video-on_48px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="call-/-video-on_48px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.869084821">
+        <path d="M24,0.625 C5.14517797,0.625 0.625,5.14517797 0.625,24 C0.625,42.854822 5.14517797,47.375 24,47.375 C42.854822,47.375 47.375,42.854822 47.375,24 C47.375,5.14517797 42.854822,0.625 24,0.625 Z M29.625,20.1235289 L34.625,16.8422789 L34.625,31.6577211 L29.625,28.3764711 L29.625,29.6796875 C29.625,30.4799003 28.9696606,31.125 28.1666667,31.125 L15.7425,31.125 C14.2267206,31.125 13.375,28.0516254 13.375,24.25 C13.375,20.4483746 14.2267206,17.375 15.7425,17.375 L28.1666667,17.375 C28.9696606,17.375 29.625,18.0200997 29.625,18.8203125 L29.625,20.1235289 Z" id="mask-squircle" stroke="#FFFFFF" stroke-width="1.25" fill="#FFFFFF"></path>
+    </g>
+</svg>

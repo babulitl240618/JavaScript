@@ -1,0 +1,321 @@
+<%- include('layouts/head') %>
+
+<main role="main" class="container">
+	<%- include('templates/recent-chat-holder') %>
+  	<div class="itl-template" id="projectPhase">
+
+
+	    <div class="search-bar" id="projectInsertBox">
+	    	<h3 class="h3Text projects">Projects</h3>
+	    	<div class="input-group">
+	    		<div class="input-group-prepend create-new-task">
+	    			<span class="input-group-text">
+	    				<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						    <g id="Create-Project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+						        <g id="plus-circle" transform="translate(8.000000, 7.000000)" stroke="#9B9B9B" stroke-width="2">
+						            <path d="M3.86100386,0.2 L3.86100386,9.8" id="Shape"></path>
+						            <path d="M0.154440154,5 L7.56756757,5" id="Shape"></path>
+						        </g>
+						    </g>
+						</svg>
+	    			</span>
+	    		</div>
+	    		<span class="form-control create-a-project" placeholder="Create a project" id="project-create" onclick="opnenProjectModel(this);" >Create Project</span>
+	    	</div>
+	      	<img src="/images/filter_28px_400 @1x.png" class="pointer filter-btn" />
+	      	<img src="/images/chat-action_28px_000 @1x.png" class="pointer action-btn" />
+	    </div>
+	    <div class="project-container">
+	    	<div class="project-body">
+		    	<h3 class="h3Text pinned-projects-1">Pinned Projects(<b><span id="pinProjectCount">5</span></b>)</h3>
+		    	<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Pinned" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+				        <g id="icon-/-400-/-pin-16" transform="translate(12.000000, 12.000000) rotate(40.000000) translate(-12.000000, -12.000000) translate(7.000000, 5.000000)" stroke="#546E7A" stroke-width="2">
+				            <path d="M0.5,9 C0.5,8.76090345 0.5,8.38590345 0.5,7.875 C0.5,7.60558696 0.5,6.75 1.625,6.1875 L3.3125,5.625 L3.3125,3.375 L1.625,2.25 L1.625,0 L8.375,0 L8.375,2.25 L6.6875,3.375 L6.6875,5.625 L8.375,6.1875 C9.5,6.75 9.5,7.60558696 9.5,7.875 L9.5,9 C3.5,9 0.5,9 0.5,9 Z" id="Stroke-6282"></path>
+				            <path d="M5,14 L5,9" id="Stroke-6283"></path>
+				        </g>
+				    </g>
+				</svg>
+		    	<a href="/projects/projectDetail/1">
+		    		<div class="pinnedContainer" id="pinnedContainer">
+						<div class="inner-group" id="p-t-n-6-in">
+							<div class="left-panel">
+								<i class="fas fa-check-circle project-circle"></i>
+							</div>
+							<div class="right-panel">
+								<span>Hayven CX/UX Design Works</span>
+							</div>
+							<div class="pin-panel">
+								<img src="/images/svg/Pinned.svg" title="Pinned project" id="p-t-n-6" class="pinnedToggle" data-ttle="P">
+							</div>
+						</div>
+					</div>
+		    	</a>
+
+		    </div>
+		    <div class="project-body">
+				<h3 class="h3Text all-projects-4">All Projects(<b><span id="projectCount">5</span></b>)</h3>
+				<div class="projectContainer" id="projectContainer">
+					<div class="inner-group" id="p-t-n-1-in">
+						<div class="left-panel">
+							<i class="fas fa-check-circle project-circle"></i>
+						</div>
+						<div class="right-panel">
+							<span>Hayven CX/UX Design Works</span>
+						</div>
+						<div class="pin-panel">
+							<img src="/images/svg/NotPinned.svg" title="Not Pinned project" id="p-t-n-1" class="pinnedToggle" data-ttle="NP">
+						</div>
+					</div>
+					<div class="inner-group" id="p-t-n-2-in">
+						<div class="left-panel">
+							<i class="fas fa-check-circle project-circle"></i>
+						</div>
+						<div class="right-panel">
+							<span>Nike Brand Strategy</span>
+						</div>
+						<div class="pin-panel">
+							<img src="/images/svg/NotPinned.svg" title="Not Pinned project" id="p-t-n-2" class="pinnedToggle" data-ttle="NP">
+						</div>
+					</div>
+					<div class="inner-group" id="p-t-n-3-in">
+						<div class="left-panel">
+							<i class="fas fa-check-circle project-circle"></i>
+						</div>
+						<div class="right-panel">
+							<span>Ritual User Testing Sessions</span>
+						</div>
+						<div class="pin-panel">
+							<img src="/images/svg/NotPinned.svg" title="Not Pinned project" id="p-t-n-3" class="pinnedToggle" data-ttle="NP">
+						</div>
+					</div>
+					<div class="inner-group" id="p-t-n-4-in">
+						<div class="left-panel">
+							<i class="fas fa-check-circle project-circle"></i>
+						</div>
+						<div class="right-panel">
+							<span>Feelix Hardware production</span>
+						</div>
+						<div class="pin-panel">
+							<img src="/images/svg/NotPinned.svg" title="Not Pinned project" id="p-t-n-4" class="pinnedToggle" data-ttle="NP">
+						</div>
+					</div>
+					<div class="inner-group" id="p-t-n-5-in">
+						<div class="left-panel">
+							<i class="fas fa-check-circle project-circle"></i>
+						</div>
+						<div class="right-panel">
+							<span>Apple Store Brand Environment</span>
+						</div>
+						<div class="pin-panel">
+							<img src="/images/svg/NotPinned.svg" title="Not Pinned project" id="p-t-n-5" class="pinnedToggle" data-ttle="NP">
+						</div>
+					</div>
+				</div>
+		    </div>
+	    </div>
+
+	</div>
+  <%- include('templates/_partial') %>
+</main>
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var to = '';
+</script>
+<script src="/javascripts/socket-client-side.js"></script>
+<script src="/javascripts/custom.js"></script>
+<%- include('layouts/foot') %>
+
+<script type="text/javascript">
+
+</script>
+<div id="projectInit">
+	<div class="col-lg-12" id="projectInitFormHolder">
+		<form action="/" enctype="multipart/form-data" method="post" class="projectInitForm" id="projectInitForm">
+			<fieldset>
+				<div class="col-lg-12 ">
+					<div class="form-group">
+						<label for="ProjectName" class="project-name">Project Name</label>
+						<input class="form-control shape" id="ProjectName" name="ProjectName" placeholder="Enter project name here" type="text" value="" />
+						<span class="field-validation-valid" data-valmsg-for="FullName" data-valmsg-replace="true"></span>
+					</div>
+				</div>
+				<div class="col-lg-12 ">
+					<div class="form-group customSelect">
+						<label for="Workspace" class="project-name">Workspace <img src="/images/info_16px @1x.png"> </label>
+						<select class="form-control shape " id="Workspace" name="Workspace" placeholder="Select workspace">
+						  	<option value="">Select workspace</option>
+						  	<option value="High">Hayven</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-lg-12">
+					<div class="form-group">
+						<label for="Message" class="project-name">Description</label>
+						<textarea class="form-control desshape" cols="20" rows="20" id="Message" name="Message" placeholder="Enter description here" rows="2"></textarea>
+						<span class="field-validation-valid" data-valmsg-for="Message" data-valmsg-replace="true"></span>
+					</div>
+				</div>
+				<div class="recaptcha col-lg-12">
+					<div class="g-recaptcha" data-sitekey="#"></div>
+					<span class="field-validation-valid" data-valmsg-for="Captcha" data-valmsg-replace="true"></span>
+					<span id="submit" class="btn btn-primary rectangle-4-copy" onclick="gonextprojectpagination('projectInitFormHolder','projectSetOwner1');">Next</span>
+				</div>
+				<div class="col-lg-12 projectPaginationContainer">
+					<svg width="24px" height="24px" class="pagination1" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+					<svg width="24px" height="24px" class="pagination2" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+					<svg width="24px" height="24px" class="pagination3" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+
+
+<div id="projectSetOwner1">
+	<div class="col-lg-12" id="projectsetownerFormholder">
+		<form action="/" enctype="multipart/form-data" method="post" class="projectsetownerForm">
+			<fieldset>
+				<div class="col-lg-12 flLeft">
+					<div class="form-group flLeft" style="width:100%;">
+						<label for="coowner" class="project-name">Add Co-owners</label>
+						<input class="form-control shape" id="coowner" onkeyup="searchCoOwner($(this).val());" onfocus="$('#users').show();" name="coowner" placeholder="Enter name or email addresses" type="text" value="" />
+						<div class="form-control coownerlist" id="users">
+							<ul>
+								<% data.forEach(function(user){ %>
+									<% if (user.id != user_id) { %>
+										<%- include('templates/project/user-list', {user: user, display: 'block'}); %>
+									<% } %>
+								<% }); %>
+							</ul>
+						</div>
+						<span class="co-owners-3 flLeft">Co-owners (<span id="coownerCount">0</span>)</span>
+						<div class="tagDivHolder flLeft" id="tagDivHolder" style="margin-top: 0%; width: 100%;">
+						</div>
+
+					</div>
+				</div>
+				<div class="col-lg-12 flLeft">
+					<div class="form-group flLeft"  style="width:100%;">
+						<label for="tags" class="project-name" style="margin-top: 3%;">Add Tags</label>
+						<input class="form-control shape" id="tags" name="tags" placeholder="add tag and press enter" type="text" value="" onkeyup="searchTags($(this).val());" onfocus="$('#tagslist').show();" />
+						<div class="form-control tagslist" id="tagslist">
+							<ul>
+								<%- include('templates/project/tag-list'); %>
+							</ul>
+						</div>
+						<div id="CreateModalTagHolder"></div>
+
+					</div>
+				</div>
+				<div class="recaptcha col-lg-12 flLeft">
+					<div class="g-recaptcha" data-sitekey="#"></div>
+					<span class="field-validation-valid" data-valmsg-for="Captcha" data-valmsg-replace="true"></span>
+					<span id="submit" class="btn btn-primary rectangle-4-copy" onclick="golastprojectpagination('projectsetownerFormholder','projectLastFormHolder');">Next</span>
+				</div>
+				<div class="col-lg-12 projectPaginationContainer flLeft">
+					<svg width="24px" height="24px" class="pagination1" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+					<svg width="24px" height="24px" class="pagination2" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+					<svg width="24px" height="24px" class="pagination3" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+				</div>
+				<div class="col-lg-12 flLeft" id="backBtnImg" onclick="goback('projectsetownerFormholder','projectInitFormHolder')">
+					<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Back" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+					        <path d="M10.5,9 L8,12 L10.5,15 M8,12 L16,12 M12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 Z" id="btn-/-back-/-32-copy" stroke="#B0BEC5"></path>
+					    </g>
+					</svg> <span class="backText" >Back</span>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+<div id="projectLast">
+	<div class="col-lg-12" id="projectLastFormHolder">
+		<div class="upperDeck">
+			<div class="col-lg-12" style="    float: left;">
+				<span class="almost-done-choose-copy">Almost done!</span><span class="almost-done-choose-copy"> Choose a template</span>
+			</div>
+			<div class="col-lg-12 flot18top">
+
+				<div class="col-lg-4  lasthovershape " id="tem1" onclick="makeActive('tem1');">
+					<span class="selectproject">Blank <br> Project</span>
+				</div>
+				<div class="col-lg-4  lasthovershape" id="tem2" onclick="makeActive('tem2');">
+					<span class="selectproject">Design</span>
+				</div>
+				<div class="col-lg-4  lasthovershape" id="tem3" onclick="makeActive('tem3');">
+					<span class="selectproject">E-commerce</span>
+				</div>
+				<div class="col-lg-4  lasthovershape" id="tem4" onclick="makeActive('tem4');">
+					<span class="selectproject">Finance</span>
+				</div>
+				<div class="col-lg-4  lasthovershape" id="tem5" onclick="makeActive('tem5');">
+					<span class="selectproject">Accounting</span>
+				</div>
+				<div class="col-lg-4 lasthovershape" id="tem6" onclick="makeActive('tem6');">
+					<span class="selectproject">Software Development</span>
+				</div>
+			</div>
+			<div class="recaptcha col-lg-12" style="    float: left;">
+				<div class="g-recaptcha" data-sitekey="#"></div>
+				<span class="field-validation-valid" data-valmsg-for="Captcha" data-valmsg-replace="true"></span>
+				<a href="/projects/p-d-c/1">
+				<span id="submit" style="width: 179px;" class="btn btn-primary rectangle-4-copy" onclick="golastprojectpagination('projectsetownerFormholder','projectLastFormHolder');">Create Project</span></a>
+			</div>
+			<div class="col-lg-12 projectPaginationContainer" style="    float: left;">
+				<svg width="24px" height="24px" class="pagination1" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+				    </g>
+				</svg>
+				<svg width="24px" height="24px" class="pagination2" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+				    </g>
+				</svg>
+				<svg width="24px" height="24px" class="pagination3" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+				    </g>
+				</svg>
+			</div>
+
+			<div class="col-lg-12" id="backBtnImg"  style="    float: left;" onclick="goback('projectLastFormHolder','projectsetownerFormholder')">
+				<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Back" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+				        <path d="M10.5,9 L8,12 L10.5,15 M8,12 L16,12 M12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 Z" id="btn-/-back-/-32-copy" stroke="#B0BEC5"></path>
+				    </g>
+				</svg> <span class="backText" >Back</span>
+			</div>
+		</div>
+	</div>
+</div>

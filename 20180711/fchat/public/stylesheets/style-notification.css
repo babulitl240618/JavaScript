@@ -1,0 +1,238 @@
+.day-rows {
+    position: relative;
+    top: 10px;
+    box-shadow: 0px 0px 1px 0px #d5dade;
+}
+
+.day-name {
+    width: 776px;
+    float: left;
+    color: rgba(0, 0, 0, 0.56);
+    font-family: "hvWorkSans";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    margin-left: 16px;
+}
+
+.day-assign,
+.day-update,
+.day-attention,
+.learn-more {
+    background: #FFFFFF;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    cursor: pointer;
+    margin-top: 1px;
+}
+
+.day-assign2 {
+    background: #FFFFFF;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    width: 864px;
+    margin-left: -15px;
+    box-shadow: 0px 0px 1px 0px #d5dade;
+}
+
+.day-update2 {
+    background: #FFFFFF;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    width: 864px;
+    margin-left: -15px;
+    box-shadow: 0px 0px 1px 0px #d5dade;
+}
+
+.dismiss {
+    color: rgba(0, 0, 0, 0.32);
+    font-family: "hvAssistant";
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    line-height: 12px;
+    margin-left: 39px;
+    position: relative;
+    top: -19px;
+}
+
+.maurice-and-roy-have {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: Assistant;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+    position: relative;
+    top: -4px;
+}
+
+.send-reminder {
+    color: #007AFF;
+    font-family: "hvAssistant";
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    line-height: 12px;
+    top: -19px;
+    position: relative;
+}
+
+.day-attention2 {
+    background: #FFFFFF;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    width: 864px;
+    margin-left: -15px;
+    box-shadow: 0px 0px 1px 0px #d5dade;
+}
+
+.title2 {
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.learn-more {
+    cursor: pointer;
+}
+
+.notification-area {
+    background: #FFFFFF;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.title {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: "hvAssistant";
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 24px;
+    margin-left: 8px;
+}
+
+.title2 {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: "hvAssistant";
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 24px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    border-bottom: 1px solid #d8cfcf;
+}
+
+.body {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: "hvAssistant";
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    line-height: 24px;
+}
+
+.yesterday {
+    color: rgba(0, 0, 0, 0.56);
+    font-family: "hvWorkSans";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    margin-top: 40px;
+}
+
+.line {
+    box-sizing: border-box;
+    border-bottom: 1px solid #007AFF;
+    font-weight: bold;
+    color: #007AFF;
+}
+
+.line2 {
+    box-sizing: border-box;
+    font-weight: bold;
+    color: #656565;
+}
+
+.this-month {
+    color: rgba(0, 0, 0, 0.56);
+    font-family: "hvWorkSans";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    margin-top: 40px;
+}
+
+.view-all-read-notification {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: "hvAssistant";
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.by-raymond-holt {
+    color: rgba(0, 0, 0, 0.32);
+    font-family: hvAssistant;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 12px;
+    left: 36px;
+    position: relative;
+}
+
+.dashboard-wireframe {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: hvAssistant;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+}
+
+.divider {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.in-hayven-cx-ux-15 {
+    color: rgba(0, 0, 0, 0.48);
+    font-family: hvAssistant;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+.comment {
+    height: 24px;
+    width: 544px;
+    color: rgba(0, 0, 0, 0.87);
+    font-family: hvAssistant;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    line-height: 24px;
+}
+
+.knots-website-12 {
+    color: rgba(0, 0, 0, 0.48);
+    font-family: Assistant;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 18px;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+.para {
+    margin-top: 15px;
+}

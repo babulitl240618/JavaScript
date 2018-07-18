@@ -1,0 +1,13 @@
+<div class="message-send-form">
+	<form method="POST" id="message-form" encType="multipart/form-data">
+		<div id="attach_file_preview"></div>
+		<img src="/images/NavbarIcons/actions-create_24px_FFF.png" class="pointer action-btn icon">
+		<div class="msg-search-label">/search:</div>
+		<div contenteditable="true" id="msg" placeholder="Write a message here..."></div>
+		<div class="emoji-search">
+			<img src="/images/emoji_22px_800 @1x.png" class="pointer" onclick="open_emoji()">
+			<img src="/images/search_22px_800 @1x.png" class="pointer" onclick="open_search_msg()">
+		</div>
+		<input type="file" name="photos" id="msg_file" multiple onchange="submit_form_data()" class="hidden" />
+	</form>
+</div>

@@ -1,0 +1,182 @@
+<%- include('layouts/head') %>
+<link rel="stylesheet" href="/stylesheets/main_call.css">
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+<main role="main" class="container" style="width: 100% !important;max-width: 100% !important;padding: 0 !important">
+  <div class="itl-template chat-page" style="position: relative;width: 100% !important;max-width: 100% !important;margin-bottom: 0px !important;margin-top: 50px !important;height: calc(100% - 50px ) !important;">
+    <img id="back_profile" style="" src="/images/back_34px_200 @1x.png">
+    <canvas id="oscilloscope" style="width: 100%;height: 100%;position: absolute;display: none"></canvas>
+    
+    <div id="videos" style="display: none !important;position: absolute;">
+      
+      <video style="display: none" id="remote-video" autoplay playsinline></video>
+      <video style="display: none" id="local-video" autoplay playsinline muted></video>
+
+      <video id="con1" style="display: none" autoplay playsinline></video>
+      <video id="con2" style="display: none" autoplay playsinline></video>
+    </div>
+
+    <div id="callingDiv" style="">
+      
+      <p id="call_username" style=""></p>
+      <h2 id="call_status" style="">CALLING</h2>
+
+      <img id="call_loading" src="/images/call/calling_loading.gif">
+      <img id="call_userimg" style=""></img>
+      <!-- <img src="/images/guest_16px.png" style="margin-left: auto;margin-right: auto;display: block;position: relative;    top: -8px;"></img> -->
+
+    </div>
+
+    <div id="apprtcDiv" style="z-index: 1000000000">
+
+
+      <div id="room-selection" class="hidden" style="display: none">
+        <h1>AppRTC</h1>
+        <p id="instructions">Please enter a room name.</p>
+        <div>
+          <div id="room-id-input-div">
+            <input type="text" id="room-id-input" autofocus/>
+            <label class="error-label hidden" for="room-id-input" id="room-id-input-label">Room name must be 5 or more characters and include only letters, numbers, underscore and hyphen.</label>
+          </div>
+          <div id="room-id-input-buttons">
+            <button id="join-button">JOIN</button>
+            <button id="random-button">RANDOM</button>
+          </div>
+        </div>
+        <div id="recent-rooms">
+          <p>Recently used rooms:</p>
+          <ul id="recent-rooms-list"></ul>
+        </div>
+      </div>
+
+      <div id="confirm-join-div" class="hidden" style="display: none">
+        <div>Ready to join<span id="confirm-join-room-span"></span>?</div>
+        <button id="confirm-join-button">JOIN</button>
+      </div>
+
+      <footer style="display: none">
+        <div id="sharing-div">
+          <div id="room-link">Waiting for someone to join this room: <a id="room-link-href" href="" target="_blank"></a></div>
+        </div>
+        <div id="info-div">Code for AppRTC is available from <a href="http://github.com/webrtc/apprtc" title="GitHub repo for AppRTC">github.com/webrtc/apprtc</a></div>
+        <div id="status-div"></div>
+        <div id="rejoin-div" class="hidden"><span>You have left the call.</span> <button id="rejoin-button">REJOIN</button><button id="new-room-button">NEW ROOM</button></div>
+      </footer>
+
+      <div id="icons">
+
+        <img id="add-member" src="/images/call/add-contact_48px.svg" class="call-btn" style=""><img id="mute-audio" src="/images/call/mute-off_56px.png" class="call-btn" style=""><img id="mute-video" src="/images/call/video-off_56px.png" class="call-btn" style=""><img id="screen-share" src="/images/call/screen-share-on_48px.svg" class="call-btn" style=""><img id="hangup" src="/images/call/hang-up_56px.png" class="call-btn" style="">
+
+        <video id="mini-video" style="" autoplay playsinline muted></video>
+
+        <svg style="display: none;" id="fullscreen" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="-10 -10 68 68">
+          <circle cx="24" cy="24" r="34">
+            <title>Enter fullscreen</title>
+          </circle>
+          <path class="on" transform="scale(0.8), translate(7,6)" d="M10 32h6v6h4V28H10v4zm6-16h-6v4h10V10h-4v6zm12 22h4v-6h6v-4H28v10zm4-22v-6h-4v10h10v-4h-6z" fill="white"/>
+          <path class="off" transform="scale(0.8), translate(7,6)"  d="M14 28h-4v10h10v-4h-6v-6zm-4-8h4v-6h6v-4H10v10zm24 14h-6v4h10V28h-4v6zm-6-24v4h6v6h4V10H28z" fill="white"/>
+        </svg>
+
+        
+      </div>
+
+      <div id="privacy" style="display: none">
+        <a href="//www.google.com/accounts/TOS">Terms</a>
+        &#32;&#124;&#32;
+        <a href="//www.google.com/policies/privacy/">Privacy</a>
+        &#32;&#124;&#32;
+        <a href="//github.com/webrtc/apprtc">Code repo</a>
+      </div>
+    </div>  
+  </div>
+
+  <div class="backWrap"></div>
+
+</main>
+<script>
+
+  var is_chrome = /chrome/i.test( navigator.userAgent );
+  if(is_chrome) alert('Sorry, chrome browser not supported yet!');
+
+  
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var user_id = '<%= user_id %>';
+  
+  var to = '<%= data[0].room_id %>'; 
+  var partner_id = to;
+  var partner_name = '<%= data[0].room_name %>';
+  var partner_img = '<%= data[0].room_img %>';
+
+  var caller_name = '<%= data[0].callername %>';
+  var caller_img = '<%= data[0].callerimg %>';
+  var caller_id = '<%= data[0].callerid %>';
+  
+  var roomid = '<%= roomid %>';
+
+  var conversation_id = '<%= data[0].conversation_id %>';
+
+  var is_busy = '<%= is_busy %>';
+
+  var call_type = 'audio';
+  
+</script>
+
+<script src="/javascripts/apprtc.debug.js"></script>
+<script src="/javascripts/appwindow_audio.js"></script>
+
+<script src="/javascripts/socket-client-side.js"></script>
+
+<style type="text/css">
+body{
+  background-color: #2A2A2A !important;
+}
+</style>
+
+<script type="text/javascript">
+   
+  var canvas = document.querySelector('canvas');
+
+  drawVisualization(document.getElementById("remote-video"), canvas);
+
+  function drawVisualization(stream, canvas) {
+    var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
+    var analyser = audioCtx.createAnalyser();
+    source = audioCtx.createMediaElementSource(stream);
+    source.connect(analyser);
+    analyser.fftSize = 2048;
+    var bufferLength = analyser.frequencyBinCount;
+    var dataArray = new Uint8Array(bufferLength);
+
+    var canvasCtx = canvas.getContext('2d');
+
+    function draw() {
+      drawVisual = requestAnimationFrame(draw);
+      analyser.getByteTimeDomainData(dataArray);
+      canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+      canvasCtx.lineWidth = 1;
+      canvasCtx.strokeStyle = '#0000FF';
+      canvasCtx.beginPath();
+      var sliceWidth = canvas.width * 1.0 / bufferLength;
+      var x = 0;
+      for (var i = 0; i < bufferLength; i++) {
+        var v = dataArray[i] / 128.0;
+        var y = v * canvas.height / 2;
+        if (i === 0) {
+          canvasCtx.moveTo(x, y);
+        } else {
+          canvasCtx.lineTo(x, y);
+        }
+        x += sliceWidth;
+      }
+      canvasCtx.lineTo(canvas.width, canvas.height / 2);
+      canvasCtx.stroke();
+    }
+    draw();
+  }
+</script>
+
+<script src="/javascripts/itl-audio-call.js"></script>
+<%- include('layouts/foot') %>
+
+

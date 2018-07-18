@@ -1,0 +1,158 @@
+<%- include('layouts/head') %>
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<main role="main" class="container">
+  <%- include('templates/recent-chat-holder') %>
+  <div class="members-list">
+    <div class="ml-header">
+      <div class="ml-container">
+        <img src="/images/view-team_40px @1x.png" class="view-team-icon">
+        <div class="group-name" id="groupname">Random Coffee</div>
+        <div class="no-group-members" id="groupmembers">103 members</div>
+        <img src="/images/close_32px_100 @1x.png" class="close-container" onclick="close_container()">
+      </div>
+    </div>
+    <div class="ml-container">
+      <div class="ml-body">
+        <div class="type-name">Admin</div>
+        <div class="member-div">
+          <img src="/images/users/mahfuz.jpg" id="adminImg" class="member-img">
+          <div class="member-name" id="adminName">Winchester Schott</div>
+          <div class="member-designation" id="adminDesignation">Machine Learning Lead</div>
+        </div>
+        <div class="type-name">Members</div>
+        <div class="ml-listHl" id="ml-listHl">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="convo-sticky-sidebar-single">
+    <img src="/images/back_34px_200 @1x.png" class="back-to-home" onclick="window.location.href='/hayven'">
+    <div class="ecosystem" id="selectecosystem">FREELANCE</div>
+    <div class="username"><%= data[0].room_name %></div>
+    <div class="conversation-details">
+      <img src="/images/pin-off_16px_200 @1x.png" class="pin">
+      <div class="no-of-members" onclick="open_members_view_div()"><span class="numbers" id="numbers">103</span><span>&nbsp;members</span></div>
+      <img src="/images/call_18px_000 @1x.png" class="icon audio-call" onclick="window.location.href='/call/audio/<%= data[0].room_id %>/<%= data[0].room_name %>/<%= data[0].room_img %>/'">
+      <img src="/images/video_18px_000 @1x.png" class="icon video-call" onclick="window.location.href='/call/video/<%= data[0].room_id %>/<%= data[0].room_name %>/<%= data[0].room_img %>/'">
+      <img src="/images/more_18px_400 @1x.png" class="icon more" onclick="open_more_option()">
+      <div class="more-option">
+        <ul>
+          <li onclick="flagged_messages()">Flagged messages</li>
+          <li onclick="tagged_messages()">Tagged messages</li>
+          <li onclick="files_media_mgs()">Files & Media</li>
+          <li>Add tags</li>
+          <li onclick="select_messages()">Select messages</li>
+          <li>Export conversation</li>
+          <li>Delete conversation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="itl-template chat-page">
+    <div class="up-down-arrow">
+      <div class="up-arrow"><img src="/images/up-arrow.png"></div>
+      <div class="down-arrow"><img src="/images/down-arrow.png"></div>
+    </div>
+    <div class="message-container">
+
+    </div>
+    <%- include('templates/chat/message-send-form') %>
+  </div>
+  <%- include('templates/_partial') %>
+  <div class="backWrap"></div>
+</main>
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var to = '<%= data[0].room_id %>';
+</script>
+<script src="/javascripts/socket-client-side.js"></script>
+<script src="/javascripts/custom.js"></script>
+<script src="/javascripts/custom-chat.js"></script>
+<script type="text/javascript">
+  $(function(){
+    scrollToBottom('.message-container');
+
+    if("<%= file_message %>" != "No"){
+      var html = per_msg_top(moment().format("MMM Do, YYYY"), 'right-msg', 'mirror', user_img, user_fullname, '');
+      html += per_msg_main_body("<img src='/upload/<%= file_message %>' style='max-width: 508px;' class='image1 lightbox'>", '', moment().format('h:mm a'));
+      $('.message-container').html(html);
+    }
+    $('#message-form').submit(function(event){
+      // event.preventDefault();
+      var str = $('#msg').html();
+      str = str.replace(/(<\/?(?:img)[^>]*>)|<[^>]+>/ig, '$1'); // replace all html tag except img
+      str = str.replace(/&nbsp;/gi, '').trim();
+      if(str != ""){
+        // msg_form_submit(str);
+        if ($('#videoUploadFile').get(0).files.length === 0) {
+          msg_form_submit(str);
+        }else{
+          var formData = new FormData(this);
+          $.ajax({
+              url: '/hayven/send_message',
+              type: 'POST',
+              data: formData,
+              cache: false,
+              contentType: false,
+              processData: false,
+              success: function (data) {
+                console.log(data);
+              },
+              error: function(e){
+                console.log(e);
+              }
+          });
+        }
+      }
+      else{
+        $('#msg').html("");
+        $('#msg').focus();
+      }
+    });
+  });
+</script>
+<script>
+  $(function(){
+    var teamname = getCookie('teamname');
+    var grpmember = getCookie('grpmember');
+    var selectecosystem = getCookie('selectecosystem');
+    var grpmemberCount = grpmember.split(',');
+
+    $("#numbers").text(grpmemberCount.length);
+    $("#groupname").text(teamname);
+    $("#selectecosystem").text(selectecosystem);
+    $("#adminImg").text(user_img);
+    $("#adminName").text(user_fullname);
+    $("#groupmembers").text(grpmemberCount.length + "members");
+
+  });
+</script>
+
+<script  type="text/javascript">
+	var allUserdata = <%- JSON.stringify(data) %>;
+  var grpmember = getCookie('grpmember');
+  var gm = grpmember.split(',');
+
+  $.each(allUserdata[0].users, function(ky,va){
+    $.each(gm, function(k,v){
+      if(va.fullname == v){
+        var mldesign ='<div class="member-div">';
+            mldesign +='          <img src="/images/users/'+va.img+'" class="member-img">';
+            mldesign +='          <div class="member-name">'+va.fullname+'</div>';
+            mldesign +='          <div class="member-designation">'+va.designation+'</div>';
+            mldesign +='        </div>';
+
+            $("#ml-listHl").append(mldesign);
+      }
+    });
+  });
+
+  $(document).keyup(function(e) {
+    if (e.keyCode == 27) { // escape key maps to keycode `27`
+        close_container();
+    }
+  });
+</script>
+<%- include('layouts/foot') %>

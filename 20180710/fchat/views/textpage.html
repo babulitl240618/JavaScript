@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>File upload Node.</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+      	<form id="uploadForm" enctype="multipart/form-data" method="post">
+	      <input type="file" name="photos" onchange="testfun()" />
+	      <span id = "status"></span>
+	    </form>
+
+<script>
+	// $('#uploadForm').submit(function(e) {
+	// 	e.preventDefault();
+	// 	$("#status").empty().text("File is uploading...");
+	// 	var formData = new FormData($('#uploadForm')[0]);
+
+	// 	$.ajax({
+	// 		url: 'send_message',
+	// 		type: "POST",
+ //            data: formData,
+ //            dataType: 'json',
+ //            contentType: false,
+ //            processData: false,
+	// 		error: function(xhr) {
+	// 			console.log('Error: ' + xhr.status);
+	// 		},
+
+	// 		success: function(response) {
+	// 			$("#status").empty().text(response);
+	// 			console.log(response);
+	// 		}
+	// 	});
+	// 	return false;
+	// });    
+	function testfun() {
+		$("#status").empty().text("File is uploading...");
+		var formData = new FormData($('#uploadForm')[0]);
+
+		$.ajax({
+			url: 'send_message',
+			type: "POST",
+            data: formData,
+            dataType: 'json',
+            contentType: false,
+            processData: false,
+			error: function(xhr) {
+				console.log('Error: ' + xhr.status);
+			},
+
+			success: function(response) {
+				$("#status").empty().text(response);
+				console.log(response);
+			}
+		});
+		return false;
+	}   
+	
+</script>
+  </body>
+</html>

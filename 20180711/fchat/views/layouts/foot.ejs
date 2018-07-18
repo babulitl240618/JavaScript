@@ -1,0 +1,96 @@
+	<% if (has_login) { %>
+		<!-- POPUP DIV START -->
+		<div id="boxWrap">
+		    <div class="mask" id="mask">
+		   	<span class="modelCloseBtn"><img src="/images/CloseModal.svg" onclick="closeProjectModel(this);"></span>
+	    	<svg onclick="menulistToggle()" width="24px" height="24px" class="dot3 modelDot3"  viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			    <g id="More-Menu" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.3">
+			        <g id="more-horizontal" transform="translate(4.000000, 11.000000)" stroke="#90A4AE" stroke-width="2">
+			            <circle id="Oval" cx="8" cy="1" r="1"></circle>
+			            <circle id="Oval" cx="15" cy="1" r="1"></circle>
+			            <circle id="Oval" cx="1" cy="1" r="1"></circle>
+			        </g>
+			    </g>
+			</svg>
+			<div class="menuList">
+				<ul class="menuListUl">
+					<li class="menuListli">Set Reminder</li>
+					<li class="menuListli">Duplicate task</li>
+					<li class="menuListli">Copy task</li>
+					<li class="menuListli">Delete task</li>
+					<li class="menuListli">Share task</li>
+				</ul>
+			</div>
+
+		      <div class="modelContainer" id="modelContainer">
+
+		      </div>
+		    </div>
+		</div>
+		<!-- POPUP DIV END -->
+
+		<!-- User Tag POP UP DIV START HERE -->
+		<div id="tagBoxWrap">
+			<div class="innerMask" id="innerMask">
+
+		      	<span class="modelCloseBtn"><img src="/images/CloseModal.svg" onclick="closeTagModel(this);"></span>
+		      	<div class="tagCointainer" id="tagCointainer">
+
+		      	</div>
+		    </div>
+		</div>
+		<!-- User Tag POP UP DIV END HERE -->
+
+		<!-- TaskListDive -->
+		<div class="menuListPD" id="taskMenuList">
+			<ul class="menuListUlPD">
+				<li class="menuListliPD" onclick="activityAction('DT')">Duplicate task</li>
+				<li class="menuListliPD" onclick="activityAction('DLT')">Delete task</li>
+			</ul>
+		</div>
+
+		<!-- SubTaskListDive -->
+		<div class="menuListPD" id="subtaskMenuList">
+			<ul class="menuListUlPD">
+				<li class="menuListliPD" onclick="activityActionST('DTT')">Convert to task</li>
+				<li class="menuListliPD" onclick="activityActionST('DT')">Duplicate task</li>
+				<li class="menuListliPD" onclick="activityActionST('DLT')">Delete task</li>
+			</ul>
+		</div>
+
+		<!-- Control Panel -->
+
+		<!-- Calling Modal -->
+		<div id="myCallModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content" style="">
+
+		      <div class="modal-body">
+		      	<img id="calling_userimg" style="">
+		      	<img id="calling_userspace" src="/images/guest_16px.png">
+		        <p id="modalCallMsg"></p>
+		        <p id="modal_incomingcall">INCOMING CALL</p>
+		        
+		        <audio id="mdCallRingtone" src="/ringtones/oldbell1.mp3" controls="controls" style="display:none"></audio>
+		        <audio id="mdCallTone" src="/ringtones/us_ringingtone.mp3" controls="controls"  style="display:none"></audio>
+
+		      </div>
+		      <div class="modal-footer">
+		        <!-- <button id="modalCallReject" onclick="callRejectBtn()" type="button" class="btn btn-danger" data-dismiss="modal">Reject</button> -->
+
+		        <img id="modalCallReject" onclick="callRejectBtn()" src="/images/call/hang-up_56px.png" class="call-btn" style="">
+		        <img src="/images/answer_64px.png" id="modalCallAccept" onclick="callAcceptBtn(this)">
+		        <img src="/images/message_56px.png" id="modalCallTextMsg">
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+		<script src="/javascripts/socket-calling.js"></script>
+	<% } %>
+	<div class="gradient-body-bg"></div>
+	
+  </body>
+</html>

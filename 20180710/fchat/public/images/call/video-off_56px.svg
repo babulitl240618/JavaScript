@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>call / video-off_56px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="call-/-video-off_56px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M28,0.625 C5.94517797,0.625 0.625,5.94517797 0.625,28 C0.625,50.054822 5.94517797,55.375 28,55.375 C50.054822,55.375 55.375,50.054822 55.375,28 C55.375,5.94517797 50.054822,0.625 28,0.625 Z" id="mask-squircle" stroke="#FFFFFF" stroke-width="1.25" opacity="0.869084821"></path>
+        <path d="M34,24.9375 L34,21.984375 C34,21.441 33.552,21 33,21 L18.091,21 C16.936,21 16,24.4227188 16,28.5 C16,32.5772812 16.936,36 18.091,36 L33,36 C33.552,36 34,35.559 34,35.015625 L34,32.0625 L40,36 L40,21 L34,24.9375 Z" id="Stroke-593" stroke="#FFFFFF" stroke-width="0.5" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+</svg>

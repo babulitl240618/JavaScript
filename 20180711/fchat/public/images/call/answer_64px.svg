@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>call / answer_64px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="call-/-answer_64px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M32,0 C6.4,0 0,6.4 0,32 C0,57.6 6.4,64 32,64 C57.6,64 64,57.6 64,32 C64,6.4 57.6,0 32,0 Z" id="mask-squircle" fill="#7ED321"></path>
+        <path d="M33.5555556,39.7777778 L37.3044444,36.9466667 C37.7244444,36.5266667 38.8911111,36.5733333 38.8911111,36.5733333 L44.4444444,37.46 C44.4444444,37.46 46,38.16 46,39.0155556 L46,44.4444444 C46,45.3 45.3,46 44.4444444,46 C29.8377778,46 18,34.1622222 18,19.5555556 C18,18.7 18.7,18 19.5555556,18 L25,18 C25.8555556,18 26.5555556,19.5555556 26.5555556,19.5555556 L27.4422222,25.1088889 C27.4422222,25.1088889 27.4888889,26.26 27.0533333,26.6955556 L24.2222222,30.4444444 C26.4622222,34.8466667 29.1533333,37.5222222 33.5555556,39.7777778 Z" id="Stroke-86" stroke="#FFFFFF" stroke-width="0.5" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+</svg>

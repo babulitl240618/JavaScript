@@ -1,0 +1,25 @@
+<div class="item ui-widget-content" onclick=openProfilePage(this)>
+  <div class="box box-<%= box_type %> online_<%= userid %> offline">
+    <%if(unread > 0) { %>
+        <div class="box-msg nomsg">
+        <%= unread %> UNREAD
+        </div>
+    <% } %>
+
+    <div class="box-header" data-id="<%= userid %>" data-conversationtype="<%= conversation_type %>"  data-conversationid="<%= conversation_id %>" data-name="<%= users_name %>" data-img="<%= users_img %>">
+      <div class="box-title"><%= users_name %></div>
+      <div class="box-subtitle"><%= sub_title %></div>
+      <%if(pined){ %>
+      <img src="/images/pin-on_16px_500 @1x.png" data-pinned="<%= pinned %>" class="pin-to-bar pined">
+      <% } else { %>
+      <img src="/images/pin-off_16px_200 @1x.png"  class="pin-to-bar">
+      <% } %>
+    </div>
+    <%if(last_msg != ""){ %>
+    <div class="box-body">
+      <%= last_msg %>
+    </div>
+    <div class="msg-time"><%= last_msg_time %> <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+    <% } %>
+  </div>
+</div>

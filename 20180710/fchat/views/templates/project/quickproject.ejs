@@ -1,0 +1,188 @@
+<div id="projectInit">
+	<div class="col-lg-12" id="projectInitFormHolder">
+		<form action="/" enctype="multipart/form-data" method="post" class="projectInitForm" id="projectInitForm">
+			<fieldset>
+				<div class="col-lg-12 ">
+					<div class="form-group">
+						<label for="ProjectName" class="project-name">Project Name</label>
+						<input class="form-control shape" id="ProjectName" name="ProjectName" placeholder="Enter project name here" type="text" value="" />
+						<span class="field-validation-valid" data-valmsg-for="FullName" data-valmsg-replace="true"></span>
+					</div>
+				</div>
+				<div class="col-lg-12 ">
+					<div class="form-group customSelect">
+						<label for="Workspace" class="project-name">Workspace </label>
+						<select class="form-control shape " id="Workspace" name="Workspace" placeholder="Select workspace">
+						  	<option value="">Select workspace</option>
+						  	<option value="High">Hayven</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-lg-12">
+					<div class="form-group">
+						<label for="Message" class="project-name">Description</label>
+						<textarea class="form-control desshape" cols="20" rows="20" id="Message" name="Message" placeholder="Enter description here" rows="2"></textarea>
+						<span class="field-validation-valid" data-valmsg-for="Message" data-valmsg-replace="true"></span>
+					</div>
+				</div>
+				<div class="recaptcha col-lg-12">
+					<div class="g-recaptcha" data-sitekey="#"></div>
+					<span class="field-validation-valid" data-valmsg-for="Captcha" data-valmsg-replace="true"></span>
+					<span id="submit" class="btn btn-primary rectangle-4-copy" onclick="gonextprojectpagination('projectInitFormHolder','projectSetOwner1');">Next</span>
+				</div>
+				<div class="col-lg-12 projectPaginationContainer">
+					<svg width="24px" height="24px" class="pagination1" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+					<svg width="24px" height="24px" class="pagination2" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+					<svg width="24px" height="24px" class="pagination3" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+
+
+<div id="projectSetOwner1">
+	<div class="col-lg-12" id="projectsetownerFormholder">
+		<form action="/" enctype="multipart/form-data" method="post" class="projectsetownerForm">
+			<fieldset>
+				<div class="col-lg-12 flLeft">
+					<div class="form-group flLeft" style="width:100%;">
+						<label for="coowner" class="project-name">Add Co-owners</label>
+						<input class="form-control shape" id="coowner" onkeyup="searchCoOwner($(this).val());" onfocus="$('#users').show();" name="coowner" placeholder="Enter name or email addresses" type="text" value="" />
+						<div class="form-control coownerlist" id="users">
+							<ul>
+								<% data.forEach(function(user){ %>
+									<% if (user.id != user_id) { %>
+										<%- include('user-list', {user: user, display: 'block'}); %>
+									<% } %>
+								<% }); %>
+							</ul>
+						</div>
+						<span class="co-owners-3 flLeft">Co-owners (<span id="coownerCount">0</span>)</span>
+						<div class="tagDivHolder flLeft" id="tagDivHolder" style="margin-top: 0%; width: 100%;">
+						</div>
+
+					</div>
+				</div>
+				<div class="col-lg-12 flLeft">
+					<div class="form-group flLeft"  style="width:100%;">
+						<label for="tags" class="project-name" style="margin-top: 3%;">Add Tags</label>
+						<input class="form-control shape" id="tags" name="tags" placeholder="add tag and press enter" type="text" value="" onkeyup="searchTags($(this).val());" onfocus="$('#tagslist').show();" />
+						<div class="form-control tagslist" id="tagslist">
+							<ul>
+								<%- include('tag-list'); %>
+							</ul>
+						</div>
+						<div id="CreateModalTagHolder"></div>
+
+					</div>
+				</div>
+				<div class="recaptcha col-lg-12 flLeft">
+					<div class="g-recaptcha" data-sitekey="#"></div>
+					<span class="field-validation-valid" data-valmsg-for="Captcha" data-valmsg-replace="true"></span>
+					<span id="submit" class="btn btn-primary rectangle-4-copy" onclick="golastprojectpagination('projectsetownerFormholder','projectLastFormHolder');">Next</span>
+				</div>
+				<div class="col-lg-12 projectPaginationContainer flLeft">
+					<svg width="24px" height="24px" class="pagination1" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+					<svg width="24px" height="24px" class="pagination2" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+					<svg width="24px" height="24px" class="pagination3" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+					    </g>
+					</svg>
+				</div>
+				<div class="col-lg-12 flLeft" id="backBtnImg" onclick="goback('projectsetownerFormholder','projectInitFormHolder')">
+					<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Back" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+					        <path d="M10.5,9 L8,12 L10.5,15 M8,12 L16,12 M12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 Z" id="btn-/-back-/-32-copy" stroke="#B0BEC5"></path>
+					    </g>
+					</svg> <span class="backText" >Back</span>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+<div id="projectLast">
+	<div class="col-lg-12" id="projectLastFormHolder">
+		<div class="upperDeck">
+			<div class="col-lg-12" style="    float: left;">
+				<span class="almost-done-choose-copy">Almost done!</span><span class="almost-done-choose-copy"> Choose a template</span>
+			</div>
+			<div class="col-lg-12 flot18top">
+
+				<div class="col-lg-4  lasthovershape" id="tem1" onclick="makeActive('tem1');">
+					<span class="blank-project-copy">Blank Project</span>
+				</div>
+				<div class="col-lg-4  lasthovershape" id="tem2" onclick="makeActive('tem2');">
+					<span class="prodesign">Design</span>
+				</div>
+				<div class="col-lg-4  lasthovershape" id="tem3" onclick="makeActive('tem3');">
+					<span class="e-commerce">E-commerce</span>
+				</div>
+				<div class="col-lg-4  lasthovershape" id="tem4" onclick="makeActive('tem4');">
+					<span class="finance">Finance</span>
+				</div>
+				<div class="col-lg-4  lasthovershape" id="tem5" onclick="makeActive('tem5');">
+					<span class="accounting">Accounting</span>
+				</div>
+				<div class="col-lg-4 lasthovershape" id="tem6" onclick="makeActive('tem6');">
+					<span class="software-development">Software Development</span>
+				</div>
+			</div>
+			<div class="recaptcha col-lg-12" style="    float: left;">
+				<div class="g-recaptcha" data-sitekey="#"></div>
+				<span class="field-validation-valid" data-valmsg-for="Captcha" data-valmsg-replace="true"></span>
+				<a href="/projects/p-d-c/1">
+				<span id="submit" style="width: 179px;" class="btn btn-primary rectangle-4-copy" onclick="golastprojectpagination('projectsetownerFormholder','projectLastFormHolder');">Create Project</span></a>
+			</div>
+			<div class="col-lg-12 projectPaginationContainer" style="    float: left;">
+				<svg width="24px" height="24px" class="pagination1" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+				    </g>
+				</svg>
+				<svg width="24px" height="24px" class="pagination2" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+				    </g>
+				</svg>
+				<svg width="24px" height="24px" class="pagination3" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Active-Pagination" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <circle id="Oval" fill="#9B9B9B" cx="12" cy="12" r="4"></circle>
+				    </g>
+				</svg>
+			</div>
+
+			<div class="col-lg-12" id="backBtnImg"  style="    float: left;" onclick="goback('projectsetownerFormholder','projectInitFormHolder')">
+				<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Back" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+				        <path d="M10.5,9 L8,12 L10.5,15 M8,12 L16,12 M12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 Z" id="btn-/-back-/-32-copy" stroke="#B0BEC5"></path>
+				    </g>
+				</svg> <span class="backText" >Back</span>
+			</div>
+		</div>
+	</div>
+</div>

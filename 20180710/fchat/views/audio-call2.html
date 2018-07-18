@@ -1,0 +1,47 @@
+<%- include('layouts/head') %>
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var to = '<%= data[0].room_id %>';
+  
+</script>
+
+<main role="main" class="container">
+  <div class="convo-sticky-sidebar-single">
+    
+    <img src="/images/back_white.png" class="back-to-home" onclick="window.location.href='/hayven'">    
+  </div>
+
+  <div class="itl-template chat-page" style="position: relative;top: 40px;">
+    <p style="text-align:  center;color: white;font-size: 36px;font-family: 'hvWorkSans';margin-bottom: 8px;"><%= data[0].room_name %></p>
+    <p style="text-align:  center;color: white;font-size: 12px;font-family: 'hvWorkSans';margin-bottom: 32px">INCOMING CALL</p>
+    <img height="150" width="150" src="/images/users/<%= data[0].room_img %>" style="margin-left: auto;margin-right: auto;display: block;border-radius: 50px;"></img>
+    <img src="/images/guest_16px.png" style="margin-left: auto;margin-right: auto;display: block;position: relative;    top: -8px;"></img>
+
+
+    <div style="margin-top: 150px;text-align: center;">
+      <img src="/images/call/hang-up_56px.png" style="position: relative;left: -40px;">
+      <img src="/images/call/answer_64px.png" style="display: inline-block;">
+      <img src="/images/call/message_56px.png" style="position: relative;left: 40px;">
+    </div>
+  </div>
+
+  <%- include('templates/_partial') %>
+  <div class="backWrap"></div>
+</main>
+
+<script src="/javascripts/custom.js"></script>
+<script type="text/javascript">
+  $(function(){
+    scrollToBottom('.message-container');
+  });
+</script>
+<%- include('layouts/foot') %>
+<style type="text/css">
+  body{
+    background-color: #2A2A2A !important;
+  }
+</style>
+

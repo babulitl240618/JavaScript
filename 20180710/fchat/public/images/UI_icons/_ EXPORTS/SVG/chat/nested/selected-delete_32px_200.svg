@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / nested / selected-delete_32px_200</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-nested-/-selected-delete_32px_200" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22.6,29 L9.4,29 C8.074,29 7,27.88125 7,26.5 L7,9 L25,9 L25,26.5 C25,27.88125 23.926,29 22.6,29 Z M8.88235294,3 C7.45235294,3 6.29411765,4.3425 6.29411765,6 L5,6 L5,9 L27,9 L27,6 L25.7058824,6 C25.7058824,4.3425 24.5476471,3 23.1176471,3 L8.88235294,3 Z M12,13 L12,25 M16,13 L16,25 M20,13 L20,25" stroke="#B0BEC5" stroke-width="1.5"></path>
+    </g>
+</svg>

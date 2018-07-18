@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Project Description, Tags, Co-owners (Chevron)</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Project-Description,-Tags,-Co-owners-(Chevron)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Chevron">
+            <polyline id="icon-/-chevron-/-8" stroke="#263238" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.000000, 12.000000) scale(1, -1) rotate(-270.000000) translate(-12.000000, -12.000000) " points="10 16 14 12 10 8"></polyline>
+            <g id="Rectangle-3" opacity="0">
+                <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="23" height="23"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

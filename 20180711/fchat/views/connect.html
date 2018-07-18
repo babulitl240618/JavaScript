@@ -1,0 +1,500 @@
+<%- include('layouts/head') %>
+<script src="/javascripts/masonry/jquery.masonry.min.js"></script>
+<main role="main" class="container">
+  <div class="itl-template">
+    <div class="search-bar">
+      <div class="input-group">
+        <input type="text" class="form-control search-txt" id="search-txt" placeholder="Search or start a new chat">
+        <img src="/images/search_18px_400 @1x.png" class="search-bar-img">
+      </div>
+      <img src="/images/filter_28px_400 @1x.png" class="pointer filter-btn" />
+      <img src="/images/NavbarIcons/28px/actions-create_24px_000.png" class="pointer action-btn" style="background: none;display: none;" />
+      <img src="/images/close_18px_300 @1x.png" class="fa-times" onclick="clearSearch()">
+    </div>
+
+    <div class="search-body">
+      <div class="row contacts">
+        <p>Contacts</p>
+        <div class="col-md-12">
+          <div class="contact-img new-group-chat-btn" onclick="window.location.href='/hayven/new-group'">
+            <img src="/images/new-group_72px_000 @1x.png" title="Start New Group Chat" /><br>
+            <span>Start New Group Chat</span>
+          </div>
+          <% data[0].users.forEach(function(user){ %>
+            <% if (user.id != user_id) { %>
+              <div class="contact-img searchContactList" data-id="<%= user.id %>" data-name="<%= user.fullname %>" data-img="<%= user.img %>"><img src="/images/users/<%= user.img %>" title="<%= user.fullname %>" /><br><span class="searchContactListText"><%= user.fullname %></span></div>
+            <% } %>
+          <% }); %>
+        </div>
+      </div>
+      <div class="row contacts-recent">
+        <p>Current Chat</p>
+        <div class="col-md-12">
+
+          <div class="contact-img" id="currentChatDiv"><img src="/images/users/anwar.jpg" title="Anwar" id="currentChatID" /><br><span id="currentChatSpan">Anwar</span></div>
+        </div>
+      </div>
+      <div class="row search-inside-msg">
+        <p>Messages containing </p>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="search-res-box">
+            <div class="box-header">Charles Boyle</div>
+            <div class="box-body">
+              Is this template really for free? That's unbelievable! Is this template really for free?
+              <div class="msg-time">10:07am <img src="/images/reciept-delivered_14px_200 @1x.png"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pin-bar">
+        <div class="pin-item">
+          <img src="/images/users/feelix.jpg" title="Feelix" />
+        </div>
+        <div class="pin-item">
+          <img src="/images/users/navigate group.jpg" title="Everyone @ Navigate Group" onclick="unpinme(event)" />
+        </div>
+        <div class="pin-item">
+          <img src="/images/drag-to-pin_72px @1x.png" title="Pin" style="margin: 0;border-radius: 0;box-shadow: none;" />
+        </div>
+    </div>
+    <div class="body-bar">
+      <!-- <div class="masonry-layout"> -->
+      <div id="conversation-container" class="masonry-layout">
+        
+
+        <% _.each(data[0].pin, function(v, k) {%>
+			<%- include('templates/chat/user_list', {
+				pinned: v.pinned,
+				userid: v.user_id,
+				conversation_id: v.conversation_id,
+				conversation_type: v.conversation_type,
+				box_type: v.box_type,
+				unread: v.unread,
+				users_name: v.users_name,
+				users_img: v.users_img,
+				pined: v.pined,
+				sub_title: v.sub_title,
+				last_msg: v.last_msg,
+				last_msg_time: v.last_msg_time,
+				display: v.display}
+			); %>
+        <% }); %>
+        <% _.each(data[0].unpin, function(v, k) {%>
+			<%- include('templates/chat/user_list', {
+				userid: v.user_id,
+				conversation_id: v.conversation_id,
+				conversation_type: v.conversation_type,
+				box_type: v.box_type,
+				unread: v.unread,
+				users_name: v.users_name,
+				users_img: v.users_img,
+				pined: v.pined,
+				sub_title: v.sub_title,
+				last_msg: v.last_msg,
+				last_msg_time: v.last_msg_time,
+				display: v.display}
+            ); %>
+        <% }); %>
+      </div>
+
+    </div>
+  </div>
+  <%- include('templates/_partial') %>
+</main>
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var groups = <%- JSON.stringify(data[0].groups) %>;
+  // console.log(groups);
+  var to = '';
+  // var alluserinfo = <%- JSON.stringify(data) %>;
+  // console.log(alluserinfo);
+</script>
+<script src="/javascripts/socket-client-side.js"></script>
+<script src="/javascripts/custom.js"></script>
+<script src="/javascripts/custom-chat.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- this script working for render new block on page load and masonry view after append new block -->
+<script>
+  $(function(){
+    var teamname = getCookie('teamname');
+    var grpmember = getCookie('grpmember');
+    var grpmemberCount = grpmember.split(',');
+    masonryViewLoad();
+  });
+ /*
+  Live event call after dynamically append data.
+  */
+  var afterAppendEventInConnectpage = () => {
+
+    $('.pin-to-bar').on( 'click',function(event){
+      event.stopPropagation();
+      var name = $(event.target).closest('.box-header').attr('data-name');
+      var img = $(event.target).closest('.box-header').attr('data-img');
+    
+
+    if($(event.target).hasClass('pined')){
+      var pinnedid = $(event.target).attr('data-pinned');
+      console.log('line number 208',event.target);
+      console.log('line number 209',pinnedid);
+      $.ajax({
+        type: 'POST',
+        data: {
+          pinnedNumber:'',
+          targetID:pinnedid,
+          blockID:'',
+          type:'unpin'
+        },
+        dataType: 'json',
+        url: '/hayven/pinning',						
+        success: function(data) {
+          console.log(data);
+          // $(event.target).removeClass('pined');
+          // $(event.target).attr('src', '/images/pin-off_16px_200 @1x.png');
+          // unpining(name);
+          $("#conversation-container").html("");
+          $.each(data.pin, function(ka,v){
+            var cokkieDesign = '<div class="item ui-widget-content" onclick="openProfilePage(this)">';
+                cokkieDesign += '        <div class="box box-'+v.box_type+' online_'+v.userid+' offline" >';
+                cokkieDesign += '          <div class="box-header" data-name="'+v.users_name+'" data-img="navigate group.jpg" data-id="'+v.userid+'" data-conversationtype="'+v.conversation_type+'"  data-conversationid="'+v.conversation_id+'">';
+                cokkieDesign += '            <div class="box-title">'+v.users_name+'</div>';
+                cokkieDesign += '            <div class="box-subtitle">'+v.sub_title+' members</div>';
+                cokkieDesign += '            <img src="/images/pin-on_16px_500 @1x.png" class="pin-to-bar pined" data-pinned="'+v.pinned+'">';
+                cokkieDesign += '          </div>';
+                cokkieDesign += '        </div>';
+                cokkieDesign += '      </div>';
+  
+            $("#conversation-container .item").draggable({
+              helper: 'clone', opacity: 0.5
+            });
+  
+            var $grid = $('.masonry-layout').masonry({
+              itemSelector : '.item',
+              columnWidth : 264
+            });
+  
+            var $content = $( cokkieDesign );
+            // add jQuery object
+            $grid.append( $content ).masonry( 'appended', $content );
+            
+          });
+
+          $.each(data.unpin, function(ka,v){
+            var cokkieDesign = '<div class="item ui-widget-content" onclick="openProfilePage(this)">';
+                cokkieDesign += '        <div class="box box-'+v.box_type+' online_'+v.userid+' offline" >';
+                cokkieDesign += '          <div class="box-header" data-name="'+v.users_name+'" data-img="navigate group.jpg" data-id="'+v.userid+'" data-conversationtype="'+v.conversation_type+'"  data-conversationid="'+v.conversation_id+'">';
+                cokkieDesign += '            <div class="box-title">'+v.users_name+'</div>';
+                cokkieDesign += '            <div class="box-subtitle">'+v.sub_title+' members</div>';
+                cokkieDesign += '            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar" >';
+                cokkieDesign += '          </div>';
+                cokkieDesign += '        </div>';
+                cokkieDesign += '      </div>';
+  
+            $("#conversation-container .item").draggable({
+              helper: 'clone', opacity: 0.5
+            });
+  
+            var $grid = $('.masonry-layout').masonry({
+              itemSelector : '.item',
+              columnWidth : 264
+            });
+  
+            var $content = $( cokkieDesign );
+            // add jQuery object
+            $grid.append( $content ).masonry( 'appended', $content );
+            
+          });
+
+          afterAppendEventInConnectpage();
+        }
+      });
+
+    }else{
+      
+      var pinnedCount = $('.pined').length;
+      var PinnedNumber = parseInt(pinnedCount)+1;
+      var targetID = $(this).closest('.box-header').attr('data-id');
+      var blockID = $(this).closest('.box-header').attr('data-conversationid');
+      
+      $.ajax({
+        type: 'POST',
+        data: {
+          pinnedNumber:PinnedNumber,
+          targetID:targetID,
+          blockID:blockID,
+          type:'pin'
+        },
+        dataType: 'json',
+        url: '/hayven/pinning',						
+        success: function(data) {
+          console.log(data);
+          console.log(data.id);
+          $("#conversation-container").html("");
+
+          $.each(data.pin, function(ka,v){
+            var cokkieDesign = '<div class="item ui-widget-content" onclick="openProfilePage(this)">';
+                cokkieDesign += '        <div class="box box-'+v.box_type+' online_'+v.userid+' offline" >';
+                cokkieDesign += '          <div class="box-header" data-name="'+v.users_name+'" data-img="navigate group.jpg" data-id="'+v.userid+'" data-conversationtype="'+v.conversation_type+'"  data-conversationid="'+v.conversation_id+'">';
+                cokkieDesign += '            <div class="box-title">'+v.users_name+'</div>';
+                cokkieDesign += '            <div class="box-subtitle">'+v.sub_title+' members</div>';
+                cokkieDesign += '            <img src="/images/pin-on_16px_500 @1x.png" class="pin-to-bar pined" data-pinned="'+v.pinned+'">';
+                cokkieDesign += '          </div>';
+                cokkieDesign += '        </div>';
+                cokkieDesign += '      </div>';
+  
+            $("#conversation-container .item").draggable({
+              helper: 'clone', opacity: 0.5
+            });
+  
+            var $grid = $('.masonry-layout').masonry({
+              itemSelector : '.item',
+              columnWidth : 264
+            });
+  
+            var $content = $( cokkieDesign );
+            // add jQuery object
+            $grid.append( $content ).masonry( 'appended', $content );
+            
+          });
+
+          $.each(data.unpin, function(ka,v){
+            var cokkieDesign = '<div class="item ui-widget-content" onclick="openProfilePage(this)">';
+                cokkieDesign += '        <div class="box box-'+v.box_type+' online_'+v.userid+' offline" >';
+                cokkieDesign += '          <div class="box-header" data-name="'+v.users_name+'" data-img="navigate group.jpg" data-id="'+v.userid+'" data-conversationtype="'+v.conversation_type+'"  data-conversationid="'+v.conversation_id+'">';
+                cokkieDesign += '            <div class="box-title">'+v.users_name+'</div>';
+                cokkieDesign += '            <div class="box-subtitle">'+v.sub_title+' members</div>';
+                cokkieDesign += '            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">';
+                cokkieDesign += '          </div>';
+                cokkieDesign += '        </div>';
+                cokkieDesign += '      </div>';
+  
+            $("#conversation-container .item").draggable({
+              helper: 'clone', opacity: 0.5
+            });
+  
+            var $grid = $('.masonry-layout').masonry({
+              itemSelector : '.item',
+              columnWidth : 264
+            });
+  
+            var $content = $( cokkieDesign );
+            // add jQuery object
+            $grid.append( $content ).masonry( 'appended', $content );
+            
+          });
+          afterAppendEventInConnectpage();
+        }
+      });
+    }
+    });
+  };
+  /*
+  Masonry View Load after event call
+  */
+  var masonryViewLoad = () => {
+    if($('.masonry-layout').length){
+      $('.masonry-layout').masonry({
+        itemSelector : '.item',
+        columnWidth : 264
+      });
+    }
+  };
+
+  // popup block for create or tagged on a new group
+  socket.on('groupCreate', function(message) {
+      console.log(message);
+      var memberListLen = message.memberList;
+      var adminList = message.adminList;
+      var arr3 = [];
+
+      for (var i=0,j=memberListLen.length; i<j; i++) {
+          arr3.push(memberListLen[i]);
+          arr3.push(adminList[i]);
+      }
+
+      $.each(arr3, function(ka,va){
+        if(va == user_id){
+          var cokkieDesign = '<div class="item ui-widget-content" onclick="openProfilePage(this)">';
+              cokkieDesign += '        <div class="box box-success online_4 offline" >';
+              cokkieDesign += '          <div class="box-msg nomsg"></div>';
+              cokkieDesign += '          <div class="box-header" data-name="'+user_fullname+'" data-img="navigate group.jpg" data-id="'+user_id+'" data-conversationtype="group"  data-conversationid="'+message.room_id.conversation_id+'">';
+              cokkieDesign += '            <div class="box-title">'+message.teamname+'</div>';
+              cokkieDesign += '            <div class="box-subtitle">'+ parseInt(parseInt(memberListLen.length)+parseInt(adminList.length)) +' members</div>';
+              cokkieDesign += '            <img src="/images/pin-off_16px_200 @1x.png" class="pin-to-bar">';
+              cokkieDesign += '          </div>';
+              cokkieDesign += '        </div>';
+              cokkieDesign += '      </div>';
+
+          $("#conversation-container .item").draggable({
+            helper: 'clone', opacity: 0.5
+          });
+
+          var $grid = $('.masonry-layout').masonry({
+            itemSelector : '.item',
+            columnWidth : 264
+          });
+
+          var $content = $( cokkieDesign );
+          // add jQuery object
+          $grid.append( $content ).masonry( 'appended', $content );
+          afterAppendEventInConnectpage();
+
+        }
+      });
+  });
+
+  $(document).keyup(function(e) {
+    if (e.keyCode == 27) { // escape key maps to keycode `27`
+        if($(".filter-btn-div").is(':visible')){
+          $(".filter-btn-div").hide();
+        }
+        if($(".action-btn-div").is(':visible')){
+          $(".action-btn").trigger('click');
+        }
+        if($(".search-body").is(':visible')){
+          clearSearch();
+        }
+    }
+  });
+
+  /** End of action button process*/
+
+  $('.search-txt').on('keyup', function(){
+    var str = $(this).val();
+    console.log(str);
+    if(str.length > 0){
+      $('.search-body').show();
+      $('.search-bar .fa-times').show();
+      $('.pin-bar').hide();
+      $('.body-bar').hide();
+      $('.search-bar .pointer').hide();
+      // $('.search-bar .input-group').css('width', '890px');
+      $('.search-bar').addClass('sticky');
+      $('.gradient-body-bg').show();
+
+      $('.searchContactListText').unhighlight();
+      $('.searchContactListText').highlight(str);
+
+      $(".searchContactListText").each(function() {
+
+          if ($(this).text().toLowerCase().search(str.toLowerCase()) > -1) {
+              $(this).parent('div').show();
+          }else {
+              $(this).parent('div').hide();
+          }
+      });
+    } else {
+      clearingSearch();
+    }
+
+    if(getCookie('userid')!== ''){
+      $("#currentChatID").attr('src','/images/users/'+getCookie('userimg'));
+      $("#currentChatSpan").text(getCookie('username'));
+      $("#currentChatDiv").attr('data-id',getCookie('userid'));
+      $("#currentChatDiv").attr('data-name',getCookie('username'));
+      $("#currentChatDiv").attr('data-img',getCookie('userimg'));
+    }
+  });
+
+  $('.searchContactList').on('click', function(){
+    //alert('click');
+    var id = $(this).attr('data-id');
+    var name = $(this).attr('data-name');
+    var img = $(this).attr('data-img');
+
+    var conversationid = $(this).attr('data-conversationid');
+    window.location.href='/hayven/chat/'+ id +'/'+ encodeURI(conversationid) +'/'+ encodeURI(name) +'/' + encodeURI(img);
+ 
+  });
+
+  $('#currentChatDiv').on('click', function(){
+    //alert('click');
+    var id = $(this).attr('data-id');
+    var name = $(this).attr('data-name');
+    var img = $(this).attr('data-img');
+
+    var conversationid = $(this).attr('data-conversationid');
+    window.location.href='/hayven/chat/'+ id +'/'+ encodeURI(conversationid) +'/'+ encodeURI(name) +'/' + encodeURI(img);
+ 
+  });
+
+  
+
+</script>
+<%- include('layouts/foot') %>
+<%- include('templates/project/quickproject') %>

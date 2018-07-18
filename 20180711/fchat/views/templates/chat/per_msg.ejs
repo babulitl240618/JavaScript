@@ -1,0 +1,115 @@
+<div class="separetor"><%= msg_data %></div>
+<div class="per-msg <%= msg_right %> msg_id_<%= msg_id %>" data-msgid="<%= msg_id %>">
+  <input type="checkbox" class="selectIt">
+  <div class="profile-picture">
+    <img src="/images/users/<%= msg_user_img %>" alt="<%= msg_user_img %>">    
+  </div>
+  <div class="triangle-up-right <%= msg_mirror %>"></div>
+  <div class="msg-con">
+    <div class="msg-header">
+      <div class="user-name"><%= msg_user_name %></div>
+      <div class="toolbar">
+        <img src="/images/incoming-reaction_20px @1x.png" class="toolbar-img" onclick="open_reaction(event)">
+        <img src="/images/incoming-thread_20px @1x.png" class="toolbar-img">
+        <%if (msg_is_flag) { %>
+        <img src="/images/flagged_20px @1x.png" class="toolbar-img flaged" onclick="flag_unflag(event)">
+        <% } else { %>
+        <img src="/images/incoming-flag_20px @1x.png" class="toolbar-img" onclick="flag_unflag(event)">
+        <% } %>
+        <img src="/images/incoming-more_20px @1x.png" class="toolbar-img" onclick="open_more(event)">
+      </div>
+    </div>
+    <div class="msg-body">
+      <div class="body-text">
+        <span class="msg-text"><%= msg_text %>
+        <%if(msg_link_url.length>0) { %>
+        <a href="<%= msg_link_url[0] %>" target="_blank"><%= msg_link_url[0] %></a>
+        <% } %>
+        <%if(msg_type=='call') { %>
+        <a href="javascript:void(0)" data-calltype="<%= call_type %>" onclick="callbackAudioVideo(this)">Callback</a>
+        <% } %>
+        </span>
+        <div class="msg-send-seen-delivered">
+          <img src="/images/incoming-reciept-delivered_14px_200 @1x.png">
+        </div>
+        <div class="per-msg-time"><%= msg_time %></div>
+        <div class="attachment">
+          <%if(msg_attach_video.length > 0){ %>
+            <video controls>
+              <source src="/upload/<%= msg_attach_video[0] %>" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video> <% 
+          } %>
+          
+          <!-- image attachment part -->
+          <%if(msg_attach_img.length>5) 
+              var imglen = 5;
+            else
+              var imglen = msg_attach_img.length; 
+          for(var i=0; i < msg_attach_img.length; i++){ 
+            var fl = '';
+            if(imglen >= 3 && i==0) 
+              fl = "float:left"; %>
+              <img src="/upload/<%= msg_attach_img[i] %>" style="<%= fl %>" class="image<%= imglen %> lightbox"> <% 
+          } 
+          if(msg_attach_img.length > 5) { %>
+          <div class="more-images">+<%= msg_attach_img.length-5 %></div>
+          <% } %>
+          <!-- end of image attachment part -->
+
+          <!-- file attachment part -->
+          <%for(var i=0; i < msg_attach_file.length; i++){ %>
+            <div class="attach-file">
+              <img src="/images/file_icon/<%= msg_attach_file[i].file_type %>.png" alt="<%= msg_attach_file[i].file_type %>">
+              <div class="file-name"><%= msg_attach_file[i].file_name %></div>
+              <div class="file-time"><%= msg_attach_file[i].file_time %></div>
+            </div>
+          <% } %>
+          <!-- end of file attachment part -->
+
+          <%if(msg_link_url.length>0) { %>
+            <div class="url-details">
+              <div class="base-link"><img src="<%= msg_link_url[5] %>"><%= msg_link_url[4] %></div>
+              <div class="title-link"><%= msg_link_url[1] %></div>
+              <div class="detail-link"><%= msg_link_url[2] %></div>
+              <img src="/upload/<%= msg_link_url[3] %>" class="image1 lightbox">
+            </div>
+          <% } %>
+        </div>
+
+        <!-- if message have tags -->
+        <%if(msg_tags.length > 0){ %>
+        <div class="tags">
+          <%for(var i=0; i < msg_tags.length; i++){ %>
+          <span class="tag-list"><%= msg_tags[i] %></span>
+          <% } %>
+        </div>
+        <% } %>
+        <!-- end tags part -->
+
+        <div class="replies">
+          <%if(msg_replies_thread.length > 0){ %>
+          <span class="replay-thread">
+            <img src="/images/thread_28px_600 @1x.png">
+            <span class="no-of-replies rt-hoverhide"><%= msg_replies_thread[0] %> replies</span>
+            <span class="replies-time rt-hoverhide"><%= msg_replies_thread[1] %></span>
+            <div class="view-thread" onmouseout="hide_view_thread()">View Thread <img src="/images/chevron_8px_600 @1x.png"></div>
+          </span>
+          <% } %>
+          <%if(msg_replies_emoji != 'no_emoji') { %>
+            <% _.forEach(msg_replies_emoji[0], function(value, key) { %>
+              <%if(value > 0) { %>
+                <span class="emoji" onmouseover="open_rep_user_emo(event)" onmouseout="close_rep_user_emo(event)">
+                  <img src="/images/emoji/<%= key %>.png">
+                  <span class="count-emoji"><%= value %></span>
+                </span>
+              <% } %>
+            <% }); %>
+          <% } %>
+        </div>
+      </div>
+      <div class="per-msg-action"><img src="/images/NavbarIcons/actions-create_24px_FFF.png" class="pointer"></div>
+    </div>
+    <div class="msg-footer"></div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>call / fullscreen_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="call-/-fullscreen_24px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.545535714">
+        <g id="fullscreen">
+            <path d="M12,0 C2.4,0 0,2.4 0,12 C0,21.6 2.4,24 12,24 C21.6,24 24,21.6 24,12 C24,2.4 21.6,0 12,0 Z" id="mask-squircle" fill="#000000"></path>
+            <path d="M10.4803883,10.4803883 L7,7 L10.4803883,10.4803883 Z M7,9.72727273 L7,7 L9.72727273,7 M13.3636364,10.4803883 L17,7 L13.3636364,10.4803883 Z M14.2727273,7 L17,7 L17,9.72727273 M10.4803883,13.3636364 L7,17 L10.4803883,13.3636364 Z M9.72727273,17 L7,17 L7,14.2727273 M13.3636364,13.3636364 L17,17 L13.3636364,13.3636364 Z M17,14.2727273 L17,17 L14.2727273,17" id="Path" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

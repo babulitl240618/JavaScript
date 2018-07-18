@@ -1,0 +1,1063 @@
+<%- include('layouts/head') %>
+<link rel="stylesheet" href="/stylesheets/style-workspace.css">
+<script src="/javascripts/masonry/jquery.masonry.min.js"></script>
+<main role="main" class="main_page">
+  <div class="">
+    <ul class="nav nav-tabs custom_tab">
+      <li class="">
+        <a data-toggle="tab" onclick="wsUserManagementTab()" class="tab_list Home-tab-Toggle  active show" href="#wsUserManagementTab">User Management</a>
+      </li>
+      <li>
+        <a data-toggle="tab" onclick="wsManagementTab()" class="tab_list Home-tab-Toggle "  href="#wsManagementTab">Workspace Management</a>
+      </li>
+      <li><a data-toggle="tab" class="tab_list Home-tab-Toggle "  href="#wsFileManagementTab">File Management</a></li>
+    </ul>
+
+    <div class="tab-content custom-content">
+      <div id="wsUserManagementTab" class="tab-pane fade in active">
+        <div id="ws-user-management-table">
+  	        <form action="" class="form-inline u_form" method="get" accept-charset="utf-8">
+  	      		<div class="form-group">
+  	      			<input type="search" name="" class="form-control ws-search" value="" placeholder="Search users">
+  	      		</div>
+  	      		<div class="form-group">
+  	      			<select name=""  class="form-control ws-select">
+  	      				<option value="">Active Users</option>
+  	      			</select>
+  	      		</div>
+  	      		<div class="form-group">
+  	      			<select name=""  class="form-control ws-select">
+  	      				<option value="">All Access Labels</option>
+  	      			</select>
+  	      		</div>
+  	          <div class="form-group">
+  	            <button id="ws-createNewUser-btn" type="button" name="" class="btn btn-primary ws-create-user">Create New Users</button>
+  	      		</div>
+  	      	</form>
+  	        <div class="ws-Custom_Table">
+  	          <table class="table user_table">
+  	              <thead>
+  	                <tr class="table_head">
+  	                    <th>Full Name <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  	                    <th>User Name <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  	                    <th>Role <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  	                    <th>Email Address <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  	                    <th>Last Active <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  	                    <th>Status <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  	                </tr>
+  	              </thead>
+  	              <tbody id="User-management-User-list">
+  	                <tr class="table_data ws-user-data" data-id="asdasd">
+                        <td class="name ws-profile-name" id="ws-user"><img src="/images/users/1joni.jpg" alt="">Dalim Chowdhury</td>
+                        <td>Chowdhury</td>
+                        <td>Users</td>
+                        <td>Dalimchy@gmail.com</td>
+                        <td>03 Dec 2018</td>
+                        <td class="td-status user-profile-status"><span class="Active-users">Active</span><span class="Deactive-users" style="display: none;">Deactive</span><span class="ws-moremenu"><img src="/images/svg/MoreMenu.svg"></span></td>
+
+                    </tr>
+                    <tr class="table_data ws-user-data">
+  	                    <td class="name ws-profile-name" id="ws-user2"><img src="/images/users/1joni.jpg" alt="">AH Nayeem</td>
+  	                    <td>Nayeem</td>
+  	                    <td>Users</td>
+  	                    <td>Nayeem@Nayeem.com</td>
+  	                    <td>03 Dec 2018</td>
+                        <td class="td-status user-profile-status"><span class="Active-users">Active</span><span class="Deactive-users" style="display: none;">Deactive</span><span class="ws-moremenu"><img src="/images/svg/MoreMenu.svg"></span></td>
+  	                </tr>
+  	              </tbody>
+  	          </table>
+  	        </div>
+        </div>
+        <!-- user Profile page start -->
+        <div id="ws-user-profile-page" style="display:none;">
+          <div class="ws-user-profile">
+            <div class="upper-left">
+      				<svg class="profile-back-svg" id="back-to-user-management" width="48px" height="48px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      				    <g id="Back" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+      				        <path d="M10.5,9 L8,12 L10.5,15 M8,12 L16,12 M12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 Z" id="btn-/-back-/-32-copy" stroke="#B0BEC5"></path>
+      				    </g>
+      				</svg>
+      			</div>
+            <div class="profile-details-content"> <!-- profile-details-content Start -->
+              <div class="profile-left-content">
+                <img src="/images/users/1joni.jpg" alt="">
+                  <label for="Profile-img-upload" class="profile-img-change">Upload/Change</label>
+                <input type="file" id="Profile-img-upload" style="display: none; " accept="image/*" >
+              </div>
+              <div class="profile-right-content">
+                <div class="profile-group-content">
+                  <h1 id="UserProfileName">Hallie Lambert</h1>
+                  <label class="Group-content-edit" id="UserEditProfileName">Edit</label>
+                  <img id="profile-more-settings" src="/images/svg/MoreMenu.svg" alt="">
+                </div>
+                <div class="profile-group-content">
+                  <label class="Group-content-rg">Email Address:</label>
+                  <label class="Group-content-value" id="UserProfileEmail">gottlieb_raegan@ivy.name</label>
+                  <label class="Group-content-edit" id="UserProfile-Edit-Email">Edit</label>
+                </div>
+                <div class="profile-group-content">
+                  <label class="Group-content-rg">Username:</label>
+                  <label class="Group-content-value" id="UserProfileUserName">HLambert</label>
+                  <label class="Group-content-edit" id="UserProfile-Edit-UserName">Edit</label>
+                </div>
+                <div class="profile-group-content">
+                  <label class="Group-content-rg">Job Title:</label>
+                  <label class="Group-content-value" id="UserProfileJobTitle">Sr.Product Manager</label>
+                  <label class="Group-content-edit" id="UserProfile-Edit-JobTitle">Edit</label>
+                </div>
+                <div class="profile-group-content">
+                  <label class="Group-content-rg">Account Status:</label>
+                  <label class="Group-content-value" id="User-Profile-Active-Deactive">Active</label>
+                  <label class="Group-content-edit" id="User-Profile-Active" style="display: none">Active</label>
+                  <label class="Group-content-edit" id="User-Profile-Deactive">Deactive</label>
+                </div>
+                <div class="profile-group-content">
+                  <label class="Group-content-rg">Account Creation:</label>
+                  <label class="Group-content-value">10 June 2018</label>
+                </div>
+                <div class="profile-group-content">
+                  <label class="Group-content-rg">Last Active:</label>
+                  <label class="Group-content-value">12 June 2018,3:56 PM</label>
+                </div>
+                <div class="profile-group-content">
+                  <label class="Group-content-rg">Role:</label>
+                  <!-- <label class="Group-content-value"><input type="radio" name="" class="CustomCheckbox"> User</label> -->
+                  <div class="CustomRadio">
+                    <input id="radio-1" name="radio" type="radio" checked>
+                    <label for="radio-1" class="radio-label Group-content-value">User</label>
+                  </div>
+                </div>
+                <div class="profile-group-content">
+                  <label class="Group-content-rg"></label>
+                  <div class="CustomRadio">
+                    <input id="radio-2" name="radio" type="radio" >
+                    <label for="radio-2" class="radio-label Group-content-value">Member</label>
+                  </div>
+                </div>
+                <div class="profile-group-content">
+                  <label class="Group-content-rg"></label>
+                  <div class="CustomRadio">
+                    <input id="radio-3" name="radio" type="radio" >
+                    <label for="radio-3" class="radio-label Group-content-value">Admin</label>
+                  </div>
+                </div>
+              </div>
+            </div>  <!-- profile-details-content End -->
+            <div class="profile-details-tab-content">
+              <ul class="nav nav-tabs profile-tab">
+                <li><a data-toggle="tab" class="tab_list  active show" href="#profile-tab-channels">Channels</a></li>
+                <li><a data-toggle="tab" class="tab_list" href="#profile-tab-teams">Teams</a></li>
+                <li><a data-toggle="tab" class="tab_list" href="#profile-tab-permissions">Permissions</a></li>
+              </ul>
+              <div class="tab-content profile-custom-tab">
+                <div id="profile-tab-channels" class="tab-pane fade active show">
+                  <div class="ws-Custom_Table">
+                    <table class="table profile-table-new user_table">
+                        <thead>
+                          <tr class="table_head profile-table-head">
+                              <th class="profile-th-name">Name</th>
+                              <th class="profile-th-des">Description</th>
+                              <th class="profile-th-action">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="table_data">
+                              <td class="profile-name-data">Every One</td>
+                              <td class="profile-des-data">Company-wide announcements and work-base matters.</td>
+                              <td><button class="profile-action-data">Remove</button></td>
+                          </tr>
+                          <tr class="table_data">
+                              <td class="profile-name-data">Every One</td>
+                              <td class="profile-des-data">Company-wide announcements and work-base matters.</td>
+                              <td><button class="profile-action-data">Remove</button></td>
+                          </tr>
+                          <tr class="table_data">
+                              <td class="profile-name-data">Every One</td>
+                              <td class="profile-des-data">Company-wide announcements and work-base matters.</td>
+                              <td><button class="profile-action-data">Remove</button></td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" name="button" class="profile-add-channels-button">+Add Channels</button>
+                  </div>
+                </div>
+                <div id="profile-tab-teams" class="tab-pane fade">
+                  <div class="profile-tab-main-content">
+                    <div id="Profile-Team-list">
+                      <div class="teams"><p>Design</p></div>
+                    </div>
+                    <div class="teams WsProfileAdd_Team" id="User-profile-Add-Team">
+                      <p><span class="add-more-task">
+                          <img src="/images/svg/Add_Section.svg">
+                        </span><br>Add Team</p>
+                    </div>
+                  </div>
+                </div>
+                <div id="profile-tab-permissions" class="tab-pane fade">
+                  <div class="profile-tab-main-content">
+                    <div class="permissions-setting">
+                      <div class="permissions-setting-group">
+                        <label for="" class="permissions-setting-group-head">Messages</label>
+                        <div class="setting-group-content">
+                          <div class="setting-group-content-left">
+                            <label for="">Delete own messages</label>
+                          </div>
+                          <div class="setting-group-content-right">
+                            <label class="switch">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="setting-group-content">
+                          <div class="setting-group-content-left">
+                            <label for="">Delete other user messages</label>
+                          </div>
+                          <div class="setting-group-content-right">
+                            <label class="switch">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="permissions-setting-group">
+                        <label for="" class="permissions-setting-group-head">Channels</label>
+                        <div class="setting-group-content">
+                          <div class="setting-group-content-left">
+                            <label for="">Create a new channel</label>
+                          </div>
+                          <div class="setting-group-content-right">
+                            <label class="switch">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="setting-group-content">
+                          <div class="setting-group-content-left">
+                            <label for="">Rename channel</label>
+                          </div>
+                          <div class="setting-group-content-right">
+                            <label class="switch">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="setting-group-content">
+                          <div class="setting-group-content-left">
+                            <label for="">Delete channel</label>
+                          </div>
+                          <div class="setting-group-content-right">
+                            <label class="switch">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="setting-group-content">
+                          <div class="setting-group-content-left">
+                            <label for="">Remove people form channels</label>
+                          </div>
+                          <div class="setting-group-content-right">
+                            <label class="switch">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="setting-group-content">
+                          <div class="setting-group-content-left">
+                            <label for="">Change a Public chanel to private</label>
+                          </div>
+                          <div class="setting-group-content-right">
+                            <label class="switch">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="permissions-setting-group">
+                        <label for="" class="permissions-setting-group-head">Workspace</label>
+                        <div class="setting-group-content">
+                          <div class="setting-group-content-left">
+                            <label for="">Invite new guest users to channel</label>
+                          </div>
+                          <div class="setting-group-content-right">
+                            <label class="switch">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="setting-group-content">
+                          <div class="setting-group-content-left">
+                            <label for="">Invite new guest users to project task</label>
+                          </div>
+                          <div class="setting-group-content-right">
+                            <label class="switch">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="setting-group-content">
+                          <div class="setting-group-content-left">
+                            <label for="">Add apps and integrations</label>
+                          </div>
+                          <div class="setting-group-content-right">
+                            <label class="switch">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="setting-group-content">
+                          <div class="setting-group-content-left">
+                            <label for="">Workspace billing and payment</label>
+                          </div>
+                          <div class="setting-group-content-right">
+                            <label class="switch">
+                              <input type="checkbox" checked>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- user Profile page end -->
+      </div>
+      <!-- workspace management tab start -->
+      <div id="wsManagementTab" class="tab-pane fade">
+        <h2 class="nav_tab_head">Navigate Group <span id="Color-Management"><img style="height: 16px; width: 16px;" src="/images/setting/setting.PNG"></span></h2>
+         	<ul class="nav nav-tabs navigate_group">
+  	    	<li class="active">
+  	    		<a data-toggle="tab" onclick="wsTeamTab()" class="navigate_tab navigate-tabcustom  active show" href="#wsTeamTab">
+  			    	<h3>6</h3>
+  			    	<p>Teams</p>
+  			    </a>
+  			</li>
+  		    <li>
+  		    	<a data-toggle="tab" class="navigate_tab navigate-tabcustom"  href="#wsMemberTab">
+  				    <h3>49</h3>
+  			    	<p>Members</p>
+  				</a>
+  			</li>
+  		    <li>
+  		    	<a data-toggle="tab" class="navigate_tab navigate-tabcustom" onclick="wsChannelTab()"  href="#wsChannelTab">
+  				    <h3>4</h3>
+  			    	<p>Channels</p>
+  				</a>
+  			</li>
+  	  	</ul>
+
+  	  	<div class="tab-content navigate_content">
+  		    <div id="wsTeamTab" class="tab-pane fade in active">
+  		    	<div id="ws_all_team">
+  		    		<h3 id="WsManagTeamHeader" >Teams <span>(6)</span></h3>
+  		        <div id="WsNewTeam">
+      			    <div class="teams ws_team_name" id="WsMTeam"><p>Business Strategy</p></div>
+      			    <div class="teams ws_team_name" id="WsMTeam2"><p>Design</p></div>
+      			    <div class="teams ws_team_name" id="WsMTeam3"><p>Engineering</p></div>
+      			    <div class="teams ws_team_name" id="WsMTeam4"><p>Legal & Finance</p></div>
+      			    <div class="teams ws_team_name" id="WsMTeam5"><p>Marketing</p></div>
+      			    <div class="teams ws_team_name" id="WsMTeam6"><p>Sales & Support</p></div>
+              </div>
+                <div class="teams add_teams">
+                  <p>
+                  <span class="add-more-task">
+                    <img src="/images/svg/Add_Section.svg">
+                  </span><br>
+                  Create Team</p>
+                </div>
+  		    	</div>
+  		      	<div id="ws-team-details" style="display: none;" class="team_details">
+  		      		<div class="Popup-back-Header">
+                  <span class="">
+                    <img src="/images/back_34px_200 @1x.png" id="ws-team-details-to-back-team"style=""></span>
+                    <span class="wsM-Team-name">Business Strategy Team</span>
+                    <span style="margin-left: 8px" class="edit-ws-team-name">Edit</span>
+                </div>
+
+  		      		<div id="ws-user-management-table">
+  				        <form action="" class="form-inline u_form" method="get" accept-charset="utf-8">
+  				      		<div class="form-group">
+  				      			<input type="search" name="" class="form-control ws-search" value="" placeholder="Search users">
+  				      		</div>
+  				      		<div class="form-group">
+  				      			<select name=""  class="form-control ws-select">
+  				      				<option value="">Active Users</option>
+  				      			</select>
+  				      		</div>
+  				      		<div class="form-group">
+  				      			<select name=""  class="form-control ws-select">
+  				      				<option value="">All Access Labels</option>
+  				      			</select>
+  				      		</div>
+  				            <div class="form-group">
+  					            <button id="Add-a-New-User"type="button" name="" class="ws-add-user" >Add User</button>
+  					            <button id="Edit-Team-Permission" type="button" name="" class="ws-edit-team">Edit Permissions</button>
+  					            <button id="Delete-single-team-ws" type="button" name="" class="ws-delete-team">Delete Team</button>
+  				      	    </div>
+  				      	</form>
+  				        <div class="ws-Custom_Table">
+  				          <table class="table user_table">
+  				              <thead>
+  				                <tr class="table_head">
+  				                    <th>Full Name <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                    <th>User Name <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                    <th>Role <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                    <th>Email Address <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                    <th>Last Active <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                    <th>Status <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                </tr>
+  				              </thead>
+  				              <tbody>
+  				                <tr class="table_data">
+  				                    <td style="text-decoration: none;" class="name" ><img src="/images/users/1joni.jpg" alt="">Mark</td>
+  				                    <td>Otto</td>
+  				                    <td>@mdo</td>
+  				                    <td>Mark</td>
+  				                    <td>03 Dec 2018</td>
+  				                    <td class="td-status">Deactive <span class="ws-moremenu"><img src="/images/svg/MoreMenu.svg"></span></td>
+  				                </tr>
+  				                <tr class="table_data">
+  				                    <td style="text-decoration: none;" class="name"><img src="/images/users/1joni.jpg" alt="">Jacob</td>
+  				                    <td>Thornton</td>
+  				                    <td>@fat</td>
+  				                    <td>03 Dec 2018</td>
+  				                    <td>03 Dec 2018</td>
+  				                    <td class="td-status">Active <span class="ws-moremenu"><img src="/images/svg/MoreMenu.svg"></span></td>
+  				                </tr>
+  				              </tbody>
+  				          </table>
+  				        </div>
+  			      	</div>
+  		      	</div>
+
+  		    </div>
+  		    <div id="wsMemberTab" class="tab-pane fade">
+  		      	<h3>Members <span>(49)</span></h3>
+
+  		      	<div id="ws-user-management-table">
+  			        <form action="" class="form-inline u_form" method="get" accept-charset="utf-8">
+  			      		<div class="form-group">
+  			      			<input type="search" name="" class="form-control ws-search" value="" placeholder="Search users">
+  			      		</div>
+  			      		<div class="form-group">
+  			      			<select name=""  class="form-control ws-select">
+  			      				<option value="">Active Users</option>
+  			      			</select>
+  			      		</div>
+  			      		<div class="form-group">
+  			      			<select name=""  class="form-control ws-select">
+  			      				<option value="">All Access Labels</option>
+  			      			</select>
+  			      		</div>
+  			          <div class="form-group">
+  			            <button id="ws-createNewUser-btn" type="button" name="" class="btn btn-primary ws-create-user">Create New Users</button>
+  			      		</div>
+  			      	</form>
+  			        <div class="ws-Custom_Table">
+  			          <table class="table user_table">
+  			              <thead>
+  			                <tr class="table_head">
+  			                    <th>Full Name <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  			                    <th>User Name <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  			                    <th>Role <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  			                    <th>Email Address <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  			                    <th>Last Active</th>
+  			                    <th>Status <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  			                </tr>
+  			              </thead>
+  			              <tbody>
+  			                <tr class="table_data">
+  			                    <td  class="name"><img src="/images/users/1joni.jpg" alt="">Mark</td>
+  			                    <td>Otto</td>
+  			                    <td>@mdo</td>
+  			                    <td>Mark</td>
+  			                    <td>03 Dec 2018</td>
+  			                    <td class="td-status">Deactive <span class="ws-moremenu"><img src="/images/svg/MoreMenu.svg"></span></td>
+  			                </tr>
+  			                <tr class="table_data">
+  			                    <td  class="name"><img src="/images/users/1joni.jpg" alt="">Jacob</td>
+  			                    <td>Thornton</td>
+  			                    <td>@fat</td>
+  			                    <td>03 Dec 2018</td>
+  			                    <td>03 Dec 2018</td>
+  			                    <td class="td-status">Active <span class="ws-moremenu"><img src="/images/svg/MoreMenu.svg"></span></td>
+  			                </tr>
+  			              </tbody>
+  			          </table>
+  			        </div>
+  		      	</div>
+  		    </div>
+  		    <div id="wsChannelTab" style="" class="tab-pane fade">
+  		    	<div class="all_channel" id="ws-all-channel">
+  		    		<h3>Channels <span>(4)</span></h3>
+
+  				    <div class="channels" id="ws-channels">
+  				      	<h3>Everone @ <br>Navigate Group</h3>
+  				      	<p>76 Members</p>
+  				    </div>
+  			        <div class="channels" id="ws-channels">
+  			      		<h3>Random</h3>
+  			      		<p>29 Members</p>
+  			        </div>
+  			        <div class="channels" id="ws-channels">
+  			      		<h3>Navigate Design</h3>
+  			      		<p>7 Members</p>
+  			        </div>
+  			        <div class="channels" id="ws-channels">
+  			      		<h3>Design Trends & News</h3>
+  			      		<p>42 Members</p>
+  			        </div>
+  			        <div class="channels add_channel">
+                  <p>
+                  <span class="add-more-task" style="text-align:center;">
+                    <img src="/images/svg/Add_Section.svg">
+                  </span>
+                  <br>
+                  Create Channel</p>
+  			      </div>
+  		    	</div>
+  		      	<div id="ws-channels-details" style="display: none; " class="channel_details">
+                <div class="Popup-back-Header">
+                  <span class="">
+                    <img src="/images/back_34px_200 @1x.png" id="ws-channels-details-to-back-channels"style=""></span>
+                    <span class="wsM-channel-name">Everyone & Navigate Group</span>
+                    <span style="margin-left: 8px" class="edit-ws-channel-name">Edit</span>
+                </div>
+
+
+
+  		      		<div id="ws-user-management-table">
+  				        <form action="" class="form-inline u_form" method="get" accept-charset="utf-8">
+  				      		<div class="form-group">
+  				      			<input type="search" name="" class="form-control ws-search" value="" placeholder="Search users">
+  				      		</div>
+  				      		<div class="form-group">
+  				      			<select name=""  class="form-control ws-select">
+  				      				<option value="">Active Users</option>
+  				      			</select>
+  				      		</div>
+  				      		<div class="form-group">
+  				      			<select name=""  class="form-control ws-select">
+  				      				<option value="">All Access Labels</option>
+  				      			</select>
+  				      		</div>
+  				          <div class="form-group">
+  				            <button id="" type="button" name="" class="ws-add-user">Add User</button>
+  				            <button id="" type="button" name="" class="ws-edit-channel">Edit Permissions</button>
+  				            <button id="" type="button" name="" class="ws-delete-channel">Delete Channel</button>
+  				      		</div>
+  				      	</form>
+  				        <div class="ws-Custom_Table">
+  				          <table class="table user_table">
+  				              <thead>
+  				                <tr class="table_head">
+  				                    <th>Full Name <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                    <th>User Name <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                    <th>Role <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                    <th>Email Address <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                    <th>Last Active <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                    <th>Status <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+  				                </tr>
+  				              </thead>
+  				              <tbody>
+  				                <tr class="table_data">
+  				                    <td class="name" id="ws-user"><img src="/images/users/1joni.jpg" alt="">Mark</td>
+  				                    <td>Otto</td>
+  				                    <td>@mdo</td>
+  				                    <td>Mark</td>
+  				                    <td>03 Dec 2018</td>
+  				                    <td class="td-status">Deactive <span class="ws-moremenu"><img src="/images/svg/MoreMenu.svg"></span></td>
+  				                </tr>
+  				                <tr class="table_data">
+  				                    <td  class="name"><img src="/images/users/1joni.jpg" alt="">Jacob</td>
+  				                    <td>Thornton</td>
+  				                    <td>@fat</td>
+  				                    <td>03 Dec 2018</td>
+  				                    <td>03 Dec 2018</td>
+  				                    <td class="td-status">Active <span class="ws-moremenu"><img src="/images/svg/MoreMenu.svg"></span></td>
+  				                </tr>
+  				              </tbody>
+  				          </table>
+  				        </div>
+  			      	</div>
+  		      	</div>
+  		    </div>
+  		  </div>
+      </div>
+      <!-- workspace management tab end -->
+
+
+
+     <!--  File Management tab start -->
+
+        <div id="wsFileManagementTab" class="tab-pane fade">
+          <div class="File-Management-main-content">
+            <div class="ws-file-main-content ws-main-content-left" style="width:47%">
+              <h1>Hayven For Work</h1>
+              <button type="button" name="button">Upgrade</button>
+              <h6>See other plans</h6>
+              <div class="bottom-border-left-content"></div>
+              <label style="float:left">Used Storage</label>
+              <span style="float:right;">Using <strong>1.9 GB</strong> of <strong>5 GB</strong></span>
+              <div class="progress file-manage-progress">
+                <div class="progress-bar" role="progressbar" style="width: 38%;" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100">38%</div>
+              </div>
+            </div>
+            <div class="ws-file-main-content ws-main-content-middle" style="width:26%">
+              <div id="chartContainer" style="height: 300px; width: 100%;">
+      </div>
+            </div>
+            <div class="ws-file-main-content ws-main-content-right" style="width:27%">
+              <h3>Keep delete file up to <span class="span-day-file">120</span> day(s)</h3>
+              <div class="bottom-border-right-content"></div>
+              <label for="">Download a files report</label>
+              <button type="button" name="button">Download Report</button>
+            </div>
+          </div>
+          <label class="filter-table-head">All Files <span class="Team-count">(753)</span></label>
+          <div class="file-management-filter-form">
+            <form id="file-table-form" action="" class="form-inline u_form" method="get" accept-charset="utf-8">
+              <div class="form-group">
+                <input type="search" name="" class="form-control ws-search" value="" placeholder="filter by user">
+              </div>
+              <div class="form-group">
+                <select name=""  class="form-control ws-select">
+                  <option value="">Select team</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name=""  class="form-control ws-select">
+                  <option value="">All file types</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="text" name="" value="" class="form-control Settingdatepicker" placeholder="Create On">
+              </div>
+              <div class="form-group">
+                <input type="text" name="" value="" class="form-control Settingdatepicker" placeholder="Last modified">
+              </div>
+              <div class="form-group">
+                <button id="ws-createNewUser-btn" type="button" name="" class="btn btn-primary ws-file-edit-per">Edit Permissions</button>
+              </div>
+            </form>
+            <form>
+              <div id="DownloadSelectFile" class="Download-select-file">
+                <button type="button" class="download-file">Download</button>
+                <button class="download-cancel" type="reset">Cancel</button>
+              </div>
+          </div>
+          <div id="ws-File-management-filter-table">
+            <div class="custom-file-table-group">
+              <div class="ws-Custom_Table file-management-table">
+                <table class="table user_table file-manage-table">
+                    <thead>
+                      <tr class="table_head" id="file-table-head">
+                          <th class="HoverDataCheckbox" style="width: 14px;">
+                            <span class="nbspHovenon"></span>
+                            <input type="checkbox" name="" class="SelectAllHoverCheckbox HoverCheckbox" id="SelectAllCheckbox">
+                          </th>
+                          <th> File Name<img class="table-down-arrow" src="/images/down-arrow.png">
+                          </th>
+                          <th>Type <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+                          <th>Size <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+                          <th>Upload On <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+                          <th>Owner <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+                          <th>Action <img class="table-down-arrow" src="/images/down-arrow.png"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table_data custom-table-data">
+                          <td class="HoverDataCheckbox" style="width: 14px;">
+                            <span class="nbspHovenon"></span>
+                            <input type="checkbox" name="" class="HoverCheckbox" id="FileCheckbox01">
+                          </td>
+                          <td class="name file-name hovernth"> Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>Mark</td>
+                          <td>03 Dec 2018</td>
+                          <td class="td-status ">
+                            <span class="ws-moremenu-file">
+                              <img class="download-icon" src="/images/setting/download.PNG" >
+                              <img class="delete-icon" src="/images/setting/delete.PNG">
+                              <img class="more-icon" src="/images/svg/MoreMenu.svg">
+                            </span>
+                          </td>
+                      </tr>
+                      <tr class="table_data custom-table-data">
+                          <td class="HoverDataCheckbox" style="width: 14px;">
+                            <span class="nbspHovenon"></span>
+                            <input type="checkbox" name="" class="HoverCheckbox" id="FileCheckbox02">
+                          </td>
+                          <td class="name file-name hovernth"> Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>Mark</td>
+                          <td>03 Dec 2018</td>
+                          <td class="td-status ">
+                            <span class="ws-moremenu-file">
+                              <img class="download-icon" src="/images/setting/download.PNG" >
+                              <img class="delete-icon" src="/images/setting/delete.PNG">
+                              <img class="more-icon" src="/images/svg/MoreMenu.svg">
+                            </span>
+                          </td>
+                      </tr>
+                      <tr class="table_data custom-table-data">
+                          <td class="HoverDataCheckbox" style="width: 14px;">
+                            <span class="nbspHovenon"></span>
+                            <input type="checkbox" name="" class="HoverCheckbox" id="FileCheckbox03">
+                          </td>
+                          <td class="name file-name hovernth"> Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>Mark</td>
+                          <td>03 Dec 2018</td>
+                          <td class="td-status ">
+                            <span class="ws-moremenu-file">
+                              <img class="download-icon" src="/images/setting/download.PNG" >
+                              <img class="delete-icon" src="/images/setting/delete.PNG">
+                              <img class="more-icon" src="/images/svg/MoreMenu.svg">
+                            </span>
+                          </td>
+                      </tr>
+                    </tbody>
+                </table>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+     <!--  File Management tab end -->
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- all popup content start-->
+
+  <div class="backWrap" style="display: none;" id="wsCreateBackWrap">
+      <div class="ws-create-pop-up" >
+        <div class="ws-create-popup-close"><i id="ws-create-user-popup-close">
+          <img src="/images/poll_icon/actions-close_24px_000.png" ></i>
+        </div>
+        <div id="CreateMainSection" class="ws-create-main-section">
+          <h2 class="ws-h2-create">Create New User</h2>
+          <form action="" class="" method="" id="UserCreateForm">
+            <label class="ws-label first-label">First Name</label>
+            <label class="ws-label">Last Name</label>
+              <input type="text" style="margin-right:14.5px;margin-bottom: 15.62px" id="UserFirstName" name="fname" class="ws-input" placeholder="First Name" value="" required>
+              <input type="text" id="UserLastName" name="lname" class="ws-input" placeholder="Last Name" required>
+              <label class="ws-label ws-label-2 ws-input-full-width" style="">Email Address</label>
+              <input type="text" id="UserEmailAdress" name="email" class="ws-input ws-input-full-width " placeholder="Enter email address" required>
+              <label class="ws-hins-email" style="margin-bottom: 15.62px">Seperate multiple email addresses with a comma</label>
+              <label for="" class="ws-label ws-input-full-width">Role</label>
+              <select style="margin-bottom: 15.62px;margin-top: 4.30px;" name="" class="ws-input ws-select ws-input-full-width" id="UserRole">
+                  <option value="" disabled selected>Select a role</option>
+                  <option >Admin</option>
+                  <option >Member</option>
+                  <option >User</option>
+              </select>
+              <label for="" class="ws-label ws-label-2 ws-input-full-width">Message</label>
+              <textarea name="" class="ws-input ws-input-full-width" placeholder="Hi, &#10; &#10;We're happy you..."></textarea>
+              <input type="submit" name="" id="UserMnageCreateUser" class="ws-label-2 ws-input-full-width Ws-Create-User-Submit" value="Send Invitation">
+             <div class="form-group"></div>
+          </form>
+        </div>
+      </div>
+  </div>
+
+  <!-- User management add user PopUp -->
+
+  <div class="backWrap" style="display: none;" id="AddUserBackWrap">
+      <div class="ws-addUser-pop-up AddUserBackWrap" >
+        <div class="ws-create-popup-close"><i id="ws-add-user-popup-close">
+          <img src="/images/poll_icon/actions-close_24px_000.png" ></i>
+        </div>
+        <div id="CreateMainSection" class="ws-create-main-section">
+          <h2 class="ws-h2-create">Add User</h2>
+          <form action="" class="" method="">
+              <label class="ws-label ws-label-2 ws-input-full-width" style="">Email Address</label>
+              <input type="text" name="email" class="ws-input ws-input-full-width " placeholder="Enter email address">
+              <label style="margin-top:8.13px" class="ws-hins-email">Seperate multiple email addresses with a comma</label>
+              <input type="submit" name="" class="Add-a-New-User-Submit" value="Add User">
+             <div class="form-group"></div>
+          </form>
+        </div>
+      </div>
+  </div>
+  <!-- User management add user PopUp -->
+
+  <!-- Create Team add user PopUp -->
+
+  <div class="backWrap" style="display: none;" id="Create-TeamBackWrap">
+      <div class="ws-create-pop-up Create-TeamBackWrap" >
+        <div class="ws-create-popup-close"><i id="ws-create-team-popup-close">
+          <img src="/images/poll_icon/actions-close_24px_000.png" ></i>
+        </div>
+        <div id="CreateMainSection" class="ws-create-main-section">
+          <h2 class="ws-h2-create">Create Team</h2>
+          <form action="" class="" method="" id="WsManageNewTeamForm">
+              <label class="ws-label ws-label-2 ws-input-full-width" style="">Team Name</label>
+              <input type="text"  class="ws-input ws-input-full-width" id="WsManagTeamName" placeholder="The design team">
+              <input type="submit" id="WsManagCteateTeam" name="" class="ws-label-2 ws-input-full-width ws-create-submit" value="Create Team">
+             <div class="form-group"></div>
+          </form>
+        </div>
+      </div>
+  </div>
+  <!-- Create Team  add user PopUp -->
+
+  <!-- User management Delete Team PopUp -->
+  <div class="backWrap" style="display: none;" id="DeleteTeamBackWrap">
+      <div class="ws-create-pop-up DeleteTeamBackWrap" >
+        <div class="ws-create-popup-close"><i id="ws-Delete-Team-popup-close">
+          <img src="/images/poll_icon/actions-close_24px_000.png" ></i>
+        </div>
+        <div id="CreateMainSection" class="ws-create-main-section">
+          <h2 class="ws-h2-create">Delete Team</h2>
+          <h3 class="delete-team-alert">Are you sure you want to delete this item ?</h3>
+          <span class="delete-team-alert2">This action will delete this business strategy team permanently.</span>
+          <p style="float:right;margin:23.5px 0 31.5px;">
+            <button class="delete-team-cancel">Cancel</button>
+            <button class="delete-team-con">Delete Team</button>
+          </p>
+        </div>
+      </div>
+  </div>
+  <!-- User management Delete Team PopUp -->
+
+  <!-- User management Team Permission PopUp -->
+
+  <!-- color management popup -->
+  <div class="backWrap" style="display: none;" id="ChoiceColorBackWrap">
+      <div class="ws-color-pop-up WorkSpaceColor" >
+        <div class="ws-create-popup-close"><i id="ws-Color-Manage-popup-close">
+          <img src="/images/poll_icon/actions-close_24px_000.png" ></i>
+        </div>
+        <div class="ws-color-main-section">
+          <h2 class="ws-h2-create">Workspace Color</h2>
+          <div class="allColor">
+              <div style="background-color: #5E8B6F;" class="colorDiv"><i class="fa fa-check colorDivCheck"></i></div>
+              <div style="background-color: #50E3C2;" class="colorDiv"></div>
+              <div style="background-color: #CD327F;" class="colorDiv"></div>
+              <div style="background-color: #8B572A;" class="colorDiv"></div>
+              <div style="background-color: #90A4AE;" class="colorDiv"></div>
+              <div style="background-color: #B8E986;" class="colorDiv"></div>
+              <div style="background-color: #2D4059;" class="colorDiv"></div>
+              <div style="background-color: #F87829;" class="colorDiv"></div>
+              <div style="background-color: #9951FF;" class="colorDiv"></div>
+              <div style="background-color: #3CA087;" class="colorDiv"></div>
+          </div>
+          <div style="float: right; margin-top: 23.5px;">
+            <button class="color-save-btn">Save Changes</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- color management popup -->
+
+
+  <!-- User Profile add a team  start -->
+
+  <div class="backWrap" style="display: none;" id="Create-userProfile-TeamBackWrap">
+      <div class="ws-create-pop-up Create-TeamBackWrap" >
+        <div class="ws-create-popup-close"><i >
+          <img src="/images/poll_icon/actions-close_24px_000.png" id="Create-userProfile-TeamBackWrap-close" ></i>
+        </div>
+        <div class="ws-create-main-section">
+          <h2 class="ws-h2-create">Add Team</h2>
+          <form action="" class="" method="" id="Profile-Team-Form" >
+              <label class="ws-label ws-label-2 ws-input-full-width" style="">Team Name</label>
+              <input type="text" id="Profile-team-Name" class="ws-input ws-input-full-width"  placeholder="The design team">
+              <input type="submit" id="User-profile-create-Team-btn" name="" class="ws-label-2 ws-input-full-width ws-create-submit" value="Add Team">
+             <div class="form-group"></div>
+          </form>
+        </div>
+      </div>
+  </div>
+
+  <!-- User Profile add a team  end -->
+
+
+
+
+  <div class="backWrap" style="display: none;" id="Team-All-Permission">
+    <div class="ws-create-pop-up Team-All-Permission" >
+      <div class="ws-create-popup-close"><i id="ws-edit-team-permission-popup-close">
+        <img src="/images/poll_icon/actions-close_24px_000.png" ></i>
+      </div>
+      <div id="CreateMainSection" class="ws-create-main-section">
+        <h2 class="ws-h2-create">Team Permissions</h2>
+        <form action="" class="" method="">
+          <div class="permissions-setting">
+            <div class="permissions-setting-group">
+              <label for="" class="permissions-setting-group-head">Messages</label>
+              <div class="setting-group-content">
+                <div class="setting-group-content-left">
+                  <label for="">Delete own messages</label>
+                </div>
+                <div class="setting-group-content-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="setting-group-content">
+                <div class="setting-group-content-left">
+                  <label for="">Delete other user messages</label>
+                </div>
+                <div class="setting-group-content-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="permissions-setting-group">
+              <label for="" class="permissions-setting-group-head">Channels</label>
+              <div class="setting-group-content">
+                <div class="setting-group-content-left">
+                  <label for="">Create a new channel</label>
+                </div>
+                <div class="setting-group-content-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="setting-group-content">
+                <div class="setting-group-content-left">
+                  <label for="">Rename channel</label>
+                </div>
+                <div class="setting-group-content-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="setting-group-content">
+                <div class="setting-group-content-left">
+                  <label for="">Delete channel</label>
+                </div>
+                <div class="setting-group-content-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="setting-group-content">
+                <div class="setting-group-content-left">
+                  <label for="">Remove people form channels</label>
+                </div>
+                <div class="setting-group-content-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="setting-group-content">
+                <div class="setting-group-content-left">
+                  <label for="">Change a Public chanel to private</label>
+                </div>
+                <div class="setting-group-content-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="permissions-setting-group">
+              <label for="" class="permissions-setting-group-head">Workspace</label>
+              <div class="setting-group-content">
+                <div class="setting-group-content-left">
+                  <label for="">Invite new guest users to channel</label>
+                </div>
+                <div class="setting-group-content-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="setting-group-content">
+                <div class="setting-group-content-left">
+                  <label for="">Invite new guest users to project task</label>
+                </div>
+                <div class="setting-group-content-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="setting-group-content">
+                <div class="setting-group-content-left">
+                  <label for="">Add apps and integrations</label>
+                </div>
+                <div class="setting-group-content-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="setting-group-content">
+                <div class="setting-group-content-left">
+                  <label for="">Workspace billing and payment</label>
+                </div>
+                <div class="setting-group-content-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- all popup content end-->
+</main>
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var to = '';
+  // var alluserinfo = <%- JSON.stringify(data) %>;
+  // console.log(alluserinfo);
+</script>
+<script src="/javascripts/socket-client-side.js"></script>
+<script src="/javascripts/canvasjs.min.js"></script>
+<script src="/javascripts/custom-workspace.js"></script>
+<script src="/javascripts/custom.js"></script>
+<script src="/javascripts/custom-chat.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<%- include('layouts/foot') %>
+<%- include('templates/project/quickproject') %>

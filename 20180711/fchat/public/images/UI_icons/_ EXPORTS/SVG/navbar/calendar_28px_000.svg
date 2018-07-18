@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / navbar / calendar_28px_000</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-navbar-/-calendar_28px_000" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(2.000000, 1.500000)">
+            <path d="M0.00013252579,5.99998306 L24.0000648,5.99998306 L0.00013252579,5.99998306 Z M6.99999788,2.99999153 L6.99999788,0 L6.99999788,2.99999153 Z M16.9999979,2.99999153 L16.9999979,0 L16.9999979,2.99999153 Z M10.1251039,1.49999576 L13.8750933,1.49999576 L10.1251039,1.49999576 Z M4.12512088,1.49999576 L3,1.49999576 C1.34314575,1.49999576 2.72138109e-10,2.84314151 2.72138312e-10,4.49999576 L2.72137868e-10,21 C2.72138071e-10,22.6568542 1.34314575,24 3,24 L21.0000648,24 C22.656919,24 24.0000648,22.6568542 24.0000648,21 L24.0000648,4.49999576 C24.0000648,2.84314151 22.656919,1.49999576 21.0000648,1.49999576 L19.8750764,1.49999576" id="icon-/-calendar-/-24" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <text id="31" font-family="Assistant-SemiBold, Assistant" font-size="14" font-weight="500" line-spacing="16" fill="#FFFFFF">
+                <tspan x="5" y="20">31</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

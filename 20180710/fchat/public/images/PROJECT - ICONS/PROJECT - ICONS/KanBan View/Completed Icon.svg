@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Completed Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Completed-Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.86">
+        <g id="Group-48" transform="translate(6.000000, 5.000000)" stroke="#000000" stroke-width="0.6">
+            <g id="check-circle" transform="translate(0.807692, 0.807692)">
+                <path d="M11.6666667,5.88 L11.6666667,6.41666667 C11.6651896,9.00006675 9.96467148,11.2747909 7.48728891,12.0072756 C5.00990634,12.7397602 2.3458129,11.7555154 0.9397238,9.5882887 C-0.466365303,7.42106199 -0.279496323,4.58712274 1.39899328,2.62329208 C3.07748288,0.659461432 5.84774904,0.0335564158 8.2075,1.085" id="Shape"></path>
+                <polyline id="Shape" points="11.6666667 1.75 5.83333333 7.58916667 4.08333333 5.83916667"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

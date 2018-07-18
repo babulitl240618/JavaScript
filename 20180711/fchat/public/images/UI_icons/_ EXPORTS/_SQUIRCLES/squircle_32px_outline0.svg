@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>shape / squircle_32px_outline0</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="shape-/-squircle_32px_outline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M16,0.75 C3.61421356,0.75 0.75,3.61421356 0.75,16 C0.75,28.3857864 3.61421356,31.25 16,31.25 C28.3857864,31.25 31.25,28.3857864 31.25,16 C31.25,3.61421356 28.3857864,0.75 16,0.75 Z" stroke="#FFFFFF" stroke-width="1.5"></path>
+    </g>
+</svg>

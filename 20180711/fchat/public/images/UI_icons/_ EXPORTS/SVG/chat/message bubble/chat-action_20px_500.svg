@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / message bubble / chat-action_20px_500</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-message-bubble-/-chat-action_20px_500" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1.75,5.69565217 L5.66304348,7.26086957 L9.9673913,1 L14.2717391,7.26086957 L18.1847826,5.69565217 M9.9673913,15.0869565 L9.9673913,18.6086957 L9.9673913,15.0869565 Z M5.66304348,7.26086957 L14.2717391,7.26086957 L18.1847826,14.3043478 L9.9673913,15.0869565 L1.75,14.3043478 L5.66304348,7.26086957 Z M9.9673913,1 L18.1847826,5.69565217 L18.1847826,14.3043478 L9.9673913,19 L1.75,14.3043478 L1.75,5.69565217 L9.9673913,1 Z M5.66304348,7.26086957 L9.9673913,15.0869565 L14.2717391,7.26086957 L5.66304348,7.26086957 Z" stroke="#607D8B" stroke-width="1.25"></path>
+    </g>
+</svg>

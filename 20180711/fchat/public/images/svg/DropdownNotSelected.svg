@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Dropdown - Not Selected</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Dropdown---Not-Selected" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M15.1715729,10.5 L8.17157288,10.5 L11.6715729,6 L15.1715729,10.5 Z M8,12.8284271 L15,12.8284271 L11.5,17.3284271 L8,12.8284271 Z" id="Affordance" fill="#E3E3E3"></path>
+    </g>
+</svg>

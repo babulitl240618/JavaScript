@@ -1,0 +1,7 @@
+{
+  "development": {
+    "DB": "dbname",
+    "CASSANDRA_URL": "url:if_need_port",
+    "CASSANDRA_PORT": "9042"
+  }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / file / doc-pdf_40px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-file-/-doc-pdf_40px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8.99700466,38 C7.89408944,38 7,37.1016617 7,35.9926701 L7,11 L15.6666667,2 L30.9947133,2 C32.1022026,2 33,2.88989258 33,3.99970728 L33,36.0002927 C33,37.1047006 32.1050211,38 31.0029953,38 L8.99700466,38 Z M7,11 L14.0026083,11 C15.1057373,11 16,10.1041422 16,9.0026083 L16,2" id="document" stroke="#263238" stroke-width="1.5" transform="translate(20.000000, 20.000000) scale(-1, 1) translate(-20.000000, -20.000000) "></path>
+        <path d="M19.3383548,14 C17.6543273,14 17.4057036,18.1910854 20.5631022,21.348484 C23.7205008,24.5058826 27.9115862,26.2095061 27.9115862,24.4103523 C27.9115862,22.6111985 23.1656903,22.9945444 19.9507285,24.4103523 C16.7357668,25.8261602 9.94821705,29.1562482 12.6022445,29.9217153 C15.4326356,30.7386218 17.6922944,24.9467916 18.7259812,22.5732313 C19.7596679,20.199671 21.4436955,14.0379672 19.3383548,14 L19.3383548,14 Z" id="pdf" stroke-opacity="0.88" stroke="#0039CB" stroke-width="1.5"></path>
+    </g>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / nested / selected-flag_32px_200</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-nested-/-selected-flag_32px_200" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6,19 L6,30 L6,2 L6,5 L25.7357632,5 C25.7960418,5 25.8542907,5.02177919 25.8997826,5.0613266 C26.003984,5.15191199 26.015022,5.30981792 25.9244366,5.41401936 L20.4842229,11.6719613 C20.3206853,11.8600805 20.3206853,12.1399195 20.4842229,12.3280387 L25.9244366,18.5859806 C25.9639841,18.6314725 25.9857632,18.6897214 25.9857632,18.75 C25.9857632,18.8880712 25.8738344,19 25.7357632,19 L6,19 Z" stroke="#B0BEC5" stroke-width="1.5"></path>
+    </g>
+</svg>

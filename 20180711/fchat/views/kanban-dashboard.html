@@ -1,0 +1,416 @@
+<%- include('layouts/head') %>
+<style type="text/css">
+	#mask{
+		width: 1058px;
+		height: 587px;
+		margin: 85px auto;
+	}
+</style>
+
+<main role="main" class="project-container kanban">
+	<%- include('templates/recent-chat-holder') %>
+  	<div class="project-template">
+		<div class="upper-prt">
+			<div class="upper-left">
+				<a href="/projects/projectDetail/1">
+					<svg width="48px" height="48px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Back" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+					        <path d="M10.5,9 L8,12 L10.5,15 M8,12 L16,12 M12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 Z" id="btn-/-back-/-32-copy" stroke="#B0BEC5"></path>
+					    </g>
+					</svg>
+				</a>
+			</div>
+			<div class="upper-right">
+				<span class="hayven-proname-span">Hayven CX / UX Design Works <span class="dotodot" id="dotodot">...</span></span>
+				<div class="menuListTT" style="left: 65%;">
+					<ul class="menuListUlTT">
+						<li class="menuListliTT">Edit Name</li>
+						<li class="menuListliTT">Duplicate Project</li>
+						<li class="menuListliTT">Delete Project</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="detail-prt">
+			<div class="sectionColom">
+				<div class="sectionHead">
+					<svg width="26px" height="26px" viewBox="0 0 24 24" style="margin: -5px;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Create-Project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+					        <g id="plus-circle" transform="translate(8.000000, 7.000000)" stroke="#9B9B9B" stroke-width="2">
+					            <path d="M3.86100386,0.2 L3.86100386,9.8" id="Shape"></path>
+					            <path d="M0.154440154,5 L7.56756757,5" id="Shape"></path>
+					        </g>
+					    </g>
+					</svg>
+					Add Section 
+				</div>
+				<div class="taskCountKn">6 Tasks</div>
+				<div class="inputTask"><input class="form-control inputTaskType" id="inputTaskType1" placeholder="+ Start adding task" id="project-create" ></div>
+				<div class="tasklistcontainer tasklistcontainer-fst" id="tasklistcontainer">
+			    	<div class="listGroup">
+						<div class="inner-group" style="border-left: 4px solid #E03C31" onclick="openTaskOptCentrKNBN(this);">
+							<p>Design screens for calendar, sign up, log in, connect. After finishing and reviewing, send to team to start developing.</p>
+							<div class="optPart col-lg-12">
+								<div class="infoPart">
+									<div class="taskPrt">
+										<svg style="color: #d2c7c7;width: 12px;height: 15px;" aria-hidden="true" data-prefix="fal" data-icon="clipboard-list" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-clipboard-list fa-w-12 fa-2x"><path fill="currentColor" d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-88.6c.4-2.6.6-5.3.6-8 0-30.9-25.1-56-56-56s-56 25.1-56 56c0 2.7.2 5.4.6 8H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 32c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm160 432c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h48v20c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12V96h48c8.8 0 16 7.2 16 16v352z" class=""></path></svg>  11 subtasks
+									</div>
+									<div class="comPrt">
+										<img src="/images/comico.png" style="margin-top: -1px;float: left;"> <span>3 Completed</span>
+									</div>
+									<div class="statusPrt">
+										<span class="subtaskBtn rectangle-3-copy-3-5 overdue knOverDueBtn">Overdue</span>
+									</div>
+									<div class="flagPrt">
+										<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="fltRight"" id="svgFlagged">
+										    <g id="Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#CD327F" stroke-width="2" fill="#CD327F" fill-rule="nonzero"></path>
+										    </g>
+										</svg>
+									</div>
+								</div>
+								<div class="progress">
+								  <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+
+					<div class="listGroup">
+						<div class="inner-group" style="border-left: 4px solid #ffffff">
+							<p>Design screens for calendar, sign up, log in, connect. After finishing and reviewing, send to team to start developing.</p>
+							<div class="optPart col-lg-12">
+								<div class="infoPart">
+									<div class="taskPrt">
+										
+									</div>
+									<div class="comPrt">
+										
+									</div>
+									<div class="statusPrt">
+										
+									</div>
+									<div class="flagPrt">
+										<svg width="24px" height="24px" class="flagged fltRight" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svgnflagged" onclick="flagToggle(event,'svgnflagged')">
+										   <g id="Not-Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.3">
+										        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#90A4AE" stroke-width="2" fill-rule="nonzero"></path>
+										    </g>
+										</svg>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+
+					<div class="listGroup">
+						<div class="inner-group" style="border-left: 4px solid #B8E986">
+							<p>Design screens for calendar, sign up, log in, connect. After finishing and reviewing, send to team to start developing.</p>
+							<div class="optPart col-lg-12">
+								<div class="infoPart">
+									<div class="taskPrt">
+										<svg style="color: #d2c7c7;width: 12px;height: 15px;" aria-hidden="true" data-prefix="fal" data-icon="clipboard-list" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-clipboard-list fa-w-12 fa-2x"><path fill="currentColor" d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-88.6c.4-2.6.6-5.3.6-8 0-30.9-25.1-56-56-56s-56 25.1-56 56c0 2.7.2 5.4.6 8H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 32c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm160 432c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h48v20c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12V96h48c8.8 0 16 7.2 16 16v352z" class=""></path></svg>  11 subtasks
+									</div>
+									<div class="comPrt">
+										<img src="/images/comico.png" style="margin-top: -1px;float: left;"> <span>0 Completed</span>
+									</div>
+									<div class="statusPrt">
+										<span class="subtaskBtn rectangle-3-copy-3-5 overdue knOverDueBtn">Overdue</span>
+									</div>
+									<div class="flagPrt">
+										<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="fltRight"" id="svgFlagged">
+										    <g id="Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#CD327F" stroke-width="2" fill="#CD327F" fill-rule="nonzero"></path>
+										    </g>
+										</svg>
+									</div>
+								</div>
+								<div class="progress">
+								  <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+
+					<div class="listGroup">
+						<div class="inner-group" style="border-left: 4px solid #ffffff">
+							<div class="completedKnBn">
+								<svg width="29px" height="29px" viewBox="0 0 26 26" class="completedCircle" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								    <g id="Completed" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								        <path d="M13,1 C6.3728959,1 1,6.37267089 1,13 C1,19.6273291 6.3728959,25 13,25 C19.6278354,25 25,19.6273291 25,13 C25,6.37267089 19.6276104,1 13,1 Z M10.7987091,19.1641659 L5.51485705,13.8805389 L7.27599106,12.1194049 L10.7987091,15.6418979 L18.7240089,7.71637299 L20.4851429,9.477507 L10.7987091,19.1641659 Z" id="Shape" fill="#32CD80" fill-rule="nonzero"></path>
+								    </g>
+								</svg> <span>Completed! </span>
+							</div>
+							
+
+							<p>Design screens for calendar, sign up, log in, connect. After finishing and reviewing, send to team to start developing.</p>
+							<div class="optPart col-lg-12">
+								<div class="infoPart">
+									<div class="taskPrt">
+										<svg style="color: #d2c7c7;width: 12px;height: 15px;" aria-hidden="true" data-prefix="fal" data-icon="clipboard-list" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-clipboard-list fa-w-12 fa-2x"><path fill="currentColor" d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-88.6c.4-2.6.6-5.3.6-8 0-30.9-25.1-56-56-56s-56 25.1-56 56c0 2.7.2 5.4.6 8H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 32c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm160 432c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h48v20c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12V96h48c8.8 0 16 7.2 16 16v352z" class=""></path></svg>  11 subtasks
+									</div>
+									<div class="comPrt">
+										<img src="/images/comico.png" style="margin-top: -1px;float: left;"> <span>0 Completed</span>
+									</div>
+									<div class="statusPrt">
+										<!-- <span class="subtaskBtn rectangle-3-copy-3-5 overdue knOverDueBtn">Overdue</span> -->
+									</div>
+									<div class="flagPrt">
+										<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="fltRight"" id="svgFlagged">
+										    <g id="Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#CD327F" stroke-width="2" fill="#CD327F" fill-rule="nonzero"></path>
+										    </g>
+										</svg>
+									</div>
+								</div>
+								<div class="progress">
+								  <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="sectionColom">
+				<div class="sectionHead">
+					<span>Branding & PR</span> 
+				</div>
+				<div class="taskCountKn">3 Tasks</div>
+				<div class="inputTask"><input class="form-control inputTaskType" id="inputTaskType2" placeholder="+ Start adding task" id="project-create" ></div>
+				<div class="tasklistcontainer" id="tasklistcontainer">
+			    	<div class="listGroup">
+						<div class="inner-group" style="border-left: 4px solid #F5A623">
+							<p>Design screens for calendar, sign up, log in, connect. After finishing and reviewing, send to team to start developing.</p>
+							<div class="optPart col-lg-12">
+								<div class="infoPart">
+									<div class="taskPrt">
+										<svg style="color: #d2c7c7;width: 12px;height: 15px;" aria-hidden="true" data-prefix="fal" data-icon="clipboard-list" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-clipboard-list fa-w-12 fa-2x"><path fill="currentColor" d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-88.6c.4-2.6.6-5.3.6-8 0-30.9-25.1-56-56-56s-56 25.1-56 56c0 2.7.2 5.4.6 8H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 32c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm160 432c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h48v20c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12V96h48c8.8 0 16 7.2 16 16v352z" class=""></path></svg>  4 subtasks
+									</div>
+									<div class="comPrt">
+										<img src="/images/comico.png" style="margin-top: -1px;float: left;"> <span>3 Completed</span>
+									</div>
+									<div class="statusPrt">
+										<!-- <span class="subtaskBtn rectangle-3-copy-3-5 overdue knOverDueBtn">Overdue</span> -->
+									</div>
+									<div class="flagPrt">
+										<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="fltRight"" id="svgFlagged">
+										    <g id="Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#CD327F" stroke-width="2" fill="#CD327F" fill-rule="nonzero"></path>
+										    </g>
+										</svg>
+									</div>
+								</div>
+								<div class="progress">
+								  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="listGroup">
+						<div class="inner-group" style="border-left: 4px solid #E03C31">
+							<p>Design screens for calendar, sign up, log in, connect. After finishing and reviewing, send to team to start developing.</p>
+							<div class="optPart col-lg-12">
+								<div class="infoPart">
+									<div class="taskPrt">
+										<svg style="color: #d2c7c7;width: 12px;height: 15px;" aria-hidden="true" data-prefix="fal" data-icon="clipboard-list" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-clipboard-list fa-w-12 fa-2x"><path fill="currentColor" d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-88.6c.4-2.6.6-5.3.6-8 0-30.9-25.1-56-56-56s-56 25.1-56 56c0 2.7.2 5.4.6 8H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 32c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm160 432c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h48v20c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12V96h48c8.8 0 16 7.2 16 16v352z" class=""></path></svg>  4 subtasks
+									</div>
+									<div class="comPrt">
+										<img src="/images/comico.png" style="margin-top: -1px;float: left;"> <span>3 Completed</span>
+									</div>
+									<div class="statusPrt">
+										<span class="subtaskBtn rectangle-3-copy-3-5 overdue knOverDueBtn">Overdue</span>
+									</div>
+									<div class="flagPrt">
+										<svg width="24px" height="24px" class="flagged fltRight" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svgnflagged" onclick="flagToggle(event,'svgnflagged')">
+										   <g id="Not-Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.3">
+										        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#90A4AE" stroke-width="2" fill-rule="nonzero"></path>
+										    </g>
+										</svg>
+									</div>
+								</div>
+								<div class="progress">
+								  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="listGroup">
+						<div class="inner-group" style="border-left: 4px solid #ffffff">
+							<div class="completedKnBn">
+								<svg width="29px" height="29px" viewBox="0 0 26 26" class="completedCircle" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								    <g id="Canceled-Status" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								        <g id="error" transform="translate(1.000000, 1.000000)">
+								            <circle id="Oval" fill="#D75A4A" fill-rule="nonzero" cx="12" cy="12" r="12"></circle>
+								            <polyline id="Shape" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" points="7.68 16.32 12 12 16.32 7.68"></polyline>
+								            <polyline id="Shape" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" points="7.68 7.68 12 12 16.32 16.32"></polyline>
+								        </g>
+								    </g>
+								</svg> <span>Canceled! </span>
+							</div>
+							
+
+							<p><strike> Design screens for calendar, sign up, log in, connect. After finishing and reviewing, send to team to start developing.</strike></p>
+							<div class="optPart col-lg-12">
+								<div class="infoPart">
+									<div class="taskPrt">
+										<svg style="color: #d2c7c7;width: 12px;height: 15px;" aria-hidden="true" data-prefix="fal" data-icon="clipboard-list" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-clipboard-list fa-w-12 fa-2x"><path fill="currentColor" d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-88.6c.4-2.6.6-5.3.6-8 0-30.9-25.1-56-56-56s-56 25.1-56 56c0 2.7.2 5.4.6 8H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 32c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm160 432c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h48v20c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12V96h48c8.8 0 16 7.2 16 16v352z" class=""></path></svg>  <strike style="font-size: 11px;">11 subtasks</strike>
+									</div>
+									<div class="comPrt">
+										<img src="/images/comico.png" style="margin-top: -1px;float: left;"> <span><strike  style="font-size: 11px;">0 Completed</strike></span>
+									</div>
+									<div class="statusPrt">
+										<!-- <span class="subtaskBtn rectangle-3-copy-3-5 overdue knOverDueBtn">Overdue</span> -->
+									</div>
+									<div class="flagPrt">
+										
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="sectionColom">
+				<div class="sectionHead">
+					<span>MVP Release 1.0</span>
+				</div>
+				<div class="taskCountKn">3 Tasks</div>
+				<div class="inputTask"><input class="form-control inputTaskType" id="inputTaskType3" placeholder="+ Start adding task" id="project-create" ></div>
+				<div class="tasklistcontainer" id="tasklistcontainer">
+			    	<div class="listGroup">
+						<div class="inner-group" style="border-left: 4px solid #E03C31">
+							<p>Design screens for calendar, sign up, log in, connect. After finishing and reviewing, send to team to start developing.</p>
+							<div class="optPart col-lg-12">
+								<div class="infoPart">
+									<div class="taskPrt">
+										<svg style="color: #d2c7c7;width: 12px;height: 15px;" aria-hidden="true" data-prefix="fal" data-icon="clipboard-list" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-clipboard-list fa-w-12 fa-2x"><path fill="currentColor" d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-88.6c.4-2.6.6-5.3.6-8 0-30.9-25.1-56-56-56s-56 25.1-56 56c0 2.7.2 5.4.6 8H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 32c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm160 432c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h48v20c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12V96h48c8.8 0 16 7.2 16 16v352z" class=""></path></svg>  11 subtasks
+									</div>
+									<div class="comPrt">
+										<img src="/images/comico.png" style="margin-top: -1px;float: left;"> <span>3 Completed</span>
+									</div>
+									<div class="statusPrt">
+										<span class="subtaskBtn rectangle-3-copy-3-5 overdue knOverDueBtn">Overdue</span>
+									</div>
+									<div class="flagPrt">
+										<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="fltRight"" id="svgFlagged">
+										    <g id="Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#CD327F" stroke-width="2" fill="#CD327F" fill-rule="nonzero"></path>
+										    </g>
+										</svg>
+									</div>
+								</div>
+								<div class="progress">
+								  <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+
+					<div class="listGroup">
+						<div class="inner-group" style="border-left: 4px solid #ffffff">
+							<p>Design screens for calendar, sign up, log in, connect. After finishing and reviewing, send to team to start developing.</p>
+							<div class="optPart col-lg-12">
+								<div class="infoPart">
+									<div class="taskPrt">
+										
+									</div>
+									<div class="comPrt">
+										
+									</div>
+									<div class="statusPrt">
+										
+									</div>
+									<div class="flagPrt">
+										<svg width="24px" height="24px" class="flagged fltRight" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svgnflagged" onclick="flagToggle(event,'svgnflagged')">
+										   	<g id="Not-Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.3">
+										        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#90A4AE" stroke-width="2" fill-rule="nonzero"></path>
+										    </g>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="listGroup">
+						<div class="inner-group" style="border-left: 4px solid #B8E986">
+							<p>Design screens for calendar, sign up, log in, connect. After finishing and reviewing, send to team to start developing.</p>
+							<div class="optPart col-lg-12">
+								<div class="infoPart">
+									<div class="taskPrt">
+										<svg style="color: #d2c7c7;width: 12px;height: 15px;" aria-hidden="true" data-prefix="fal" data-icon="clipboard-list" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-clipboard-list fa-w-12 fa-2x"><path fill="currentColor" d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-88.6c.4-2.6.6-5.3.6-8 0-30.9-25.1-56-56-56s-56 25.1-56 56c0 2.7.2 5.4.6 8H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 32c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm160 432c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h48v20c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12V96h48c8.8 0 16 7.2 16 16v352z" class=""></path></svg>  11 subtasks
+									</div>
+									<div class="comPrt">
+										<img src="/images/comico.png" style="margin-top: -1px;float: left;"> <span>0 Completed</span>
+									</div>
+									<div class="statusPrt">
+										<span class="subtaskBtn rectangle-3-copy-3-5 overdue knOverDueBtn">Overdue</span>
+									</div>
+									<div class="flagPrt">
+										<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="fltRight"" id="svgFlagged">
+										    <g id="Flagged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										        <path d="M16.3769322,13.0646 L14.4965193,10 L16.3947998,6.906 C16.4326947,6.8442 16.4346582,6.7666 16.4001011,6.703 C16.3653478,6.6394 16.299768,6.6 16.2282977,6.6 L7.39269352,6.6 L7.39269352,6.2 C7.39269352,6.0894 7.30492652,6 7.19634676,6 C7.087767,6 7,6.0894 7,6.2 L7,6.8 L7,12.6 L7,13.2 L7,17.8 C7,17.9106 7.087767,18 7.19634676,18 C7.30492652,18 7.39269352,17.9106 7.39269352,17.8 L7.39269352,13.4 L16.2282977,13.4 C16.3408044,13.4 16.4285714,13.3106 16.4285714,13.2 C16.4285714,13.1478 16.4089368,13.1004 16.3769322,13.0646 Z" id="Shape-Copy-4" stroke="#CD327F" stroke-width="2" fill="#CD327F" fill-rule="nonzero"></path>
+										    </g>
+										</svg>
+									</div>
+								</div>
+								<div class="progress">
+								  <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="sectionColom">
+				<div class="sectionHead">
+					<svg width="26px" height="26px" viewBox="0 0 24 24" style="margin: -5px;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Create-Project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+					        <g id="plus-circle" transform="translate(8.000000, 7.000000)" stroke="#9B9B9B" stroke-width="2">
+					            <path d="M3.86100386,0.2 L3.86100386,9.8" id="Shape"></path>
+					            <path d="M0.154440154,5 L7.56756757,5" id="Shape"></path>
+					        </g>
+					    </g>
+					</svg>
+					Add Section 
+				</div>
+				<div class="taskCountKn"><span class="no-tasks-yet">No tasks yet</span> </div>
+				<div class="inputTask"><input class="form-control inputTaskType" id="inputTaskType4" placeholder="+ Start adding task" id="project-create" ></div>
+				<div class="tasklistcontainer" id="tasklistcontainer">
+			    	
+					
+				</div>
+			</div>
+		</div>
+	</div>
+  <%- include('templates/_partial') %>
+</main>
+
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var to = '';
+  // var alluserinfo = <%- JSON.stringify(data) %>;
+  // console.log(alluserinfo);
+</script>
+<script src="/javascripts/socket-client-side.js"></script>
+<script src="/javascripts/custom.js"></script>
+<script src="/javascripts/custom-project.js"></script>
+
+<%- include('layouts/foot') %>
+<%- include('templates/taskproperties_kanban') %>
+

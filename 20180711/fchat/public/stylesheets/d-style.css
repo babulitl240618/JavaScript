@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Assistant');
+
+.recent-chat-holder{
+	box-shadow: 2px 0px 10px #a2a2a2;
+    width: 100vw;
+    height: 25px;
+    margin-left: -15%;
+    position: relative;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.mirror{
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+
+.recent-icon-color{
+	color: #af2222;
+}
+
+.h3Text{
+	font-family: 'Work Sans', sans-serif;
+	text-align: left;
+	font-weight: 600;
+}
+
+.project-body{
+	width: 72%;
+	margin-left: 10%;
+	height: 75px;
+	position: relative;
+	padding-top: 50px;
+}
+
+#projectContainer .inner-group{
+	float: left;
+	position: relative;
+	width: 100%;
+    height: 40px;
+    box-shadow: -1px 0px 6px #a7a7a7;
+    border-radius: 8px;
+    margin-bottom: 1%;
+}
+
+#projectContainer>.inner-group>.left-panel{
+	width: 6%;
+	float: left;
+}
+
+#projectContainer>.inner-group>.right-panel{
+	width: 91%;
+    display: inline-block;
+    height: 40px;
+    float: left;
+}
+#projectContainer>.inner-group>.pin-panel{
+	width: 3%;
+    display: inline-block;
+    height: 40px;
+    float: left;
+    padding: 12px 0 0 0;
+    color: #b2b4b7;
+    display: none;
+}
+
+#projectContainer>.inner-group>.right-panel>span{
+	font-size: 19px;
+    padding: 3px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.project-circle{
+	font-size: 29px;
+	margin: 5px;
+    color: #e2e2e2;
+}
+
+#projectCount{
+	font-weight: 800;
+	font-size: 18px;
+}
+
+.inner-group:hover{
+	margin-top: -3px;
+    margin-bottom: 11px !important;
+    cursor: pointer;
+    box-shadow: -3px 3px 6px #a7a7a7 !important;
+}
+
+.inner-group:hover .pin-panel{
+	display: block !important;
+}

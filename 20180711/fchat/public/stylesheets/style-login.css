@@ -1,0 +1,374 @@
+/*Login page design*/
+@import url('./fonts/haven-fonts.css');
+body{
+	background: #9b9b9b;
+}
+::placeholder {
+    color: #E3E3E3;
+    font-family: hvAssistant;
+    font-size: 16px;
+}
+
+::-moz-placeholder{
+	color: #939393;
+	font-family: hvAssistant;
+    font-size: 16px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #E3E3E3;
+   font-family: hvAssistant;
+   font-size: 16px;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: #E3E3E3;
+   font-family: hvAssistant;
+   font-size: 16px;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+.centered-form {
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	justify-content: center;
+}
+.centered-form__form {
+	background: #FAFAFA;
+	border-radius: 4px;
+	width: 466px;
+	height: 506px;
+	padding: 32px 40px;
+}
+.hello-welcome-back{
+	position: relative;
+	height: 42px;
+	width: 386px;
+	color: rgba(0,0,0,0.86);
+	font-family: "hvWorkSans";
+	font-size: 36px;
+	font-weight: 600;
+	line-height: 42px;
+	text-align: center;
+}
+.sign-into-your-account{
+	position: relative;
+	width: 246px;
+	height: 21px;
+	margin: 4px auto 0px;
+	color: #9B9B9B;
+	font-family: "hvWorkSans";
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 21px;
+	text-align: center;
+}
+.form-field{
+	position: relative;
+	margin: 0px 32px;
+	height: 60px;
+	width: 322px;
+}
+.email-address{
+	margin-top: 40px;
+}
+.email-address>label{
+	margin-top: -4px;
+}
+.password{
+	margin-top: 16px;
+}
+.forgotpass{
+	height: 11px;
+}
+.form-field>label{
+	height: 19px;
+	width: 113px;
+	color: rgba(0,0,0,0.86);
+	font-family: "hvWorkSans";
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 19px;
+	margin-bottom: 4px;
+}
+.form-field>input{
+	box-sizing: border-box;
+	height: 38px;
+	width: 323px;
+	border: 1px solid #E6E8ED;
+	border-radius: 4px;
+	padding: 8.5px;
+	background-color: #FFFFFF;
+	margin-bottom: 16px;
+}
+input[name=password]{
+	margin-bottom: 4px;
+}
+.forgot-pass{
+	position: relative;
+    float: right;
+    right: 0px;
+    margin-top: 4px;
+    color: rgba(0,0,0,0.86);
+    font-family: "hvWorkSans";
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 11px;
+}
+.forgot-pass:hover{
+	cursor: pointer;
+	color: #4A90E2;
+}
+.remember-me{
+	position: relative;
+    margin-top: 12px;
+    margin-left: 32px;
+    height: 16px;
+    width: 100px;
+}
+.remember-me>input{
+	position: relative;
+    float: left;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #E6E8ED;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+}
+.remember-me>p{
+	position: absolute;
+    height: 11px;
+    margin: 2px 0px 2px 18px;
+    color: rgba(0,0,0,0.86);
+    font-family: "hvWorkSans";
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 11px;
+    margin-left: 23px;
+}
+.sign-in>button, .sign-up>button{
+	position: relative;
+	margin: 16px 32px 0px 32px;
+	height: 37px;
+	width: 322px;
+	border-radius: 4px;
+	border: none;
+	color: #9B9B9B;
+	font-family: "hvWorkSans";
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 21px;
+	text-align: center;
+	background-color: rgba(155,155,155,0.1);
+}
+.sendButton.active{
+	color: #FFFFFF;
+	background-color: #4A90E2;
+	cursor: pointer;
+}
+.sign-up>button{
+	margin: 30px 32px 0px;
+}
+.back{
+	position: relative;
+	height: 37px;
+	width: 322px;
+	text-align: center;
+    text-decoration: none;
+    background-color: rgba(155,155,155,0.1);
+    margin: 5px 32px;
+    border-radius: 4px;
+    padding-top: 5px;
+    text-decoration: none;
+    color: #9B9B9B;
+	font-family: "hvWorkSans";
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 21px;
+}
+.back:hover {
+	background-color: #4A90E2;
+	cursor: pointer;
+	color: #fff;
+}
+.centered-form__form a:hover{
+	text-decoration: none;
+}
+.don-t-have-an-account{
+	position: relative;
+	margin: 12px 112.5px 16px;
+	height: 12px;
+	width: 162px;
+	color: #4A4A4A;
+	font-family: "hvWorkSans";
+	font-size: 10px;
+	line-height: 11px;
+	text-align: center;
+}
+.don-t-have-an-account>a{
+	text-decoration: none;
+	font-weight: 600;
+	color: #4A4A4A;
+}
+.don-t-have-an-account>a:hover{
+	color: #4A90E2;
+}
+.or-sign-in{
+	position: relative;
+	margin: 16px 32px 24px;
+	height: 13px;
+	width: 323px;
+}
+.or-sign-in>.line{
+	position: relative;
+	float: left;
+	box-sizing: border-box;
+	height: 2px;
+	width: 111px;
+	border-bottom: 0.5px solid #E3E3E3;
+	margin: 7px 0 4px 0;
+}
+.or-sign-in>.line.right{
+	float: right;
+}
+.or-sign-in>.or{
+	position: absolute;
+    float: left;
+    margin: 0px 157px;
+    font-family: hvAssistant;
+    font-size: 10px;
+    color: #9B9B9B;
+    height: 13px;
+    width: 9px;
+    line-height: 13px;
+    text-align: center;
+}
+.social-icon{
+	position: relative;
+	margin: 0px auto 32px;
+	height: 30px;
+	width: 208px;
+}
+.social-icon .fa-w-14{
+	color: #9b9b9b;
+	width: 30px;
+	height: 30px;
+}
+.social-icon .fa-w-20{
+    position: absolute;
+    margin: 0px 45px;
+    color: #9b9b9b;
+    width: 60px;
+    height: 30px;
+}
+.social-icon .windows-icon{
+	float: right;
+}
+.social-icon .fa-w-14:hover{
+	color: #4A90E2;
+	background-color: #FFFFFF;
+	cursor: pointer;
+}
+.social-icon .fa-w-20:hover{
+	color: #dc3545;
+	background-color: #FFFFFF;
+	cursor: pointer;
+}
+
+.forgot-password{
+	height: 309px;
+	width: 492px;
+}
+.forpass-title{
+	position: relative;
+	color: rgba(0,0,0,0.86);
+	font-family: "hvWorkSans";
+	font-size: 36px;
+	font-weight: 600;
+	line-height: 42px;
+	text-align: center;
+}
+.forpass-subtitle{
+	position: relative;
+	margin: 16px 23px 0px;
+	height: 42px;
+	width: 366px;
+	color: #9B9B9B;
+	font-family: "hvWorkSans";
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 21px;
+	text-align: center;
+}
+.forgot-password .form-field{
+	margin: 32px 45px 16px;
+}
+.forgot-password .sign-up>button{
+	margin: 0px 45px;
+}
+/*NB: for all browser, we have to change*/
+
+#projectSetOwner1{
+  display: none;
+}
+
+#projectLast{
+  display: none;
+}
+
+#projectInit{
+  display: none;
+}
+
+@-moz-document url-prefix() {
+	/*for mozilla, need to adjust this css*/
+    .hello-welcome-back, .forpass-title {letter-spacing: -2px;}
+    /*.don-t-have-an-account {letter-spacing: -1px;}*/
+}
+
+//Remember me checkbox
+
+input.HoverCheckbox{
+	visibility: hidden;
+}
+
+
+input.HoverCheckbox[type=checkbox] {
+    cursor: pointer;
+    font-size: 14px;
+    visibility: hidden;
+    transform: scale(1);
+    left: 0px;
+    margin-top: 0px;
+    -moz-appearance: none;
+}
+
+input.HoverCheckbox[type=checkbox]:after {
+    content: " ";
+    background-color: #fff;
+    display: inline-block;
+    color: #00BFF0;
+    width: 16px;
+    height: 16px;
+    visibility: visible;
+    border: 1px solid #FFF;
+    padding: 0 3px;
+    margin: 0px 0;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.16);
+}
+
+input.HoverCheckbox[type=checkbox]:checked:after {
+    content: "\2713";
+    display: block;
+    font-weight: 600;
+    background: #4B90E0;
+    color: white;
+    border: none;
+    font-size: 11px;
+    transform: scale(1);
+
+}

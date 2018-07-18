@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / message bubble / flagged_20px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-message-bubble-/-flagged_20px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M12.8218874,7.72823131 L15.7984316,4.41713434 C15.8907374,4.31445377 15.8823269,4.15638611 15.7796464,4.06408036 C15.7337533,4.02282432 15.6742229,4 15.612512,4 L4,4 L4,12.125 L15.612512,12.125 C15.7505832,12.125 15.862512,12.0130712 15.862512,11.875 C15.862512,11.8132891 15.8396877,11.7537587 15.7984316,11.7078657 L12.8218874,8.39676869 C12.6510064,8.20668132 12.6510064,7.91831868 12.8218874,7.72823131 Z" fill="#D0021B"></path>
+        <path d="M4.21734188,2 L4.21734188,17" id="Path" stroke="#263238" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+</svg>

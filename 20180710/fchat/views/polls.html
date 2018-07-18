@@ -1,0 +1,1086 @@
+<%- include('layouts/head') %>
+<link rel="stylesheet" href="/stylesheets/style-polls.css">
+<style>
+</style>
+<script src="/javascripts/masonry/jquery.masonry.min.js"></script>
+<main role="main" class="container poll-container">
+  <div class="itl-template">
+    <div class="poll-text"><p class="created-by-me">Polls <span class="polls-17">(17)</span></p> </div>
+    <div class="search-bar">
+      <div class="input-group">
+        <input type="text" class="form-control search-txt" id="search-poll" placeholder="Search polls">
+        <img src="/images/svg/SearchPolls.svg" class="search-bar-img">
+      </div>
+      <img src="/images/filter_28px_400 @1x.png" class="pointer mask-squircle" />
+      <span class="rectanglePoll" id="rectanglePoll">Start Poll</span>
+    </div>
+    <div class="poll-text">
+      <span class="created-by-me" id="cbm" onclick="makePollActiveDiv('cbm');">Created by me</span>
+      <span class="created-by-me poll-inactive" id="sbo" onclick="makePollActiveDiv('sbo');">Shared by others</span>
+    </div>
+    <div class="body-bar">
+      <div class="shape-poll cbm">
+        <div class="poll-body"><p class="poll-title">What’s your favorite summer vacation spot ?</p></div>
+        <div class="poll-time">
+          <p class="time-title">Remaining time:</p>
+          <p class="time-remain">3d 5hrs 45mins</p>
+        </div>
+        <div class="poll-tag">
+          <div class="poll-img">
+            <img src="/images/users/dipok.jpg" class="pollicon" style="z-index:102;"/>
+            <img src="/images/users/tajdik.jpg" class="pollicon" style="z-index:101;"/>
+            <img src="/images/users/joni.jpg" class="pollicon" style="z-index:100;"/>
+            <span class="pollplus">+57</span>
+          </div>
+          <div class="poll-more">
+            <img src="/images/svg/MoreMenuPoll.svg"/>
+          </div>
+        </div>
+      </div>
+      <div class="shape-poll cbm">
+        <div class="poll-body"><p class="poll-title">How likely will you upgrade to sketch version 70 ? are you also going to update your plugins or wait until they are stable ?</p></div>
+        <div class="poll-time">
+          <p class="time-title">Remaining time:</p>
+          <p class="time-remain">7mins</p>
+        </div>
+        <div class="poll-tag">
+          <div class="poll-img">
+            <img src="/images/users/dipok.jpg" class="pollicon" style="z-index:102;"/>
+            <img src="/images/users/tajdik.jpg" class="pollicon" style="z-index:101;"/>
+            <img src="/images/users/joni.jpg" class="pollicon" style="z-index:100;"/>
+            <span class="pollplus">+130</span>
+          </div>
+          <div class="poll-more">
+            <img src="/images/svg/MoreMenuPoll.svg"/>
+          </div>
+        </div>
+      </div>
+      <div class="shape-poll sbo">
+        <div class="poll-body"><p class="poll-title">For our next lunch and learn topics, choose one of the bellow options.</p></div>
+        <div class="poll-time">
+          <p class="time-title">Remaining time:</p>
+          <p class="time-remain">2w 3d 14hrs 56mins</p>
+        </div>
+        <div class="poll-tag">
+          <div class="poll-img">
+            <img src="/images/users/dipok.jpg" class="pollicon" style="z-index:102;"/>
+            <img src="/images/users/tajdik.jpg" class="pollicon" style="z-index:101;"/>
+            <img src="/images/users/joni.jpg" class="pollicon" style="z-index:100;"/>
+            <span class="pollplus">+30</span>
+          </div>
+          <div class="poll-more">
+            <img src="/images/svg/MoreMenuPoll.svg"/>
+          </div>
+        </div>
+      </div>
+      <div class="shape-poll sbo">
+        <div class="poll-body"><p class="poll-title">Which hayven in-app integrations do you mainly use on a daily use ?</p></div>
+        <div class="poll-time">
+          <p class="time-title">Remaining time:</p>
+          <p class="time-remain">12hrs</p>
+        </div>
+        <div class="poll-tag">
+          <div class="poll-img">
+            <img src="/images/users/dipok.jpg" class="pollicon" style="z-index:102;"/>
+            <img src="/images/users/tajdik.jpg" class="pollicon" style="z-index:101;"/>
+            <img src="/images/users/joni.jpg" class="pollicon" style="z-index:100;"/>
+            <span class="pollplus">+57</span>
+          </div>
+          <div class="poll-more">
+            <img src="/images/svg/MoreMenuPoll.svg"/>
+          </div>
+        </div>
+      </div>
+      <div class="shape-poll sbo">
+        <div class="poll-body"><p class="poll-title">Are you a mac or pc user ?</p></div>
+        <div class="poll-time">
+          <p class="time-title closed">Remaining time:</p>
+          <p class="time-remain closed">Closed</p>
+        </div>
+        <div class="poll-tag">
+          <div class="poll-img">
+            <img src="/images/users/dipok.jpg" class="pollicon" style="z-index:102;"/>
+            <img src="/images/users/tajdik.jpg" class="pollicon" style="z-index:101;"/>
+            <img src="/images/users/joni.jpg" class="pollicon" style="z-index:100;"/>
+            <span class="pollplus">+57</span>
+          </div>
+          <div class="poll-more">
+            <img src="/images/svg/MoreMenuPoll.svg"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="backWrap" style="display: none;" id="pollBackWrap">
+    <div id="poll-pop-up" class="poll-pop-up" >
+      <i class="poll-close-shape" aria-label="Close" onclick="$('#rectanglePoll').click();">
+        <span aria-hidden="true">&times;</span>
+      </i>
+      <div class="poll-choose-shape">
+        <p class="poll-choose-a-polling-tem">Choose polling template</p>
+      </div>
+      <div class="poll-button-1">
+        <button id="yes-no-poll" class="poll-button-shape">Yes / No</button>
+        <button id="agree-disagree-poll" class="poll-button-shape">Agree / Disagree</button>
+      </div>
+      <div class="poll-button-2">
+        <button id="nps-score-poll" class="poll-button-shape">NPS Score</button>
+        <button id="custom-poll" class="poll-button-shape">Custom</button>
+      </div>
+      <div class="poll-pagination">
+        <a  class="poll-dot activepagination" href="#"></a>
+        <a  class="poll-dot" href="#"></a>
+      </div>
+
+    </div>
+    <div id="poll-pop-yes-no" class="poll-pop-yes-no">
+      <i class="poll-close-shape-2" aria-label="Close" onclick="window.location.href='/poll'">
+        <span aria-hidden="true">&times;</span>
+      </i>
+    </div>
+  </div>
+  <div class="backWrap" style="display: none;" id="responseDiv">
+    <div id="poll-pop-up" class="poll-pop-up" >
+      <i class="response-close-shape" aria-label="Close" onclick="$('#responseDiv').hide();">
+        <span aria-hidden="true">&times;</span>
+      </i>
+      <ul class="nav nav-tabs responseDivClass">
+        <li><a data-toggle="tab" href="#home" class="active show">Summary</a></li>
+        <li><a data-toggle="tab" href="#responses">Responses</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade active show">
+          <div class="rectangle-3">
+            <p class="whats-favorite">What’s your favorite summer vacation spot ?</p>
+            <p class="t-responses">60 responses</p>
+            <p class="tesText">Argentina</p>
+            <div class="progress">
+              <div class="progress-bar bg-success pb-percent" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+              <div class="pb-total">40 Responses</div>
+            </div>
+            <p class="tesText">Brazil</p>
+            <div class="progress">
+              <div class="progress-bar bg-success pb-percent" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100">22%</div>
+              <div class="pb-total">10 Responses</div>
+            </div>
+            <p class="tesText">Spain</p>
+            <div class="progress">
+              <div class="progress-bar bg-success pb-percent" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100">28%</div>
+              <div class="pb-total">10 Responses</div>
+            </div>
+          </div>
+          <p class="time-remaining-3-d-5">Time Remaining: 3d 5hrs 45mins</p>
+        </div>
+        <div id="responses" class="tab-pane fade">
+          <ul class="nav nav-tabs responseDivClass">
+            <li><a data-toggle="tab" href="#inTab1" class="active show">Argentina (40)</a></li>
+            <li><a data-toggle="tab" href="#inTab2">Brazil (10)</a></li>
+            <li><a data-toggle="tab" href="#inTab3">Spain (10)</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="inTab1" class="tab-pane fade active show" style="padding-top:12px;">
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/joni.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Roxie Sims</p>
+                  <p class="responseTime">Today @ 4:36 pm</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/dipok.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Cora Crawford</p>
+                  <p class="responseTime">Today @ 2:36 pm</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/tajdik.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Joel Marshall</p>
+                  <p class="responseTime">Yesterday @ 10:45 am</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/jubayer.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Gavin Barnes</p>
+                  <p class="responseTime">Tuesday @ 1:10 pm</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/manzu.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Lillie Fowler</p>
+                  <p class="responseTime">Wednesday @ 9:16 am</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/mahfuz.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Henry Massey</p>
+                  <p class="responseTime">23/05/2018 @ 9:08 am</p>
+                </div>
+              </div>
+            </div>
+            <div id="inTab2" class="tab-pane fade"  style="padding-top:12px;">
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/joni.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Virginia Mann</p>
+                  <p class="responseTime">Today @ 4:36 pm</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/dipok.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Jean Little</p>
+                  <p class="responseTime">Today @ 2:36 pm</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/tajdik.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Trevor Daniels</p>
+                  <p class="responseTime">Yesterday @ 10:45 am</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/jubayer.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Raymond Stevenson</p>
+                  <p class="responseTime">Tuesday @ 1:10 pm</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/manzu.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Gertrude Webb</p>
+                  <p class="responseTime">Wednesday @ 9:16 am</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/mahfuz.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Aiden Carson</p>
+                  <p class="responseTime">23/05/2018 @ 9:08 am</p>
+                </div>
+              </div>
+            </div>
+            <div id="inTab3" class="tab-pane fade"  style="padding-top:12px;">
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/joni.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Madge McGee</p>
+                  <p class="responseTime">Today @ 4:36 pm</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/dipok.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Louisa Aguilar</p>
+                  <p class="responseTime">Today @ 2:36 pm</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/tajdik.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Lewis Leonard</p>
+                  <p class="responseTime">Yesterday @ 10:45 am</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/jubayer.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Jim Quinn</p>
+                  <p class="responseTime">Tuesday @ 1:10 pm</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/manzu.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Henrietta Munoz</p>
+                  <p class="responseTime">Wednesday @ 9:16 am</p>
+                </div>
+              </div>
+              <div class="tabImgHolder">
+                <div class="imgDivLeft">
+                  <img src="/images/users/mahfuz.jpg" class="responseIcon">
+                </div>
+                <div class="imgDivright">
+                  <p class="responseName">Charlie Parker</p>
+                  <p class="responseTime">23/05/2018 @ 9:08 am</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="backWrap" style="display: none; text-align: left;" id="pollBackWrap2">
+    <div class="poll-yes-popup">
+        <div class="poll-yes-popup-close"><i id="close-create-poll">
+          <img src="/images/poll_icon/actions-close_24px_000.png" ></i>
+        </div>
+        <div class="poll-yes-popup-main-section">
+          <div class="poll-yes-popup-section-1">
+            <label>Question</label>
+            <div class="input-group ques">
+              <input id="form-control-2" class="form-control pop" type="text" name="" placeholder="Do you like cheese ?">
+            </div>
+
+          </div>
+          <div class="poll-yes-popup-section-2">
+            <div class="poll-yes-popup-section-2-1">
+              <label class="answer" >Answer(s)</label>
+                <div class="checkbox checkbox-primary popup-allow">
+                      <input id="checkbox8" type="checkbox"  >
+                      <label for="checkbox8" class="checkbox8 answer">
+                          Allow multiple answer
+                      </label>
+                </div>
+            </div>
+            <div class="input-group">
+                <input  type="text" class="form-control pop poll"  placeholder="Yes">
+                <span class="input-group-addon" ><img src="/images/poll_icon/attach_an_image.svg"></span>
+                <span class="input-group-addon delete"><img src="/images/poll_icon/Delete_Choice.svg"></span>
+              </div>
+              <div class="input-group poll">
+                <input  type="text" class="form-control pop poll"  placeholder="No">
+                <span class="input-group-addon "><img src="/images/poll_icon/attach_an_image.svg"></span>
+                <span class="input-group-addon delete"><img src="/images/poll_icon/Delete_Choice.svg"></span>
+              </div>
+              <label class="poll-choice" >+Add Choice</label>
+            <div class="poll-yes-popup-section-2-1">
+              <label class="answer" >When will this poll end ?</label>
+            </div>
+            <div class="input-group">
+              <div class="radio radio-primary">
+                  <input type="radio" name="timeornot" id="timeornot" value="option1">
+                  <label for="timeornot"></label>
+              </div>
+              <input type="text" class="form-control pop shape popll-popup polldatepicker">
+              <input type="text" class="form-control pop shape polltimepicker" >
+              <select name="timezone" class="form-control pop shape timeZonePicker">
+                  <option value="-12" >(GMT -12:00)</option>
+                  <option value="-11" >(GMT -11:00)</option>
+                  <option value="-10" >(GMT -10:00)</option>
+                  <option value="-9"  >(GMT -9:00)</option>
+                  <option value="-8"  >(GMT -8:00)</option>
+                  <option value="-7"  >(GMT -7:00)</option>
+                  <option value="-6"  >(GMT -6:00)</option>
+                  <option value="-5"  >(GMT -5:00)</option>
+                  <option value="-4.5">(GMT -4:30)</option>
+                  <option value="-4"  >(GMT -4:00)</option>
+                  <option value="-3.5">(GMT -3:30)</option>
+                  <option value="-3"  >(GMT -3:00)</option>
+                  <option value="-2"  >(GMT -2:00)</option>
+                  <option value="-1"  >(GMT -1:00)</option>
+                  <option value="0"  selected="selected">(GMT 0:00)</option>
+                  <option value="1"   >(GMT +1:00)</option>
+                  <option value="2"   >(GMT +2:00)</option>
+                  <option value="3"   >(GMT +3:00)</option>
+                  <option value="3.5" >(GMT +3:30)</option>
+                  <option value="4"   >(GMT +4:00)</option>
+                  <option value="4.5" >(GMT +4:30)</option>
+                  <option value="5"   >(GMT +5:00)</option>
+                  <option value="5.5" >(GMT +5:30)</option>
+                  <option value="5.45">(GMT +5:45)</option>
+                  <option value="6"   >(GMT +6:00)</option>
+                  <option value="6.5" >(GMT +6:30)</option>
+                  <option value="7"   >(GMT +7:00)</option>
+                  <option value="8"   >(GMT +8:00)</option>
+                  <option value="9"   >(GMT +9:00)</option>
+                  <option value="9.5" >(GMT +9:30)</option>
+                  <option value="10"  >(GMT +10:00)</option>
+                  <option value="11"  >(GMT +11:00)</option>
+                  <option value="12"  >(GMT +12:00)</option>
+                </select>
+              </div>
+              <div class="poll-never-end">
+                <div class="radio radio-primary">
+                  <input type="radio" name="timeornot" id="timeornot2" value="option1">
+                  <label for="timeornot2"></label>
+                </div>
+                <span class="poll-never">Never</span><br>
+                <span class="poll-never-2">This poll will never end.</span>
+              </div>
+            <div class="poll-create-back-button">
+              <button id="back-choice-poll" class="poll-back-button" type="button" name="button">Back</button>
+              <button class="poll-create-button" type="button" name="button"  onclick="workSpaceSelect();">Create poll</button>
+            </div>
+            <div class="poll-pagination">
+              <a  class="poll-dot " href="#"></a>
+              <a  class="poll-dot activepagination" href="#"></a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="backWrap" style="display: none; text-align: left;" id="pollBackWrap2">
+    <div class="poll-yes-popup">
+        <div class="poll-yes-popup-close"><i id="close-create-poll">
+          <img src="/images/poll_icon/actions-close_24px_000.png" ></i>
+        </div>
+        <div class="poll-yes-popup-main-section">
+          <div class="poll-yes-popup-section-1">
+            <label>Question</label>
+            <div class="input-group ques">
+              <input id="form-control-2" class="form-control pop" type="text" name="" placeholder="Do you like cheese ?">
+            </div>
+
+          </div>
+          <div class="poll-yes-popup-section-2">
+            <div class="poll-yes-popup-section-2-1">
+              <label class="answer" >Answer(s)</label>
+                <div class="checkbox checkbox-primary popup-allow">
+                      <input id="poll-yes-allow-checkbox" type="checkbox"  >
+                      <label for="poll-yes-allow-checkbox" class="checkbox8 answer">
+                          Allow multiple answer
+                      </label>
+                </div>
+            </div>
+            <div class="input-group">
+                <input  type="text" class="form-control pop poll"  placeholder="Yes">
+                <span class="input-group-addon"><img src="/images/poll_icon/attach_an_image.svg"></span>
+                <span class="input-group-addon delete"><img src="/images/poll_icon/Delete_Choice.svg"></span>
+              </div>
+              <div class="input-group poll">
+                <input  type="text" class="form-control pop poll"  placeholder="No">
+                <span class="input-group-addon"><img src="/images/poll_icon/attach_an_image.svg"></span>
+                <span class="input-group-addon delete"><img src="/images/poll_icon/Delete_Choice.svg"></span>
+              </div>
+              <label class="poll-choice" >+Add Choice</label>
+            <div class="poll-yes-popup-section-2-1">
+              <label class="answer" >When will this poll end ?</label>
+            </div>
+            <div class="input-group">
+              <div class="radio radio-primary">
+                  <input type="radio" name="pollyestime" id="poll-yes-when-end" value="option1">
+                  <label for="poll-yes-when-end"></label>
+              </div>
+              <input type="text" class="form-control pop shape popll-popup" >
+              <input type="text" class="form-control pop shape">
+              <select name="timezone" class="form-control pop shape timeZonePicker">
+                  <option value="-12" >(GMT -12:00)</option>
+                  <option value="-11" >(GMT -11:00)</option>
+                  <option value="-10" >(GMT -10:00)</option>
+                  <option value="-9"  >(GMT -9:00)</option>
+                  <option value="-8"  >(GMT -8:00)</option>
+                  <option value="-7"  >(GMT -7:00)</option>
+                  <option value="-6"  >(GMT -6:00)</option>
+                  <option value="-5"  >(GMT -5:00)</option>
+                  <option value="-4.5">(GMT -4:30)</option>
+                  <option value="-4"  >(GMT -4:00)</option>
+                  <option value="-3.5">(GMT -3:30)</option>
+                  <option value="-3"  >(GMT -3:00)</option>
+                  <option value="-2"  >(GMT -2:00)</option>
+                  <option value="-1"  >(GMT -1:00)</option>
+                  <option value="0"  selected="selected">(GMT 0:00)</option>
+                  <option value="1"   >(GMT +1:00)</option>
+                  <option value="2"   >(GMT +2:00)</option>
+                  <option value="3"   >(GMT +3:00)</option>
+                  <option value="3.5" >(GMT +3:30)</option>
+                  <option value="4"   >(GMT +4:00)</option>
+                  <option value="4.5" >(GMT +4:30)</option>
+                  <option value="5"   >(GMT +5:00)</option>
+                  <option value="5.5" >(GMT +5:30)</option>
+                  <option value="5.45">(GMT +5:45)</option>
+                  <option value="6"   >(GMT +6:00)</option>
+                  <option value="6.5" >(GMT +6:30)</option>
+                  <option value="7"   >(GMT +7:00)</option>
+                  <option value="8"   >(GMT +8:00)</option>
+                  <option value="9"   >(GMT +9:00)</option>
+                  <option value="9.5" >(GMT +9:30)</option>
+                  <option value="10"  >(GMT +10:00)</option>
+                  <option value="11"  >(GMT +11:00)</option>
+                  <option value="12"  >(GMT +12:00)</option>
+                </select>
+              </div>
+              <div class="poll-never-end">
+                <div class="radio radio-primary">
+                  <input type="radio" name="pollyestime" id="poll-yes-never-end" value="option1">
+                  <label for="poll-yes-never-end"></label>
+                </div>
+                <span class="poll-never">Never</span><br>
+                <span class="poll-never-2">This poll will never end.</span>
+              </div>
+            <div class="poll-create-back-button">
+              <button id="back-choice-poll" class="poll-back-button" type="button" name="button">Back</button>
+              <button class="poll-create-button" type="button" name="button"  onclick="workSpaceSelect();">Create poll</button>
+            </div>
+            <div class="poll-pagination">
+              <a  class="poll-dot " href="#"></a>
+              <a  class="poll-dot activepagination" href="#"></a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+<!--   Agree / Disagree popup page  start-->
+  <div class="backWrap" style="display: none; text-align: left;" id="pollBackWrap3">
+    <div class="poll-agree-popup">
+      <div class="poll-yes-popup-close"><i id="close-create-poll-agree">
+          <img src="/images/poll_icon/actions-close_24px_000.png" ></i>
+        </div>
+      <div class="poll-yes-popup-main-section">
+          <div class="poll-yes-popup-section-1">
+            <label>Question</label>
+            <div class="input-group ques">
+              <input id="form-control-2" class="form-control pop" type="text" name="" placeholder="Running away is a solution to a problem ?">
+            </div>
+
+          </div>
+          <div class="poll-yes-popup-section-2">
+            <div class="poll-yes-popup-section-2-1">
+              <label class="answer" >Answer(s)</label>
+                <div class="checkbox checkbox-primary popup-allow">
+                      <input id="agree-allow-checkbox" type="checkbox"  >
+                      <label for="agree-allow-checkbox" class="checkbox8 answer">
+                          Allow multiple answer
+                      </label>
+                </div>
+            </div>
+            <div class="input-group">
+                <input  type="text" class="form-control pop poll"  placeholder="Strongly Agree">
+                <span class="input-group-addon"><img src="/images/poll_icon/attach_an_image.svg"></span>
+                <span class="input-group-addon delete"><img src="/images/poll_icon/Delete_Choice.svg"></span>
+              </div>
+              <div class="input-group poll">
+                <input  type="text" class="form-control pop poll"  placeholder="Agree">
+                <span class="input-group-addon"><img src="/images/poll_icon/attach_an_image.svg"></span>
+                <span class="input-group-addon delete"><img src="/images/poll_icon/Delete_Choice.svg"></span>
+              </div>
+              <div class="input-group poll">
+                <input  type="text" class="form-control pop poll"  placeholder="Neutral">
+                <span class="input-group-addon"><img src="/images/poll_icon/attach_an_image.svg"></span>
+                <span class="input-group-addon delete"><img src="/images/poll_icon/Delete_Choice.svg"></span>
+              </div>
+              <div class="input-group poll">
+                <input  type="text" class="form-control pop poll"  placeholder="Disagree">
+                <span class="input-group-addon"><img src="/images/poll_icon/attach_an_image.svg"></span>
+                <span class="input-group-addon delete"><img src="/images/poll_icon/Delete_Choice.svg"></span>
+              </div>
+              <div class="input-group poll">
+                <input  type="text" class="form-control pop poll"  placeholder="Strongly Disagree">
+                <span class="input-group-addon"><img src="/images/poll_icon/attach_an_image.svg"></span>
+                <span class="input-group-addon delete"><img src="/images/poll_icon/Delete_Choice.svg"></span>
+              </div>
+              <label class="poll-choice" >+Add Choice</label>
+            <div class="poll-yes-popup-section-2-1">
+              <label class="answer" >When will this poll end ?</label>
+            </div>
+            <div class="input-group">
+              <div class="radio radio-primary">
+                  <input type="radio" name="pollagreetime" id="poll-agree-when-end" value="option1">
+                  <label for="poll-agree-when-end"></label>
+              </div>
+              <input type="text" class="form-control pop shape popll-popup polldatepicker" >
+              <input type="text" class="form-control pop shape polltimepicker" >
+              <select name="timezone" class="form-control pop shape timeZonePicker">
+                  <option value="-12" >(GMT -12:00)</option>
+                  <option value="-11" >(GMT -11:00)</option>
+                  <option value="-10" >(GMT -10:00)</option>
+                  <option value="-9"  >(GMT -9:00)</option>
+                  <option value="-8"  >(GMT -8:00)</option>
+                  <option value="-7"  >(GMT -7:00)</option>
+                  <option value="-6"  >(GMT -6:00)</option>
+                  <option value="-5"  >(GMT -5:00)</option>
+                  <option value="-4.5">(GMT -4:30)</option>
+                  <option value="-4"  >(GMT -4:00)</option>
+                  <option value="-3.5">(GMT -3:30)</option>
+                  <option value="-3"  >(GMT -3:00)</option>
+                  <option value="-2"  >(GMT -2:00)</option>
+                  <option value="-1"  >(GMT -1:00)</option>
+                  <option value="0"  selected="selected">(GMT 0:00)</option>
+                  <option value="1"   >(GMT +1:00)</option>
+                  <option value="2"   >(GMT +2:00)</option>
+                  <option value="3"   >(GMT +3:00)</option>
+                  <option value="3.5" >(GMT +3:30)</option>
+                  <option value="4"   >(GMT +4:00)</option>
+                  <option value="4.5" >(GMT +4:30)</option>
+                  <option value="5"   >(GMT +5:00)</option>
+                  <option value="5.5" >(GMT +5:30)</option>
+                  <option value="5.45">(GMT +5:45)</option>
+                  <option value="6"   >(GMT +6:00)</option>
+                  <option value="6.5" >(GMT +6:30)</option>
+                  <option value="7"   >(GMT +7:00)</option>
+                  <option value="8"   >(GMT +8:00)</option>
+                  <option value="9"   >(GMT +9:00)</option>
+                  <option value="9.5" >(GMT +9:30)</option>
+                  <option value="10"  >(GMT +10:00)</option>
+                  <option value="11"  >(GMT +11:00)</option>
+                  <option value="12"  >(GMT +12:00)</option>
+                </select>
+              </div>
+              <div class="poll-never-end">
+                <div class="radio radio-primary">
+                  <input type="radio" name="pollagreetime" id="poll-agree-never-end" value="option1">
+                  <label for="poll-agree-never-end"></label>
+                </div>
+                <span class="poll-never">Never</span><br>
+                <span class="poll-never-2">This poll will never end.</span>
+              </div>
+            <div class="poll-create-back-button">
+              <button id="back-choice-poll-agree" class="poll-back-button" type="button" name="button">Back</button>
+              <button class="poll-create-button" type="button" name="button" onclick="workSpaceSelect();">Create poll</button>
+            </div>
+            <div class="poll-pagination">
+              <a  class="poll-dot " href="#"></a>
+              <a  class="poll-dot activepagination" href="#"></a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
+<!--   Agree / Disagree popup page end -->
+
+<!--   NPS score popup page  Start-->
+<div class="backWrap" style="display: none; text-align: left;" id="pollBackWrap4">
+  <div class="poll-nps-popup">
+    <div class="poll-yes-popup-close"><i id="close-create-poll-nps">
+        <img src="/images/poll_icon/actions-close_24px_000.png" ></i>
+      </div>
+    <div class="poll-yes-popup-main-section">
+        <div class="poll-yes-popup-section-1">
+          <label>Question</label>
+          <div class="input-group ques">
+            <input id="form-control-2" class="form-control pop" type="text" name="" placeholder="Running away is a solution to a problem ?">
+          </div>
+
+        </div>
+        <div class="poll-yes-popup-section-2">
+          <div class="poll-yes-popup-section-2-1">
+            <label class="answer" >Answer(s)</label>
+          </div>
+          <div class="input-group">
+            <button class="form-control nps-score-poll-score">1</button>
+            <button class="form-control nps-score-poll-score">2</button>
+            <button class="form-control nps-score-poll-score">3</button>
+            <button class="form-control nps-score-poll-score">4</button>
+            <button class="form-control nps-score-poll-score">5</button>
+            <button class="form-control nps-score-poll-score">6</button>
+            <button class="form-control nps-score-poll-score">7</button>
+            <button class="form-control nps-score-poll-score">8</button>
+            <button class="form-control nps-score-poll-score">9</button>
+            <button class="form-control nps-score-poll-score">10</button>
+          </div>
+          <label id="not-like-nps">Not at all likely</label>
+          <label id="extrem-like-nps">Extremly likely</label>
+          <div class="poll-yes-popup-section-2-1">
+            <label class="answer" >When will this poll end ?</label>
+          </div>
+          <div class="input-group">
+            <div class="radio radio-primary">
+                <input type="radio" name="pollnpstime" id="poll-nps-when-end" value="option1">
+                <label for="poll-nps-when-end"></label>
+            </div>
+                <input type="text" class="form-control pop shape popll-popup polldatepicker" >
+                <input type="text" class="form-control pop shape polltimepicker" >
+                <select name="timezone" class="form-control pop shape timeZonePicker">
+                    <option value="-12" >(GMT -12:00)</option>
+                    <option value="-11" >(GMT -11:00)</option>
+                    <option value="-10" >(GMT -10:00)</option>
+                    <option value="-9"  >(GMT -9:00)</option>
+                    <option value="-8"  >(GMT -8:00)</option>
+                    <option value="-7"  >(GMT -7:00)</option>
+                    <option value="-6"  >(GMT -6:00)</option>
+                    <option value="-5"  >(GMT -5:00)</option>
+                    <option value="-4.5">(GMT -4:30)</option>
+                    <option value="-4"  >(GMT -4:00)</option>
+                    <option value="-3.5">(GMT -3:30)</option>
+                    <option value="-3"  >(GMT -3:00)</option>
+                    <option value="-2"  >(GMT -2:00)</option>
+                    <option value="-1"  >(GMT -1:00)</option>
+                    <option value="0"  selected="selected">(GMT 0:00)</option>
+                    <option value="1"   >(GMT +1:00)</option>
+                    <option value="2"   >(GMT +2:00)</option>
+                    <option value="3"   >(GMT +3:00)</option>
+                    <option value="3.5" >(GMT +3:30)</option>
+                    <option value="4"   >(GMT +4:00)</option>
+                    <option value="4.5" >(GMT +4:30)</option>
+                    <option value="5"   >(GMT +5:00)</option>
+                    <option value="5.5" >(GMT +5:30)</option>
+                    <option value="5.45">(GMT +5:45)</option>
+                    <option value="6"   >(GMT +6:00)</option>
+                    <option value="6.5" >(GMT +6:30)</option>
+                    <option value="7"   >(GMT +7:00)</option>
+                    <option value="8"   >(GMT +8:00)</option>
+                    <option value="9"   >(GMT +9:00)</option>
+                    <option value="9.5" >(GMT +9:30)</option>
+                    <option value="10"  >(GMT +10:00)</option>
+                    <option value="11"  >(GMT +11:00)</option>
+                    <option value="12"  >(GMT +12:00)</option>
+                  </select>
+            </div>
+            <div class="poll-never-end">
+              <div class="radio radio-primary">
+                <input type="radio" name="pollnpstime" id="poll-nps-never-end" value="option1">
+                <label for="poll-nps-never-end"></label>
+              </div>
+              <span class="poll-never">Never</span><br>
+              <span class="poll-never-2">This poll will never end.</span>
+            </div>
+          <div class="poll-create-back-button">
+            <button id="back-choice-poll-nps" class="poll-back-button" type="button" name="button">Back</button>
+            <button class="poll-create-button" type="button" name="button"  onclick="workSpaceSelect();">Create poll</button>
+          </div>
+          <div class="poll-pagination">
+            <a  class="poll-dot " href="#"></a>
+            <a  class="poll-dot activepagination" href="#"></a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>
+<!--   NPS score popup page  end-->
+<!-- custom create popup page start -->
+<div class="backWrap" style="display: none; text-align: left;" id="pollBackWrap5">
+    <div class="poll-custom-popup">
+        <div class="poll-yes-popup-close"><i id="close-custom-poll">
+          <img src="/images/poll_icon/actions-close_24px_000.png" ></i>
+        </div>
+        <div class="poll-yes-popup-main-section">
+          <div class="poll-yes-popup-section-1">
+            <label>Question</label>
+            <div class="input-group ques">
+              <input id="form-control-custom" class="form-control pop" type="text" name="" placeholder="What’s your favorite summer vacation spot ?">
+            </div>
+
+          </div>
+          <div class="poll-yes-popup-section-2">
+            <div class="poll-yes-popup-section-2-1">
+              <label class="answer" >Answer(s)</label>
+                <div class="checkbox checkbox-primary popup-allow">
+                      <input id="custom-allow-checkbox" type="checkbox"  >
+                      <label for="custom-allow-checkbox" class="checkbox8 answer">
+                          Allow multiple answer
+                      </label>
+                </div>
+            </div>
+            <div class="input-group">
+                <input  id="form-control-custom"type="text" class="form-control pop poll"  placeholder="Yes">
+                <span class="input-group-addon"><img src="/images/poll_icon/attach_an_image.svg"></span>
+                <span class="input-group-addon delete"><img src="/images/poll_icon/Delete_Choice.svg"></span>
+              </div>
+              <label class="poll-choice" >+Add Choice</label>
+            <div class="poll-yes-popup-section-2-1">
+              <label class="answer" >When will this poll end ?</label>
+            </div>
+            <div class="input-group">
+              <div class="radio radio-primary">
+                  <input type="radio" name="pollcustomtime" id="poll-custom-when-end" value="option1">
+                  <label for="poll-custom-when-end"></label>
+              </div>
+              <input type="text" class="form-control pop shape popll-popup polldatepicker" >
+              <input type="text" class="form-control pop shape polltimepicker" >
+              <select name="timezone" class="form-control pop shape timeZonePicker">
+                  <option value="-12" >(GMT -12:00)</option>
+                  <option value="-11" >(GMT -11:00)</option>
+                  <option value="-10" >(GMT -10:00)</option>
+                  <option value="-9"  >(GMT -9:00)</option>
+                  <option value="-8"  >(GMT -8:00)</option>
+                  <option value="-7"  >(GMT -7:00)</option>
+                  <option value="-6"  >(GMT -6:00)</option>
+                  <option value="-5"  >(GMT -5:00)</option>
+                  <option value="-4.5">(GMT -4:30)</option>
+                  <option value="-4"  >(GMT -4:00)</option>
+                  <option value="-3.5">(GMT -3:30)</option>
+                  <option value="-3"  >(GMT -3:00)</option>
+                  <option value="-2"  >(GMT -2:00)</option>
+                  <option value="-1"  >(GMT -1:00)</option>
+                  <option value="0"  selected="selected">(GMT 0:00)</option>
+                  <option value="1"   >(GMT +1:00)</option>
+                  <option value="2"   >(GMT +2:00)</option>
+                  <option value="3"   >(GMT +3:00)</option>
+                  <option value="3.5" >(GMT +3:30)</option>
+                  <option value="4"   >(GMT +4:00)</option>
+                  <option value="4.5" >(GMT +4:30)</option>
+                  <option value="5"   >(GMT +5:00)</option>
+                  <option value="5.5" >(GMT +5:30)</option>
+                  <option value="5.45">(GMT +5:45)</option>
+                  <option value="6"   >(GMT +6:00)</option>
+                  <option value="6.5" >(GMT +6:30)</option>
+                  <option value="7"   >(GMT +7:00)</option>
+                  <option value="8"   >(GMT +8:00)</option>
+                  <option value="9"   >(GMT +9:00)</option>
+                  <option value="9.5" >(GMT +9:30)</option>
+                  <option value="10"  >(GMT +10:00)</option>
+                  <option value="11"  >(GMT +11:00)</option>
+                  <option value="12"  >(GMT +12:00)</option>
+                </select>
+              </div>
+              <div class="poll-never-end">
+                <div class="radio radio-primary">
+                  <input type="radio" name="pollcustomtime" id="poll-custom-never-end" value="option1">
+                  <label for="poll-custom-never-end"></label>
+                </div>
+                <span class="poll-never">Never</span><br>
+                <span class="poll-never-2">This poll will never end.</span>
+              </div>
+            <div class="poll-create-back-button">
+              <button id="back-custom-poll" class="poll-back-button" type="button" name="button">Back</button>
+              <button class="poll-create-button" type="button" name="button"  onclick="workSpaceSelect();">Create poll</button>
+            </div>
+            <div class="poll-pagination">
+              <a  class="poll-dot " href="#"></a>
+              <a  class="poll-dot activepagination" href="#"></a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="backWrap" style="display: none;" id="pollBackWrapWorkspace">
+  <div id="poll-pop-up" class="poll-pop-up" >
+    <i class="poll-close-shape" id="closeWrapWorkspace" aria-label="Close" onclick="createPoll()">
+      <span aria-hidden="true">&times;</span>
+    </i>
+    <p class="pollworkspace">Workspace</p>
+    <select name="timezone" class="form-control pollselectshape">
+      <option value="#" selected="selected">Select a workspace</option>
+      <option value="-12" >Hayven</option>
+      <option value="0"  >Hayven</option>
+    </select>
+    <p class="pollworkspace">Group-Chat/Channel</p>
+    <select name="timezone" class="form-control pollselectshape">
+      <option value="-12" selected="selected" >Select a group-chat/channel</option>
+      <option value="0">Design group</option>
+    </select>
+    <div class="poll-create-back-button">
+      <button class="poll-create-button rectanglePollBtn" type="button" name="button"  onclick="createPoll();">Next</button>
+    </div>
+    <div class="poll-pagination">
+      <a  class="poll-dot activepagination" href="#"></a>
+      <a  class="poll-dot" href="#"></a>
+    </div>
+
+  </div>
+</div>
+<!-- custom create popup page end -->
+
+
+  <%- include('templates/_partial') %>
+</main>
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var to = '';
+  // var alluserinfo = <%- JSON.stringify(data) %>;
+  // console.log(alluserinfo);
+</script>
+<script src="/javascripts/socket-client-side.js"></script>
+<script src="/javascripts/custom.js"></script>
+<script src="/javascripts/custom-chat.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- this script working for render new block on page load and masonry view after append new block -->
+<script>
+  $('#rectanglePoll').on('click', function(event){
+    $("#pollBackWrap").toggle();
+  });
+
+  $('.shape-poll').on('click', function(event){
+    $("#responseDiv").toggle();
+  });
+
+var makePollActiveDiv = function(target){
+  if(target == 'cbm'){
+    $('.created-by-me').removeClass('poll-inactive');
+    $('#sbo').addClass('poll-inactive');
+    $('.sbo').show();
+  }
+  if(target == 'sbo'){
+    $('.created-by-me').removeClass('poll-inactive');
+    $('#cbm').addClass('poll-inactive');
+    $('.sbo').hide();
+  }
+}
+
+$(document).ready(function(){
+  $("#back-to-poll-pop-up").click(function(){
+    $("#poll-pop-yes-no").toggle();
+    $("#poll-pop-up").toggle();
+  });
+});
+
+// $("#rectanglePoll").click(function(){
+//   $("#pollBackWrap").toggle();
+// });
+// yes-no-poll popup toggle script start
+$("#yes-no-poll").click(function(){
+  $("#pollBackWrap2").toggle();
+  $("#pollBackWrap").toggle();
+
+});
+
+$("#close-create-poll").click(function(){
+  $("#pollBackWrap2").toggle();
+  $("#pollBackWrap").toggle();
+});
+
+$("#back-choice-poll").click(function(){
+  $("#pollBackWrap2").toggle();
+  $("#pollBackWrap").toggle();
+});
+// yes-no-poll popup toggle script end
+
+// agree-disagree-poll popup toggle script start
+$("#agree-disagree-poll").click(function(){
+  $("#pollBackWrap3").toggle();
+  $("#pollBackWrap").toggle();
+});
+
+$("#close-create-poll-agree").click(function(){
+  $("#pollBackWrap3").toggle();
+  $("#pollBackWrap").toggle();
+});
+
+$("#back-choice-poll-agree").click(function(){
+  $("#pollBackWrap3").toggle();
+  $("#pollBackWrap").toggle();
+});
+// agree-disagree-poll popup toggle script end
+
+// nps-score-poll popup toggle script start
+$("#nps-score-poll").click(function(){
+  $("#pollBackWrap4").toggle();
+  $("#pollBackWrap").toggle();
+});
+
+$("#close-create-poll-nps").click(function(){
+  $("#pollBackWrap4").toggle();
+  $("#pollBackWrap").toggle();
+});
+
+$("#back-choice-poll-nps").click(function(){
+  $("#pollBackWrap4").toggle();
+  $("#pollBackWrap").toggle();
+});
+
+// nps-score-poll popup toggle script end
+
+$(function () {
+  $('.polldatepicker').datetimepicker({
+    format: 'L'
+  });
+});
+$(function () {
+  $('.polltimepicker').datetimepicker({
+    format: 'hh:mm'
+  });
+});
+
+
+
+//custom create popup page start
+$("#custom-poll").click(function(){
+  $("#pollBackWrap5").toggle();
+  $("#pollBackWrap").toggle();
+});
+
+$("#close-custom-poll").click(function(){
+  $("#pollBackWrap5").toggle();
+  $("#pollBackWrap").toggle();
+});
+
+$("#back-custom-poll").click(function(){
+  $("#pollBackWrap5").toggle();
+  $("#pollBackWrap").toggle();
+});
+//custom create popup page end
+
+
+// workspace container toggle on create button onclick
+var workSpaceSelect = function(){
+  $(".backWrap").hide();
+  $("#pollBackWrapWorkspace").show();
+}
+var createPoll = function(){
+  $(".backWrap").hide();
+}
+
+//esc button to close
+window.addEventListener("keyup", function(event) {
+    // event.preventDefault();
+    if (event.keyCode === 27) {
+
+      if($("#responseDiv").is(':visible')){
+        $('#responseDiv').hide();
+      }
+
+      if($("#pollBackWrapWorkspace").is(':visible')){
+        //createPoll();
+        $('#closeWrapWorkspace').click();
+
+      }
+
+      if($("#pollBackWrap").is(':visible')){
+        $('#rectanglePoll').click();
+      }
+
+      if($("#pollBackWrap2").is(':visible')){
+        $("#close-create-poll").trigger('click');
+      }
+
+      if($("#pollBackWrap3").is(':visible')){
+        $("#close-create-poll-agree").trigger('click');
+      }
+
+      if($("#pollBackWrap4").is(':visible')){
+         $("#close-create-poll-nps").trigger('click');
+       }
+
+     if($("#pollBackWrap5").is(':visible')){
+       $("#close-custom-poll").trigger('click');
+     }
+    }
+});
+
+</script>
+<%- include('layouts/foot') %>
+<%- include('templates/project/quickproject') %>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="navbar-/-projects_24px_000" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="bounds" x="0" y="0" width="24" height="24"></rect>
+        <path d="M8,4.75 L8,7 L16,7 L16,4.75 C16,4.33578644 15.5522847,4 15,4 L9,4 C8.44771525,4 8,4.33578644 8,4.75 Z M3,19.1875 L3,7.8125 C3,7.36376864 3.33578644,7 3.75,7 L20.25,7 C20.6642136,7 21,7.36376864 21,7.8125 L21,19.1875 C21,19.6362314 20.6642136,20 20.25,20 L3.75,20 C3.33578644,20 3,19.6362314 3,19.1875 Z M3,11 L9.23426087,13.6145678 C11.0475652,14.1284774 12.9524348,14.1284774 14.7657391,13.6145678 L21,11" id="icon-/-briefcase-/-16" stroke="#000000" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+</svg>

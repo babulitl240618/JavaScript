@@ -1,0 +1,359 @@
+<%- include('layouts/head') %>
+<main role="main" class="container">
+<div class="convo-sticky-sidebar-single">
+    <img src="/images/back_34px_200 @1x.png" class="back-to-home" onclick="window.location.href='/hayven'">
+    <div class="ecosystem">FREELANCE</div>
+    <div class="username"><%= data[0].room_name %></div>
+    <div class="conversation-details">
+      <img src="/images/pin-off_16px_200 @1x.png" class="pin">
+      <div class="no-of-members" onclick="open_members_view_div()"><span class="numbers" id="numbers">1</span><span>&nbsp;members</span></div>
+      <img src="/images/call_18px_000 @1x.png" class="icon audio-call" onclick="window.location.href='/call/audio/<%= data[0].room_id %>/<%= data[0].room_name %>/<%= data[0].room_img %>/'">
+      <img src="/images/video_18px_000 @1x.png" class="icon video-call" onclick="window.location.href='/call/video/<%= data[0].room_id %>/<%= data[0].room_name %>/<%= data[0].room_img %>/'">
+      <img src="/images/more_18px_400 @1x.png" class="icon more" onclick="open_more_option()">
+      <div class="more-option">
+        <ul>
+          <li onclick="flagged_messages()">Flagged messages</li>
+          <li onclick="tagged_messages()">Tagged messages</li>
+          <li onclick="files_media_mgs()">Files & Media</li>
+          <li>Add tags</li>
+          <li onclick="select_messages()">Select messages</li>
+          <li>Export conversation</li>
+          <li>Delete conversation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="itl-template chat-page">
+    <div class="message-container">
+
+    </div>
+    <%- include('templates/chat/message-send-form') %>
+  </div>
+  <%- include('templates/_partial') %>
+  <div class="backWrap" style="display: block;"></div>
+  <div class="new-group-chat-popup">
+    <div class="popup-title">
+      <div>New Group Chat</div>
+      <img src="/images/close_18px_000 @1x.png" class="back-home" onclick="window.location.href='/hayven'">
+    </div>
+    <div class="popup-body">
+      <div class="left-part">
+        <div class="input-label-field">
+          <div class="label-name">Group Name *</div>
+          <img src="/images/info_16px @1x.png">
+          <input type="text" name="team-name" class="team-name" id="team-name" placeholder="Your team name">
+        </div>
+        <div class="input-label-field">
+          <div class="label-name">Ecosystem *</div>
+          <img src="/images/info_16px @1x.png">
+          <select class="select-ecosystem" id="select-ecosystem">
+            <option>Navigate</option>
+            <option>Freelance</option>
+            <option>Personal</option>
+          </select>
+        </div>
+        <div class="input-label-field">
+          <div class="label-name">Privacy *</div>
+          <img src="/images/info_16px @1x.png">
+          <select class="privacy" id="grp-privacy">
+            <option>Private</option>
+            <option>Public</option>
+          </select>
+        </div>
+        <div class="input-label-field selected-group-members">
+          <div class="label-name">Group Members (<span class="no-of-group-members">1</span>)</div>
+          <ul id="memberlist" style="margin-left:-15%;">
+
+          </ul>
+        </div>
+        <div class="input-label-field selected-group-guests">
+          <div class="label-name">Pending Guests</div>
+          <ul>
+          </ul>
+        </div>
+      </div>
+      <div class="right-part">
+        <div class="input-label-field">
+          <div class="label-name">Add Members</div>
+          <span class="add-team-member-search"><img src="/images/search_18px_200 @1x.png"></span>
+          <input type="text" name="add-team-member" onkeyup="searchsldefclas($(this).val());" class="add-team-member" placeholder="Search contacts, departments, or invite guests">
+          <div class="suggested-type-list">
+            <img src="/images/remove_8px_200 @1x.png" class="remove-suggested-type-list">
+            <ul class="suggested-list" id="s-l-def">
+
+
+            </ul>
+          </div>
+        </div>
+        <div class="input-label-field">
+          <div class="label-name">Suggested Contacts</div>
+          <img src="/images/info_16px @1x.png">
+          <ul class="suggested-member" id="s-m-ul">
+
+          </ul>
+          <div class="bottom-gradient"></div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <button onclick="CreateGroup();">Create</button>
+    </div>
+  </div>
+</main>
+<script src="/javascripts/socket-client-side.js"></script>
+<script src="/javascripts/custom.js"></script>
+<script src="/javascripts/custom-chat.js"></script>
+<script>
+  var user_id = '<%= user_id %>';
+  var user_fullname = '<%= user_fullname %>';
+  var user_img = '<%= user_img %>';
+  var to = '';
+</script>
+<script  type="text/javascript">
+	var allUserdata = <%- JSON.stringify(data) %>;
+  var dept = [];
+  var memberList = [];
+  var adminList = [];
+  var adminListUUID = [];
+  var memberListUUID = [];
+  /*
+
+  */
+  $.each(allUserdata[0].users, function(ky,va){
+    if(jQuery.inArray(va.dept, dept) !== -1){
+
+    }else{
+      dept.push(va.dept);
+    }
+  });
+
+  $.each(dept, function(k,v){
+    var ulDes = '<li>';
+        ulDes += '      <div class="department">'+v+'</div>';
+        ulDes += '      <div class="dpt-members">';
+        ulDes += '        <ul class="suggested-list" id="s-l-'+v.replace(/\s/g,'')+'" >';
+        ulDes += '        </ul>';
+        ulDes += '      </div>';
+        ulDes += '    </li>';
+
+        $("#s-m-ul").append(ulDes);
+
+  });
+  // Render all user accoroding to designation  
+  $.each(allUserdata[0].users, function(ky,va){
+    if(va.id == user_id){
+      var adminDes = '<li>';
+          adminDes += '        <img src="/images/users/'+va.img+'" class="profile">';
+          adminDes += '        <span class="name" data-uuid="'+va.id+'">'+va.fullname+'</span> <span class="is-admin">(Admin)</span>';
+          adminDes += '      </li>';
+      $("#memberlist").append(adminDes);
+    }else{
+      var liDes = '<li>';
+          liDes += '      <img src="/images/users/'+va.img+'" class="profile">';
+          liDes += '      <spna class="name" data-uuid="'+va.id+'">'+va.fullname+'</spna> <spna class="designation-name">'+va.designation+'</spna>';
+          liDes += '    </li>';
+      var dept = va.dept;
+      $("#s-l-"+dept.replace(/\s/g,'')).append(liDes);
+    }
+
+    var definedList = '<li>';
+        definedList += '      <img src="/images/users/'+va.img+'" class="profile">';
+        definedList += '      <spna class="name s-l-def-clas" data-uuid="'+va.id+'">'+va.fullname+'</spna> <spna class="designation-name">'+va.designation+'</spna>';
+        definedList += '    </li>';
+
+    $("#s-l-def").append(definedList);
+
+  });
+
+  /** Add suggested user list to
+      selected group member list */
+  $('.suggested-list li').on('click', function(){
+    var img_src = $(this).find('img').attr('src');
+    var name = $(this).find('.name').text();
+    var uuid = $(this).find('.name').attr('data-uuid');
+    if(jQuery.inArray(name, memberList) !== -1){
+
+    }else{
+      memberList.push(name);
+      memberListUUID.push(uuid);
+      $("#numbers").text(parseInt(memberList.length)+1);
+      group_member_li_draw(name, img_src, uuid);
+    }
+
+    all_action_for_selected_member();
+  });
+
+  /** selected group member list row html */
+  var group_member_li_draw = (name, img, uuid) =>{
+    var html =  '<li>';
+        html+=    '<img src="'+ img +'" class="profile">';
+        html+=    '<span class="name" data-uuid="'+uuid+'">'+ name +'</span> <span class="is-admin"></span>';
+        html+=    '<img src="/images/admin-add_12px @1x.png" class="add-admin">';
+        html+=    '<img src="/images/admin-remove_12px @1x.png" class="remove-admin">';
+        html+=    '<img src="/images/remove_8px_200 @1x.png" class="remove-it">';
+        html+=  '</li>';
+    $('.selected-group-members ul').append(html);
+    $('.no-of-group-members').text($('.selected-group-members li:visible').length);
+  };
+
+  /* Suggested member list onkeyup */
+  $('.add-team-member').on('keyup', function(e){
+    var str = $(e.target).val();
+    if(str != ""){
+      $('.right-part .suggested-type-list').show();
+      if(str.indexOf('@') != -1){
+        $('.right-part .suggested-type-list li').hide();
+        send_email_invite(str);
+      }
+    } else {
+      $('.right-part .suggested-type-list').hide();
+    }
+  });
+
+  var searchsldefclas = (value) => {
+    // $('.s-l-def-clas:contains(' + value + ')').show();
+    // $('.s-l-def-clas:not(:contains(' + value + '))').hide();
+    $(".s-l-def-clas").each(function() {
+        if ($(this).text().toLowerCase().search(value.toLowerCase()) > -1) {
+            $(this).parent('li').show();
+        }else {
+            $(this).parent('li').hide();
+        }
+    });
+
+    $('.s-l-def-clas').unhighlight();
+    $('.s-l-def-clas').highlight(value);
+
+  }
+
+
+/** action for selected member list */
+var all_action_for_selected_member = () =>{
+  /** On hover into the selected group member list,
+      if member is already admin, show the remove admin btn,
+      if member is not admin, show the make admin btn */
+  $(".left-part .selected-group-members li").mouseenter(function() {
+    var isadmin = $(this).closest('li').find('.is-admin').text();
+    if(isadmin == '(Admin)'){
+      $(this).closest('li').find('.is-admin').hide();
+      $(this).closest('li').find('.remove-admin').show();
+    } else {
+      $(this).closest('li').find('.add-admin').show();
+    }
+  }).mouseleave(function() {
+    var isadmin = $(this).closest('li').find('.is-admin').text();
+    if(isadmin == '(Admin)'){
+      $(this).closest('li').find('.is-admin').show();
+      $(this).closest('li').find('.remove-admin').hide();
+    } else {
+      $(this).closest('li').find('.add-admin').hide();
+    }
+  });
+
+  /** When click on the make admin btn,
+      admin text show and hide add admin btn */
+  $(".add-admin").on('click', function(){
+    $(this).closest('li').find('.is-admin').text('(Admin)').show();
+    $(this).closest('li').find('.add-admin').hide();
+    
+    memberList.splice($(this).closest('li').find('.name').text(),1);
+    memberListUUID.splice($(this).closest('li').find('.name').attr('data-uuid'),1);
+  });
+  /** When click on the remove admin btn,
+      admin text null and hide remove admin btn */
+  $(".remove-admin").on('click', function(){
+    $(this).closest('li').find('.is-admin').text('').hide();
+    $(this).closest('li').find('.remove-admin').hide();
+    adminList.splice($(this).closest('li').find('.name').text(),1);
+    adminList.splice($(this).closest('li').find('.name').attr('data-uuid'),1);
+    memberList.push($(this).closest('li').find('.name').text());
+    memberListUUID.push($(this).closest('li').find('.name').attr('data-uuid'));
+  });
+  /** To remove a selected group member */
+  // $(".remove-it").on('click', function(){
+  //   $(this).closest('li').hide();
+  // });
+
+
+  /*
+    Remove User from meber list while clicking on remove btn
+  */
+  $('.remove-it').on('click', function(){
+    var name = $(this).find('.name').text();
+    var uuid = $(this).find('.name').attr('data-uuid');
+    memberList.splice(name,1);
+    memberListUUID.splice(uuid,1);
+    $("#numbers").text(parseInt(memberList.length)+1);
+    $(this).closest('li').remove();
+  });
+};
+/*
+  Create Chat Group on click create btn
+*/
+
+var  CreateGroup = () =>{
+
+  var teamname = $("#team-name").val();
+  var selectecosystem = $("#select-ecosystem").val();
+  var grpprivacy = $("#grp-privacy").val();
+
+  if(teamname != ""){
+    if(selectecosystem != ""){
+      if(grpprivacy != ""){
+
+        $(".left-part .selected-group-members li").each(function(k,v){
+          console.log($(v).closest('li').find('.is-admin').text());
+          if($(v).closest('li').find('.is-admin').text() == '(Admin)'){
+            adminList.push($(v).closest('li').find('.name').text());
+            adminListUUID.push($(v).closest('li').find('.name').attr('data-uuid'));
+          }
+        });
+
+        console.log(adminList);
+
+        setCookie('teamname',teamname,1);
+        setCookie('selectecosystem',selectecosystem,1);
+        setCookie('grpprivacy',grpprivacy,1);
+        setCookie('grpmember',memberList,1);
+        setCookie('adminList',adminList,1);
+
+        $(".backWrap").hide();
+        $(".new-group-chat-popup").hide();
+
+      }else{
+        $("#grp-privacy").css('border','1px solid RED');
+      }
+    }else{
+      $("#select-ecosystem").css('border','1px solid RED');
+    }
+  }else{
+    $("#team-name").css('border','1px solid RED');
+  }
+
+  socket.emit('groupCreateBrdcst', {
+    createdby: user_id,
+    memberList: memberList,
+    memberListUUID: memberListUUID,
+    adminList: adminList,
+    adminListUUID: adminListUUID,
+    is_room: '6',
+    teamname: teamname,
+    selectecosystem: selectecosystem,
+    grpprivacy: grpprivacy});
+
+}
+
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) { // escape key maps to keycode `27`
+      if($(".backWrap").is(':visible')){
+        window.location.href='/hayven';
+      }
+  }
+});
+
+
+
+
+
+</script>
+<%- include('layouts/foot') %>

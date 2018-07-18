@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / message bubble / close_20px_700</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-message-bubble-/-close_20px_700" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10,10 L10,4 L10,10 L4,10 L10,10 Z M10,10 L10,16 L10,10 L16,10 L10,10 Z" stroke="#455A64" stroke-width="2" transform="translate(10.000000, 10.000000) rotate(45.000000) translate(-10.000000, -10.000000) "></path>
+    </g>
+</svg>

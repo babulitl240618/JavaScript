@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / contact / drag-to-pin_72px0</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-contact-/-drag-to-pin_72px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="contact-/-drag-to-pin_72px">
+            <path d="M36,1 C8,1 1,8 1,36 C1,64 8,71 36,71 C64,71 71,64 71,36 C71,8 64,1 36,1 Z" id="Path-path" stroke-opacity="0.640143795" stroke="#CFD8DC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,4"></path>
+            <text id="Drag-to-pin" font-family="Assistant-SemiBold, Assistant" font-size="14" font-weight="500" line-spacing="16" letter-spacing="-0.100000001" fill="#CFD8DC">
+                <tspan x="15.956" y="27.7060547">Drag</tspan>
+                <tspan x="12.773" y="43.7060547">to pin</tspan>
+            </text>
+            <g id="icon-/-pin-/-16" transform="translate(56.000000, 0.000000)">
+                <rect id="Rectangle-2" x="0" y="1" width="16" height="16"></rect>
+                <path d="M3.5,11 C3.5,10.7609034 3.5,10.3859034 3.5,9.875 C3.5,9.60558696 3.5,8.75 4.625,8.1875 L6.3125,7.625 L6.3125,5.375 L4.625,4.25 L4.625,2 L11.375,2 L11.375,4.25 L9.6875,5.375 L9.6875,7.625 L11.375,8.1875 C12.5,8.75 12.5,9.60558696 12.5,9.875 L12.5,11 C6.5,11 3.5,11 3.5,11 Z M8,16 L8,11 L8,16 Z" id="Stroke-6282" stroke-opacity="0.640143795" stroke="#CFD8DC" stroke-width="1.5" fill="#F7F9F9" stroke-linecap="round" stroke-linejoin="round" transform="translate(8.000000, 9.000000) rotate(40.000000) translate(-8.000000, -9.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

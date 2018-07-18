@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>
+        <%= title %>
+    </title>
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/stylesheets/jquery.mobile-1.4.5.min.css" />
+    <script src="/javascripts/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="/javascripts/jQuery/jquery.mobile-1.4.5.js"></script>
+    <script src="/javascripts/lodash.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/fontawesome-all.js"></script>
+    <script src="/javascripts/jquery.typeahead.js"></script>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/stylesheets/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/tooltipster.bundle.min.css" />
+    <script src="/javascripts/moment.js"></script>
+    <script src="/javascripts/bootstrap-datetimepicker.js"></script>
+    <script src="/javascripts/jquery.highlight.js"></script>
+    <script src="/javascripts/bootstrap-select.min.js"></script>
+    <script src="/javascripts/popper.min.js"></script>
+    <script src="/javascripts/tooltipster.bundle.min.js"></script>
+    <script src="/javascripts/jquery.toaster.js"></script>
+    <% if (has_login) { %>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <link rel="stylesheet" href="/stylesheets/style-connect.css">
+        <link rel="stylesheet" href="/stylesheets/style-chat.css">
+        <!-- Stylesheet for project,task,subtask pages -->
+        <link rel="stylesheet" href="/stylesheets/style-project.css">
+        <link rel="stylesheet" href="/stylesheets/jquery.typeahead.css">
+        <!-- Stylesheet for Quicklist,Calender -->
+        <link rel="stylesheet" href="/stylesheets/style-quicklist.css">
+        <link rel="stylesheet" href="/stylesheets/style-call.css">
+        <% } else { %>
+            <!-- Stylesheet for Login,Signup pages -->
+            <link rel="stylesheet" href="/stylesheets/style-login.css">
+            <% } %>
+                <style type="text/css">
+                    /*Over lapping bootstarp css. So that, write in here*/
+                    
+                    @media (min-width:1200px) {
+                        .container {
+                            max-width: 1104px
+                        }
+                    }
+                    
+                    .navQuickMenu {
+                        display: none;
+                    }
+                    
+                    .notificationtDiv {
+                        display: none;
+                    }
+                    
+                    .recentChatDiv {
+                        display: none;
+                    }
+                </style>
+                <script>
+                    //var  move = function() {
+                    //  $('#nav-icon1').toggleClass('open');
+                    //  if($('#leftSideBar-flt').hasClass('moved')) {
+                    //      $('#leftSideBar-flt').removeClass('moved');
+                    //  }else{
+                    //      $('#leftSideBar-flt').addClass('moved');
+                    //      $('#leftSideBar-flt').show();
+                    //  }
+                    //}
+
+                    var setCookie = (cname, cvalue, exdays) => {
+                        var d = new Date();
+                        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                        var expires = "expires=" + d.toUTCString();
+                        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                    }
+
+                    var getCookie = (cname) => {
+                        var name = cname + "=";
+                        var decodedCookie = decodeURIComponent(document.cookie);
+                        var ca = decodedCookie.split(';');
+                        for (var i = 0; i < ca.length; i++) {
+                            var c = ca[i];
+                            while (c.charAt(0) == ' ') {
+                                c = c.substring(1);
+                            }
+                            if (c.indexOf(name) == 0) {
+                                return c.substring(name.length, c.length);
+                            }
+                        }
+                        return "";
+                    }
+
+
+                    function openProfilePage(element) {
+
+                        var id = $(element).find('.box-header').attr('data-id');
+                        var name = $(element).find('.box-header').attr('data-name');
+                        var img = $(element).find('.box-header').attr('data-img');
+                        var conversationid = $(element).find('.box-header').attr('data-conversationid');
+                        var conversationtype = $(element).find('.box-header').attr('data-conversationtype');
+                        //alert(conversationid);
+                        setCookie('userid', id, 1);
+                        setCookie('username', name, 1);
+                        setCookie('userimg', img, 1);
+                        setCookie('conversationid', conversationid, 1);
+
+                        if (conversationtype === 'personal') {
+                            $.ajax({
+                                type: 'POST',
+                                data: {
+                                    targetUser: name,
+                                    targetID: id,
+                                    ecosystem: 'Navigate'
+                                },
+                                dataType: 'json',
+                                url: '/hayven/personalConCreate',
+                                success: function(data) {
+                                    window.location.href = '/hayven/chat/' + conversationtype + '/' + id + '/' + encodeURI(data.conversation_id) + '/' + encodeURI(name) + '/' + encodeURI(img);
+                                },
+                                error: function(err) {
+                                    console.log(err);
+                                }
+                            });
+                        } else if (conversationtype === 'group') {
+                            window.location.href = '/hayven/chat/' + conversationtype + '/' + id + '/' + encodeURI(conversationid) + '/' + encodeURI(name) + '/' + encodeURI(img);
+                        }
+
+
+                    }
+
+                    $(document).keyup(function(e) {
+                        if (e.keyCode == 27) { // escape key maps to keycode `27`
+
+                            if ($('#leftSideBar-flt').hasClass('moved')) {
+                                $('#leftSideBar-flt').removeClass('moved');
+                                $("#nav_tgl_img").show();
+                                $("#nav_tgl_close").hide();
+                            }
+
+                            if ($('#notfDivHolder').is(':visible')) {
+                                $('#tpgglequickDiv').removeClass('open');
+                                $("#notfDivHolder").html("");
+                                $("#notfDivHolder").hide();
+                                $("#tpgglequickDivOpen").hide();
+                                $("#tpgglequickDiv").show();
+
+                            }
+                        }
+                    });
+                    // Toggle recent chat div at nav bar right side on click chat icon
+                    var toggleRecentChat = function() {
+                            $("#tpgglequickDivOpen").hide();
+                            $("#tpgglequickDiv").show();
+                            if ($("#notfDivHolder").is(':visible')) {
+
+                                $("#notfDivHolder").html("");
+                                $("#notfDivHolder").hide();
+
+                            } else if ($("#notfDivHolder").is(':hidden')) {
+                                $("#notfDivHolder").html($("#recentChatHoled").html());
+                                $("#notfDivHolder").show();
+                                $(".recentChatDiv").show();
+                                $("#notfDivHolder").height('236px');
+                            }
+                        }
+                        // Toggle notification div at nav bar right side on click bell icon
+                    var togglenotification = function() {
+                            $("#tpgglequickDivOpen").hide();
+                            $("#tpgglequickDiv").show();
+                            if ($("#notfDivHolder").is(':visible')) {
+                                $("#notfDivHolder").html("");
+                                $("#notfDivHolder").hide();
+                            } else {
+                                $("#notfDivHolder").html($("#NotificationHoled").html());
+                                $("#notfDivHolder").show();
+                                $(".notificationtDiv").show();
+                                $("#notfDivHolder").height('236px');
+                            }
+                        }
+                        // Toggle quick activity div at nav bar right side on click plus icon
+                    var tpgglequickDivClose = function() {
+                        $("#notfDivHolder").html($("#quickDivHold").html());
+                        $("#notfDivHolder").show();
+                        $(".navQuickMenu").show();
+                        $("#tpgglequickDivOpen").show();
+                        $("#tpgglequickDiv").hide();
+                        $("#notfDivHolder").height('208px');
+                    }
+
+                    var tpgglequickDiv = function() {
+                        $("#notfDivHolder").html("");
+                        $("#notfDivHolder").hide();
+                        $("#tpgglequickDivOpen").hide();
+                        $("#tpgglequickDiv").show();
+                    }
+
+
+                    function isVisible(id) {
+                        var element = $('#' + id);
+                        if (element.length > 0 && element.css('visibility') !== 'hidden' && element.css('display') !== 'none') {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+
+
+                    /** On mouse up event 'mouseup' */
+                    $(document).mouseup(function(e) {
+                        var container = "";
+                        var leftSideBar = $('#leftSideBar-flt');
+                        var targetID = "";
+                        var tagContainer = "";
+                        // console.log(e.target.id);
+                        // console.log(197, e);
+
+
+                        if ($('.notfDivHolder').is(':visible')) {
+                            container = $('.notfDivHolder');
+                            targetID = e.target.id;
+                            tagContainer = "notfDivHolder";
+                        } else if ($('.filter-btn-div').is(':visible')) {
+                            container = $('.filter-btn-div');
+                            targetID = e.target.id;
+                            tagContainer = "filter-btn-div";
+                        } else if ($('.action-btn-div').is(':visible')) {
+                            if (!$(e.target).hasClass('pointer')) {
+                                container = $('.action-btn-div');
+                                targetID = e.target.id;
+                                tagContainer = "action-btn-div";
+                            }
+                        } else {
+                            targetID = "";
+                            tagContainer = "";
+                        }
+
+                        if (e.target.id != 'nav_tgl_img' && container !== "" && targetID === "") {
+                            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                                container.hide();
+                                if (tagContainer != "filter-btn-div" && tagContainer != "action-btn-div") {
+                                    container.html("");
+                                }
+
+                                if (tagContainer == "action-btn-div") {
+                                    $('.backWrap').hide();
+                                    $('.per-msg-action img').attr('src', '/images/NavbarIcons/actions-create_24px_FFF.png'); // This is per message action icon
+                                    $('.action-btn').attr('src', '/images/NavbarIcons/actions-create_24px_FFF.png'); // This is message form action icon
+                                    $('.message-container .per-msg').removeClass('active');
+                                }
+
+                                $("#tpgglequickDivOpen").hide();
+                                $("#tpgglequickDiv").show();
+                            }
+                        }
+
+                        if (e.target.id != 'nav-icon1' && leftSideBar !== "" && targetID === "") {
+                            if (!leftSideBar.is(e.target) && leftSideBar.has(e.target).length === 0) {
+                                if ($('#leftSideBar-flt').hasClass('moved')) {
+                                    $("#nav_tgl_img").show();
+                                    $("#nav_tgl_close").hide();
+                                    $('#leftSideBar-flt').removeClass('moved');
+                                }
+                            }
+                        }
+
+
+                    });
+
+                    //$(document).ready(function(){
+                    //  $('#tpgglequickDiv').click(function(){
+                    //    $(this).toggleClass('open');
+                    //    if(!$(this).hasClass('open')){
+                    //      $("#notfDivHolder").html("");
+                    //      $("#notfDivHolder").hide();
+                    //    }else{
+                    //      $("#notfDivHolder").html($("#quickDivHold").html());
+                    //      $("#notfDivHolder").show();
+                    //      $(".navQuickMenu").show();
+                    //      $("#notfDivHolder").height('208px');
+                    //    }
+                    //  });
+                    //  
+                    //  $('#nav-icon1').click(function(e){
+                    //    if($('#leftSideBar-flt').hasClass('moved')) {
+                    //        $('#leftSideBar-flt').removeClass('moved');
+                    //        $('#nav-icon1').removeClass('open');
+                    //    }else{
+                    //        $('#leftSideBar-flt').addClass('moved');
+                    //        $('#leftSideBar-flt').show();
+                    //        $('#nav-icon1').addClass('open');
+                    //    }
+                    //  });
+                    //});
+
+                    var menuOpen = function() {
+                        $('#leftSideBar-flt').addClass('moved');
+                        $('#leftSideBar-flt').show();
+                        $("#nav_tgl_img").hide();
+                        $("#nav_tgl_close").show();
+                    }
+
+                    var menuClose = function() {
+                        $('#leftSideBar-flt').removeClass('moved');
+                        $("#nav_tgl_img").show();
+                        $("#nav_tgl_close").hide();
+                    }
+                </script>
+
+</head>
+
+<body class="<%= bodyClass %>">
+    <% if (has_login) { %>
+        <nav class="navbar navbar-expand-md navbar-dark itl-bg-nav fixed-top">
+            <!-- <a class="navbar-brand" href="#" onclick="move();"><img src="/images/svg/more_18px_000.svg" class="nav_tgl_img" id="nav_tgl_img"/></a> -->
+            <img src="/images/svg/more_18px_000.svg" onclick="menuOpen();" class="nav_tgl_img" id="nav_tgl_img" />
+            <img src="/images/svg/CloseModal.svg" onclick="menuClose();" class="nav_tgl_img" id="nav_tgl_close" />
+
+            <!--        <div id="nav-icon1">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/<%= url %>" style="float: left; margin: 0px; padding: 7px;">
+                            <%= title %> <span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Contacts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/quicklists">Quick List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Files</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li> -->
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search Hayven" aria-label="Search Hayven" id="navbarsearch">
+                    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                    <!-- <i class="fas fa-search"></i> -->
+                    <img src="/images/svg/recent-chats_28px_000.svg" class="navRightIco" id="toggleRecentChat" onclick="toggleRecentChat()" />
+                    <img src="/images/svg/notification_28px_000.svg" class="navRightIco" id="togglenotification" onclick="togglenotification()" />
+                    <img src="/images/close_18px_300 @2x.png" class="navRightIco tpgglequickDivOpen" id="tpgglequickDivOpen" onclick="tpgglequickDiv()" />
+                    <img src="/images/svg/actions-create_24px_000.svg" class="navRightIco tpgglequickDivClose" id="tpgglequickDiv" onclick="tpgglequickDivClose()" />
+                    <!--<div id="tpgglequickDiv" class="navRightIco" onclick="tpgglequickDiv()">-->
+                    <!--  <span></span>-->
+                    <!--  <span></span>-->
+                    <!--  -->
+                    <!--</div>-->
+                    <img style="display:none;" src="/images/users/<%= user_img %>" alt="<%= user_img %>" title="<%= user_fullname %>" class="itl-nav-user-icon" onclick="open_nav_user_pro()" />
+                    <!-- <div class="nav-user-pro">
+              <ul>
+                <li onclick="logout()">Logout</li>
+              </ul>
+            </div> -->
+                </div>
+            </div>
+            <div class="notfDivHolder" id="notfDivHolder"></div>
+
+        </nav>
+        <div class="leftSideBar-flt transition" id="leftSideBar-flt">
+            <ul>
+                <li>
+                    <a href="/hayven">
+                        <span class="imgSide">
+              <svg width="28px" height="28px" viewBox="0 0 28 28"  fill: "rgba(0,0,0,0.56)"" class="navleftIco" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="navbar-/-recent-chats_28px_000" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <rect id="Rectangle" x="2" y="2" width="24" height="24"></rect>
+                    <path d="M25.9343946,4.28791472 L24.6030457,7.69565217 L24.6030457,14.2695652 C24.6030457,15.3069001 23.7817045,16.1478261 22.7685288,16.1478261 L20.1533629,16.1478261 M8.09239419,11.4521739 L8.09239419,4.87826087 C8.09239419,3.84092604 8.91373535,3 9.92691102,3 L25.0827416,3 C25.5893294,3 26,3.42046302 26,3.93913043 C26,4.05860607 25.9777334,4.17698438 25.9343946,4.28791472 M20.0167536,7.69565217 L12.6786863,7.69565217 L20.0167536,7.69565217 Z M2.06560536,12.7400886 C2.02226663,12.6291583 2,12.51078 2,12.3913043 C2,11.8726369 2.41067058,11.4521739 2.91725842,11.4521739 L18.073089,11.4521739 C19.0862646,11.4521739 19.9076058,12.2930999 19.9076058,13.3304348 L19.9076058,22.7217391 C19.9076058,23.759074 19.0862646,24.6 18.073089,24.6 L5.23147116,24.6 C4.21829549,24.6 3.39695433,23.759074 3.39695433,22.7217391 L3.39695433,16.1478261 L2.06560536,12.7400886 Z M7.98324641,16.1478261 L15.3213137,16.1478261 L7.98324641,16.1478261 Z M7.98324641,19.9043478 L15.3213137,19.9043478 L7.98324641,19.9043478 Z" id="icon-/-message-bubble-/-incoming-thread_20px" stroke-opacity="0.865885417" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(14.000000, 13.800000) scale(-1, 1) translate(-14.000000, -13.800000) "></path>
+                  </g>
+                </svg>
+              </span><span class="textSide">Connect</span></a>
+                </li>
+                <li><span class="imgSide">
+            <svg width="24px" height="24px"  class="navleftIco" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="navbar-/-contacts_24px_000" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <rect id="bounds" x="0" y="0" width="24" height="24"></rect>
+                    <path d="M19.6521739,7.2173913 C18.5286957,6.09391304 18.5113043,3.14173913 19.6521739,2 L6.36608696,2 C5.16521739,2 4,2.97304348 4,4.17391304 L4,5.04347826 C4,6.24434783 5.16521739,7.2173913 6.36608696,7.2173913 L19.6521739,7.2173913 L19.6521739,22 L6.80086957,22 L5.93130435,22 C4.73043478,22 4,21.0278261 4,19.826087 L4,5.04347826 M6.17391304,4.60869565 L18.7826087,4.60869565 M13.5652174,12.4347826 C13.5652174,13.3956522 12.7869565,14.173913 11.826087,14.173913 C10.8652174,14.173913 10.0869565,13.3956522 10.0869565,12.4347826 C10.0869565,11.473913 10.8652174,10.6956522 11.826087,10.6956522 C12.7869565,10.6956522 13.5652174,11.473913 13.5652174,12.4347826 L13.5652174,12.4347826 Z M15.3043478,18.5217391 C15.3043478,16.6008696 14.3982609,14.173913 11.826087,14.173913 C9.25391304,14.173913 8.34782609,16.6008696 8.34782609,18.5217391 L15.3043478,18.5217391 L15.3043478,18.5217391 Z" id="Stroke-784" stroke="#000000" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </svg>
+            </span><span class="textSide">Contacts</span></li>
+                <li><span class="imgSide">
+            <svg width="24px" height="24px"  class="navleftIco" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="navbar-/-quicklist_24px_000" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <rect id="bounds" x="0" y="0" width="24" height="24"></rect>
+                      <path d="M7.63636364,11.2727273 L12,15.6363636 L21.4545455,4 M17.0909091,4 L7,4 C5.34314575,4 4,5.34314575 4,7 L4,17 C4,18.6568542 5.34314575,20 7,20 L17,20 C18.6568542,20 20,18.6568542 20,17 L20,10.5454545" id="icon-/-task-/-16" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+              </svg>
+          </span><span class="textSide">Quick List</span></li>
+                <li><a href="/projects"><span class="imgSide">
+            <svg width="24px" height="24px"   class="navleftIco"viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="navbar-/-projects_24px_000" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <rect id="bounds" x="0" y="0" width="24" height="24"></rect>
+                    <path d="M8,4.75 L8,7 L16,7 L16,4.75 C16,4.33578644 15.5522847,4 15,4 L9,4 C8.44771525,4 8,4.33578644 8,4.75 Z M3,19.1875 L3,7.8125 C3,7.36376864 3.33578644,7 3.75,7 L20.25,7 C20.6642136,7 21,7.36376864 21,7.8125 L21,19.1875 C21,19.6362314 20.6642136,20 20.25,20 L3.75,20 C3.33578644,20 3,19.6362314 3,19.1875 Z M3,11 L9.23426087,13.6145678 C11.0475652,14.1284774 12.9524348,14.1284774 14.7657391,13.6145678 L21,11" id="icon-/-briefcase-/-16" stroke="#000000" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </svg></span><span class="textSide">Projects</span></a></li>
+                <li><span class="imgSide">
+            <svg width="24px" height="24px"  class="navleftIco" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="navbar-/-calendar_24px_000" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <rect id="bounds" x="0" y="0" width="24" height="24"></rect>
+                  <path d="M3.00009939,7.49998729 L21.0000486,7.49998729 L3.00009939,7.49998729 Z M8.24999841,5.24999365 L8.24999841,3 L8.24999841,5.24999365 Z M15.7499984,5.24999365 L15.7499984,3 L15.7499984,5.24999365 Z M10.593828,4.12499682 L13.40632,4.12499682 L10.593828,4.12499682 Z M6.09384066,4.12499682 L6,4.12499682 C4.34314575,4.12499682 3,5.46814257 3,7.12499682 L3,18 C3,19.6568542 4.34314575,21 6,21 L18.0000486,21 C19.6569028,21 21.0000486,19.6568542 21.0000486,18 L21.0000486,7.12499682 C21.0000486,5.46814257 19.6569028,4.12499682 18.0000486,4.12499682 L17.9063073,4.12499682" id="icon-/-calendar-/-24" stroke="#000000" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <text id="31" font-family="Assistant-Bold, Assistant" font-size="10" font-weight="bold" line-spacing="12" fill="#000000">
+                      <tspan x="6.5" y="17">31</tspan>
+                  </text>
+              </g>
+          </svg></span><span class="textSide">Calendar</span></li>
+                <li><a href="/polls"><span class="imgSide">
+            <svg width="24px" height="24px"  class="navleftIco" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="navbar-/-polls_24px_000" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <rect id="bounds" x="0" y="0" width="24" height="24"></rect>
+                  <path d="M17,20.3333333 L19.5,22 L22,20.3333333 L22,8.66666667 L19.5,7 L17,8.66666667 L17,20.3333333 L17,20.3333333 Z M17,9.5 L19.5,11.1666667 L22,9.5 M19.5,11.1666667 L19.5,22 M2,20.3333333 L4.5,22 L7,20.3333333 L7,12 L4.5,10.3333333 L2,12 L2,20.3333333 L2,20.3333333 Z M2,12.8333333 L4.5,14.5 L7,12.8333333 M4.5,14.5 L4.5,22 M9.5,20.2608696 L12,22 L14.5,20.2608696 L14.5,3.73913043 L12,2 L9.5,3.73913043 L9.5,20.2608696 L9.5,20.2608696 Z M9.5,4.5 L12,6.16666667 L14.5,4.5 M12,6.16666667 L12,22" id="Stroke-83" stroke="#000000" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+          </svg></span><span class="textSide">Polls</span></a></li>
+                <li><span class="imgSide">
+            <svg width="24px" height="24px"  class="navleftIco" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="navbar-/-files_24px_000" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <rect id="bounds" x="0" y="0" width="24" height="24"></rect>
+                    <path d="M18.3374256,22 L6.66257441,22 C5.74385233,22 5,21.2519624 5,20.3292112 L5,3.67078882 C5,2.74752185 5.74937467,2 6.67377517,2 L15,2 L20,7 L20,20.3374256 C20,21.2561477 19.2556401,22 18.3374256,22 Z M14.375,2 L14.375,5.3350724 C14.375,6.25144948 15.123784,7 16.0474558,7 L20,7 M9.16666667,10.3333333 L15.8333333,10.3333333 M9.16666667,13.5277778 L15.8333333,13.5277778 M9.16666667,16.7222222 L13.3333333,16.7222222" id="file" stroke="#000000" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </svg></span><span class="textSide">Files</span></li>
+                <li><a href="/user_settings"><span class="imgSide"><img src="/images/users/<%= user_img %>" class="navleftIco"/></span><span class="textSide">Profile</span></a></li>
+                <li><a href="/settings"><span class="imgSide">
+            <svg width="24px" height="24px"  class="navleftIco" aria-hidden="true" data-prefix="fal" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-cog fa-w-16 fa-2x"><path fill="currentColor" d="M482.696 299.276l-32.61-18.827a195.168 195.168 0 0 0 0-48.899l32.61-18.827c9.576-5.528 14.195-16.902 11.046-27.501-11.214-37.749-31.175-71.728-57.535-99.595-7.634-8.07-19.817-9.836-29.437-4.282l-32.562 18.798a194.125 194.125 0 0 0-42.339-24.48V38.049c0-11.13-7.652-20.804-18.484-23.367-37.644-8.909-77.118-8.91-114.77 0-10.831 2.563-18.484 12.236-18.484 23.367v37.614a194.101 194.101 0 0 0-42.339 24.48L105.23 81.345c-9.621-5.554-21.804-3.788-29.437 4.282-26.36 27.867-46.321 61.847-57.535 99.595-3.149 10.599 1.47 21.972 11.046 27.501l32.61 18.827a195.168 195.168 0 0 0 0 48.899l-32.61 18.827c-9.576 5.528-14.195 16.902-11.046 27.501 11.214 37.748 31.175 71.728 57.535 99.595 7.634 8.07 19.817 9.836 29.437 4.283l32.562-18.798a194.08 194.08 0 0 0 42.339 24.479v37.614c0 11.13 7.652 20.804 18.484 23.367 37.645 8.909 77.118 8.91 114.77 0 10.831-2.563 18.484-12.236 18.484-23.367v-37.614a194.138 194.138 0 0 0 42.339-24.479l32.562 18.798c9.62 5.554 21.803 3.788 29.437-4.283 26.36-27.867 46.321-61.847 57.535-99.595 3.149-10.599-1.47-21.972-11.046-27.501zm-65.479 100.461l-46.309-26.74c-26.988 23.071-36.559 28.876-71.039 41.059v53.479a217.145 217.145 0 0 1-87.738 0v-53.479c-33.621-11.879-43.355-17.395-71.039-41.059l-46.309 26.74c-19.71-22.09-34.689-47.989-43.929-75.958l46.329-26.74c-6.535-35.417-6.538-46.644 0-82.079l-46.329-26.74c9.24-27.969 24.22-53.869 43.929-75.969l46.309 26.76c27.377-23.434 37.063-29.065 71.039-41.069V44.464a216.79 216.79 0 0 1 87.738 0v53.479c33.978 12.005 43.665 17.637 71.039 41.069l46.309-26.76c19.709 22.099 34.689 47.999 43.929 75.969l-46.329 26.74c6.536 35.426 6.538 46.644 0 82.079l46.329 26.74c-9.24 27.968-24.219 53.868-43.929 75.957zM256 160c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zm0 160c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z" class=""></path></svg>
+          </span><span class="textSide">Settings</span></a></li>
+                <li onclick="logout()"><span class="imgSide"><img src="/images/logout.png" class="navleftIco"/></span><span class="textSide">Logout</span></li>
+            </ul>
+        </div>
+        <% } %>
+
+            <div id="recentChatHoled">
+                <div class="recentChatDiv">
+                    <div class="row-bg">
+                        <p style="margin-top: 14px;">
+                            <span class="contact">Tobias Fünke</span>
+                            <span class="rightTime">9.58am</span>
+                        </p>
+                        <p>
+                            <span class="secondary-text">Screw the pooch. I don't want to drain t...</span>
+                            <span class="counRcht">3</span>
+                        </p>
+                    </div>
+                    <div class="row-bg">
+                        <p style="margin-top: 14px;">
+                            <span class="contact">Everyone @ Navigate Group</span>
+                            <span class="rightTime">9.58am</span>
+                        </p>
+                        <p>
+                            <span class="secondary-text">Raymond: Hard stop sacred cow, yet tho...</span>
+                            <span class="counRcht">3</span>
+                        </p>
+                    </div>
+                    <div class="row-bg">
+                        <p style="margin-top: 14px;">
+                            <span class="contact">Amy Santiago</span>
+                            <span class="rightTime">9.58am</span>
+                        </p>
+                        <p>
+                            <span class="secondary-text">Powerpoint Bunny can we take this offli...</span>
+                            <span class="counRcht">3</span>
+                        </p>
+                    </div>
+                    <p class="view-all-chats">View all chats</p>
+                </div>
+            </div>
+            <div id="NotificationHoled">
+                <div class="notificationtDiv">
+                    <div class="row-bg">
+                        <p>
+                            <span class="nText">You’re event <span class="mark">NavConnect Catch Up</span> starts in 15 minutes. <span class="ntime">9.58am</span></span>
+                        </p>
+                    </div>
+                    <div class="row-bg">
+                        <p>
+                            <span class="nText">Raymond assigned you to the task <span class="mark">User Interviews</span> in <span class="mark">Hayven UX</span>. <span class="ntime">9.58am</span></span>
+                        </p>
+                    </div>
+                    <div class="row-bg">
+                        <p>
+                            <span class="nText">You have 2 events happening today.  <span class="ntime">9.58am</span></span>
+                        </p>
+                    </div>
+                    <p class="view-all-chats" onclick="window.location.href='/notification';">View all notifications</p>
+                </div>
+            </div>
+            <div class="quickDivHold" id="quickDivHold">
+                <div class="navQuickMenu" id="navQuickMenu">
+                    <ul>
+                        <li onclick="opnenProjectModel(this);">
+                            <span class="imgSide"><img src="/images/svg/projects_24px_007AFF.svg" style="width: 28px;height: 28px;"></span><span class="textSide">Create a project</span></li>
+                        <li>
+                            <span class="imgSide"><img src="/images/svg/quicklist_24px_007AFF.svg" style="width: 28px;height: 28px;"></span><span class="textSide">Add a task</span></li>
+                        <li>
+                            <span class="imgSide"><img src="/images/svg/calendar_24px_007AFF.svg" style="width: 28px;height: 28px;"></span><span class="textSide">Schedule an event</span></li>
+                        <li>
+                            <span class="imgSide"><img src="/images/svg/alarm.svg" style="width: 28px;height: 28px;"></span><span class="textSide">Set a reminder</span></li>
+                    </ul>
+                </div>
+            </div>

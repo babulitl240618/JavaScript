@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Selected</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Selected" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-43" transform="translate(4.000000, 4.000000)">
+            <g id="FilledCheckMark" fill="#4A90E2">
+                <rect id="Selected-Checkbox" x="0" y="0" width="16" height="16" rx="4"></rect>
+            </g>
+            <polygon id="Indicator" fill="#FFFFFF" fill-rule="nonzero" points="4.36976015 7.46323637 3 8.95366076 6.64823071 12.306532 12.6298079 5.31606709 11.0917653 4 6.47376377 9.39690058"></polygon>
+        </g>
+    </g>
+</svg>

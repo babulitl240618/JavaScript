@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="navbar-/-calendar_24px_000" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="bounds" x="0" y="0" width="24" height="24"></rect>
+        <path d="M3.00009939,7.49998729 L21.0000486,7.49998729 L3.00009939,7.49998729 Z M8.24999841,5.24999365 L8.24999841,3 L8.24999841,5.24999365 Z M15.7499984,5.24999365 L15.7499984,3 L15.7499984,5.24999365 Z M10.593828,4.12499682 L13.40632,4.12499682 L10.593828,4.12499682 Z M6.09384066,4.12499682 L6,4.12499682 C4.34314575,4.12499682 3,5.46814257 3,7.12499682 L3,18 C3,19.6568542 4.34314575,21 6,21 L18.0000486,21 C19.6569028,21 21.0000486,19.6568542 21.0000486,18 L21.0000486,7.12499682 C21.0000486,5.46814257 19.6569028,4.12499682 18.0000486,4.12499682 L17.9063073,4.12499682" id="icon-/-calendar-/-24" stroke="#000000" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+        <text id="31" font-family="Assistant-Bold, Assistant" font-size="10" font-weight="bold" line-spacing="12" fill="#000000">
+            <tspan x="6.5" y="17">31</tspan>
+        </text>
+    </g>
+</svg>

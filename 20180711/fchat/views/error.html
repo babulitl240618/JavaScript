@@ -1,0 +1,7 @@
+<%- include('layouts/head') %>
+  <div class="page404">
+    <h2><%= error.status %></h2>
+    <h1><%= message %></h1>
+    <pre><%= error.stack %></pre>
+  </div>
+<%- include('layouts/foot') %>
