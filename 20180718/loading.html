@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset='UTF-8'>
+	
+	<title>Animasi Loading Saat Pertama Membuka Website</title>
+	<meta name="description" content="Menampilkan animasi loading saat membuka website" /> 
+	<meta name="keywords" content="website animation, loading animation, jquery animation, jquery loading, preloader, animasi loading" />
+	<link href='style.css' rel='stylesheet' type='text/css'>
+	
+
+</head>
+	<body onload="myFunction()" style="margin:0;">
+
+		<div id="cssload-wraper"></div>
+
+		<div style="display:none;" id="myDiv" class="cssload-dots">
+			 <h2>Tada!</h2>
+			 <p>Some text in my newly loaded page..</p>
+		</div>
+
+
+	<div class="cssload-wraper">
+		<div class="cssload-dots"></div>
+	</div>
+
+</body>
+
+<script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+
+</html>
